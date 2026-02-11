@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Empier Scents - Get in touch with us"
+    />
+    <title>Contact Us - Empier Scents</title>
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav-container">
+        <a href="index.html" class="logo">EMPIER SCENTS</a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li>
+            <a href="cart.html" class="cart-icon-wrapper">
+              <i class="bx bx-shopping-bag"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+
+        <button class="mobile-menu-toggle">
+          <i class="bx bx-menu"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section
+      class="section"
+      style="
+        padding-top: 140px;
+        background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%);
+      "
+    >
+      <div class="container">
+        <div class="section-header">
+          <h1 class="section-title">Get in Touch</h1>
+          <p class="section-subtitle">
+            We'd love to hear from you. Reach out to us anytime!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-container">
+          <!-- Contact Information -->
+          <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem">
+              Feel free to reach out to us through any of these channels. We're
+              here to help!
+            </p>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bx bxl-whatsapp"></i>
+              </div>
+              <div class="contact-details">
+                <h4>WhatsApp</h4>
+                <p>07040062388</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bx bx-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Phone</h4>
+                <p>09073824064</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bx bx-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p>egwingift@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bx bx-map"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Location</h4>
+                <p>Rivers State, Nigeria</p>
+              </div>
+            </div>
+
+            <div
+              style="
+                margin-top: 2rem;
+                padding-top: 2rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+              "
+            >
+              <h4 style="color: white; margin-bottom: 1rem">Business Hours</h4>
+              <p style="color: rgba(255, 255, 255, 0.9)">
+                Monday - Saturday: 9:00 AM - 7:00 PM<br />
+                Sunday: 10:00 AM - 5:00 PM
+              </p>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form">
+            <h2 style="margin-bottom: 1.5rem">Send us a Message</h2>
+
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Enter your full name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  placeholder="What is this regarding?"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Write your message here..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="width: 100%; justify-content: center"
+              >
+                <span class="btn-text">Send Message</span>
+                <i class="bx bx-send"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Contact Section -->
+    <section
+      class="section"
+      style="background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%)"
+    >
+      <div class="container text-center">
+        <h2 style="margin-bottom: 1rem">Prefer to Chat?</h2>
+        <p
+          style="
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          Connect with us directly on WhatsApp for instant responses to your
+          queries.
+        </p>
+        <a
+          href="https://wa.me/2347040062388"
+          target="_blank"
+          class="btn btn-primary"
+          style="display: inline-flex"
+        >
+          <i class="bx bxl-whatsapp" style="font-size: 1.5rem"></i>
+          <span class="btn-text">Chat on WhatsApp</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Empier Scents</h3>
+            <p>
+              Your premier destination for luxury fragrances. We bring you the
+              finest selection of perfumes, body sprays, and scents from around
+              the world.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Shopping Cart</a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p><i class="bx bxl-whatsapp"></i> WhatsApp: 07040062388</p>
+            <p><i class="bx bx-phone"></i> Call: 09073824064</p>
+            <p><i class="bx bx-envelope"></i> egwingift@gmail.com</p>
+            <p><i class="bx bx-map"></i> Rivers State, Nigeria</p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="#" class="social-link"
+                ><i class="bx bxl-facebook"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="bx bxl-instagram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="bx bxl-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Empier Scents. All rights reserved. | Designed with
+            excellence
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+
+    <script>
+      function handleContactSubmit(event) {
+        event.preventDefault();
+
+        // Get form data
+        const formData = new FormData(event.target);
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const phone = formData.get("phone");
+        const subject = formData.get("subject");
+        const message = formData.get("message");
+
+        // Build WhatsApp message
+        let whatsappMessage = `*New Contact Form Submission*\n\n`;
+        whatsappMessage += `*Name:* ${name}\n`;
+        whatsappMessage += `*Email:* ${email}\n`;
+        if (phone) {
+          whatsappMessage += `*Phone:* ${phone}\n`;
+        }
+        whatsappMessage += `*Subject:* ${subject}\n\n`;
+        whatsappMessage += `*Message:*\n${message}`;
+
+        // Encode and send via WhatsApp
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        const whatsappURL = `https://wa.me/2347040062388?text=${encodedMessage}`;
+
+        window.open(whatsappURL, "_blank");
+
+        // Show success notification
+        showNotification("Redirecting to WhatsApp...");
+
+        // Reset form
+        event.target.reset();
+      }
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

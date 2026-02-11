@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shop premium perfumes, body sprays, and fragrances at Empier Scents"
+    />
+    <title>Products - Empier Scents</title>
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav-container">
+        <a href="index.html" class="logo">EMPIER SCENTS</a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li>
+            <a href="cart.html" class="cart-icon-wrapper">
+              <i class="bx bx-shopping-bag"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+
+        <button class="mobile-menu-toggle">
+          <i class="bx bx-menu"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Products Hero Section -->
+    <section
+      class="section"
+      style="
+        padding-top: 140px;
+        background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%);
+      "
+    >
+      <div class="container">
+        <div class="section-header">
+          <h1 class="section-title">Our Collection</h1>
+          <p class="section-subtitle">
+            Discover your perfect fragrance from our premium selection
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section">
+      <div class="container">
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-category="all">
+            All Products
+          </button>
+          <button class="filter-tab" data-category="oil-perfume">
+            Oil Perfume
+          </button>
+          <button class="filter-tab" data-category="body-spray">
+            Body Spray
+          </button>
+          <button class="filter-tab" data-category="body-mist">
+            Body Mist
+          </button>
+          <button class="filter-tab" data-category="roll-on">Roll-On</button>
+          <button class="filter-tab" data-category="perfume">Perfumes</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Products will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section
+      class="section"
+      style="
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        padding: 4rem 0;
+      "
+    >
+      <div class="container text-center" style="color: white">
+        <h2 style="color: white; margin-bottom: 1rem">
+          Can't Find What You're Looking For?
+        </h2>
+        <p
+          style="
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          Contact us and let us help you find the perfect fragrance for your
+          needs.
+        </p>
+        <a href="contact.html" class="btn btn-secondary">
+          <span class="btn-text">Get in Touch</span>
+          <i class="bx bx-message-dots"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Empier Scents</h3>
+            <p>
+              Your premier destination for luxury fragrances. We bring you the
+              finest selection of perfumes, body sprays, and scents from around
+              the world.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Shopping Cart</a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p><i class="bx bxl-whatsapp"></i> WhatsApp: 07040062388</p>
+            <p><i class="bx bx-phone"></i> Call: 09073824064</p>
+            <p>
+              <i class="bx bx-envelope"></i>
+              <a
+                href="/cdn-cgi/l/email-protection"
+                class="__cf_email__"
+                data-cfemail="e38684948a8d848a8597a3848e828a8fcd808c8e"
+                >[email&#160;protected]</a
+              >
+            </p>
+            <p><i class="bx bx-map"></i> Rivers State, Nigeria</p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="#" class="social-link"
+                ><i class="bx bxl-facebook"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="bx bxl-instagram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="bx bxl-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Empier Scents. All rights reserved. | Designed with
+            excellence
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

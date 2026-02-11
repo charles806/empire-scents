@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Payment - Empier Scents" />
+    <title>Payment - Empier Scents</title>
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav-container">
+        <a href="index.html" class="logo">EMPIER SCENTS</a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li>
+            <a href="cart.html" class="cart-icon-wrapper">
+              <i class="bx bx-shopping-bag"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+
+        <button class="mobile-menu-toggle">
+          <i class="bx bx-menu"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Payment Section -->
+    <section class="cart-container">
+      <div class="container-small">
+        <div class="section-header">
+          <h1 class="section-title">Complete Your Order</h1>
+          <p class="section-subtitle">
+            Please transfer to the account below and send receipt
+          </p>
+        </div>
+
+        <div class="payment-container">
+          <!-- Payment Details -->
+          <div class="payment-section">
+            <h2>Bank Transfer Details</h2>
+
+            <div class="bank-details">
+              <div class="bank-detail-item">
+                <span class="bank-detail-label">Account Name:</span>
+                <span class="bank-detail-value">Empier Scents</span>
+              </div>
+              <div class="bank-detail-item">
+                <span class="bank-detail-label">Account Number:</span>
+                <span class="bank-detail-value">0123456789</span>
+              </div>
+              <div class="bank-detail-item">
+                <span class="bank-detail-label">Bank Name:</span>
+                <span class="bank-detail-value">First Bank of Nigeria</span>
+              </div>
+            </div>
+
+            <div
+              style="
+                background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%);
+                border-radius: 12px;
+                padding: 1.5rem;
+                margin-top: 1.5rem;
+              "
+            >
+              <h4
+                style="
+                  color: #1e3a8a;
+                  margin-bottom: 1rem;
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                "
+              >
+                <i class="bx bx-info-circle" style="font-size: 1.3rem"></i>
+                Payment Instructions
+              </h4>
+              <ol style="color: #64748b; line-height: 2; padding-left: 1.5rem">
+                <li>Transfer the exact amount to the account above</li>
+                <li>Keep your payment receipt or screenshot</li>
+                <li>Click the WhatsApp button below to send your receipt</li>
+                <li>Include your order details in the message</li>
+                <li>We'll confirm your payment and process your order</li>
+              </ol>
+            </div>
+
+            <button
+              class="whatsapp-btn"
+              onclick="sendWhatsAppReceipt()"
+              style="margin-top: 2rem"
+            >
+              <i class="bx bxl-whatsapp" style="font-size: 1.5rem"></i>
+              <span>Send Receipt on WhatsApp</span>
+            </button>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="order-summary">
+            <h2>Order Summary</h2>
+
+            <div id="orderSummary">
+              <!-- Order items will be dynamically loaded here -->
+            </div>
+
+            <div
+              style="
+                background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+                border-radius: 12px;
+                padding: 1.5rem;
+                margin-top: 1.5rem;
+                text-align: center;
+                color: white;
+              "
+            >
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.9);
+                  margin-bottom: 0.5rem;
+                  font-size: 0.9rem;
+                "
+              >
+                Need Help?
+              </p>
+              <p style="color: white; font-weight: 600; font-size: 1.1rem">
+                <i class="bx bxl-whatsapp"></i> 07040062388
+              </p>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.9);
+                  margin-top: 0.5rem;
+                  font-size: 0.9rem;
+                "
+              >
+                We're here to assist you
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back to Cart -->
+        <div class="text-center" style="margin-top: 2rem">
+          <a href="cart.html" class="btn btn-secondary">
+            <i class="bx bx-left-arrow-alt"></i>
+            <span class="btn-text">Back to Cart</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Empier Scents</h3>
+            <p>
+              Your premier destination for luxury fragrances. We bring you the
+              finest selection of perfumes, body sprays, and scents from around
+              the world.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Shopping Cart</a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p><i class="bx bxl-whatsapp"></i> WhatsApp: 07040062388</p>
+            <p><i class="bx bx-phone"></i> Call: 09073824064</p>
+            <p>
+              <i class="bx bx-envelope"></i>
+              <a
+                href="/cdn-cgi/l/email-protection"
+                class="__cf_email__"
+                data-cfemail="9efbf9e9f7f0f9f7f8eadef9f3fff7f2b0fdf1f3"
+                >[email&#160;protected]</a
+              >
+            </p>
+            <p><i class="bx bx-map"></i> Rivers State, Nigeria</p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="#" class="social-link"
+                ><i class="bx bxl-facebook"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="bx bxl-instagram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="bx bxl-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Empier Scents. All rights reserved. | Designed with
+            excellence
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
