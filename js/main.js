@@ -1,39 +1,39 @@
 // Product Data
 const products = [
     // Oil Perfumes
-    {
-        id: 1,
-        name: "Midnight Oud",
-        category: "oil-perfume",
-        price: 8500,
-        image: "images/oil-perfume-1.jpg",
-        badge: "Premium"
-    },
-    {
-        id: 2,
-        name: "Royal Amber",
-        category: "oil-perfume",
-        price: 7500,
-        image: "images/oil-perfume-2.jpg",
-        badge: "New"
-    },
-    {
-        id: 3,
-        name: "Silk Musk",
-        category: "oil-perfume",
-        price: 9000,
-        image: "images/oil-perfume-3.jpg",
-        badge: "Bestseller"
-    },
-    {
-        id: 4,
-        name: "Desert Rose",
-        category: "oil-perfume",
-        price: 8000,
-        image: "images/oil-perfume-4.jpg",
-        badge: ""
-    },
-    
+    // {
+    //     id: 1,
+    //     name: "Midnight Oud",
+    //     category: "oil-perfume",
+    //     price: 8500,
+    //     image: "images/oil-perfume-1.jpg",
+    //     badge: "Premium"
+    // },
+    // {
+    //     id: 2,
+    //     name: "Royal Amber",
+    //     category: "oil-perfume",
+    //     price: 7500,
+    //     image: "images/oil-perfume-2.jpg",
+    //     badge: "New"
+    // },
+    // {
+    //     id: 3,
+    //     name: "Silk Musk",
+    //     category: "oil-perfume",
+    //     price: 9000,
+    //     image: "images/oil-perfume-3.jpg",
+    //     badge: "Bestseller"
+    // },
+    // {
+    //     id: 4,
+    //     name: "Desert Rose",
+    //     category: "oil-perfume",
+    //     price: 8000,
+    //     image: "images/oil-perfume-4.jpg",
+    //     badge: ""
+    // },
+
     // Body Sprays
     {
         id: 5,
@@ -45,130 +45,130 @@ const products = [
     },
     {
         id: 6,
-        name: "Citrus Burst",
+        name: "Kaly",
         category: "body-spray",
-        price: 4000,
+        price: 10500,
         image: "images/body-spray-2.jpg",
         badge: "New"
     },
     {
         id: 7,
-        name: "Tropical Paradise",
+        name: "Kamrah 30ml",
         category: "body-spray",
-        price: 4200,
+        price: 4500,
         image: "images/body-spray-3.jpg",
         badge: ""
     },
     {
         id: 8,
-        name: "Lavender Dreams",
+        name: "Bakarrat 30ml",
         category: "body-spray",
         price: 4500,
-        image: "images/body-spray-4.jpg",
+        image: "images/image.png",
         badge: "Bestseller"
     },
-    
+
     // Body Mists
     {
         id: 9,
-        name: "Cherry Blossom",
+        name: "My Way",
         category: "body-mist",
-        price: 3500,
-        image: "images/body-mist-1.jpg",
+        price: 4500,
+        image: "images/image copy.png",
         badge: "Light"
     },
     {
         id: 10,
-        name: "Vanilla Cloud",
+        name: "Ophylia",
         category: "body-mist",
-        price: 3800,
-        image: "images/body-mist-2.jpg",
+        price: 4500,
+        image: "images/opheli.png",
         badge: "Sweet"
     },
     {
         id: 11,
-        name: "Peach Delight",
+        name: "Eclaire X Sugar Pink",
         category: "body-mist",
-        price: 3600,
-        image: "images/body-mist-3.jpg",
+        price: 9000,
+        image: "images/image copy 2.png",
         badge: "New"
     },
     {
         id: 12,
-        name: "Rose Garden",
+        name: "Avanti",
         category: "body-mist",
-        price: 3900,
-        image: "images/body-mist-4.jpg",
+        price: 4500,
+        image: "images/image copy 3.png",
         badge: ""
     },
-    
+
     // Roll-Ons
     {
         id: 13,
-        name: "Jasmine Touch",
-        category: "roll-on",
-        price: 2500,
-        image: "images/roll-on-1.jpg",
+        name: "Asad X Avantos",
+        category: "body-mist",
+        price: 9000,
+        image: "images/image copy 4.png",
         badge: "Travel"
     },
     {
         id: 14,
-        name: "Sandalwood Essence",
-        category: "roll-on",
-        price: 2800,
-        image: "images/roll-on-2.jpg",
+        name: "Berries Weekend X Now men",
+        category: "body-mist",
+        price: 9000,
+        image: "images/image copy 5.png",
         badge: "Woody"
     },
     {
         id: 15,
-        name: "Mint Fresh",
-        category: "roll-on",
-        price: 2300,
-        image: "images/roll-on-3.jpg",
+        name: "Yara",
+        category: "body-mist",
+        price: 4500,
+        image: "images/image copy 6.png",
         badge: "Cool"
     },
     {
         id: 16,
-        name: "Lily White",
-        category: "roll-on",
-        price: 2600,
-        image: "images/roll-on-4.jpg",
+        name: "Asad",
+        category: "body-mist",
+        price: 4500,
+        image: "images/image copy 7.png",
         badge: ""
     },
-    
+
     // Perfumes
-    {
-        id: 17,
-        name: "Elegance Noir",
-        category: "perfume",
-        price: 15000,
-        image: "images/perfume-1.jpg",
-        badge: "Luxury"
-    },
-    {
-        id: 18,
-        name: "Azure Dream",
-        category: "perfume",
-        price: 12000,
-        image: "images/perfume-2.jpg",
-        badge: "Premium"
-    },
-    {
-        id: 19,
-        name: "Golden Hour",
-        category: "perfume",
-        price: 13500,
-        image: "images/perfume-3.jpg",
-        badge: "Exclusive"
-    },
-    {
-        id: 20,
-        name: "Velvet Rose",
-        category: "perfume",
-        price: 14000,
-        image: "images/perfume-4.jpg",
-        badge: "Bestseller"
-    }
+    // {
+    //     id: 17,
+    //     name: "Elegance Noir",
+    //     category: "perfume",
+    //     price: 15000,
+    //     image: "images/perfume-1.jpg",
+    //     badge: "Luxury"
+    // },
+    // {
+    //     id: 18,
+    //     name: "Azure Dream",
+    //     category: "perfume",
+    //     price: 12000,
+    //     image: "images/perfume-2.jpg",
+    //     badge: "Premium"
+    // },
+    // {
+    //     id: 19,
+    //     name: "Golden Hour",
+    //     category: "perfume",
+    //     price: 13500,
+    //     image: "images/perfume-3.jpg",
+    //     badge: "Exclusive"
+    // },
+    // {
+    //     id: 20,
+    //     name: "Velvet Rose",
+    //     category: "perfume",
+    //     price: 14000,
+    //     image: "images/perfume-4.jpg",
+    //     badge: "Bestseller"
+    // }
 ];
 
 // Category Data
@@ -209,34 +209,34 @@ const categories = [
 // Navigation & Mobile Menu
 // ========================================
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Mobile menu toggle
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (mobileToggle) {
-        mobileToggle.addEventListener('click', function() {
+        mobileToggle.addEventListener('click', function () {
             navMenu.classList.toggle('active');
         });
-        
+
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 navMenu.classList.remove('active');
             });
         });
     }
-    
+
     // Header scroll effect
     const header = document.querySelector('.header');
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
     });
-    
+
     // Active nav link
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.add('active');
         }
     });
-    
+
     // Update cart count
     updateCartCount();
 });
@@ -256,9 +256,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function initHeroSlider() {
     const slides = document.querySelectorAll('.hero-slide');
     if (slides.length === 0) return;
-    
+
     let currentSlide = 0;
-    
+
     function showSlide(index) {
         slides.forEach((slide, i) => {
             slide.classList.remove('active');
@@ -267,15 +267,15 @@ function initHeroSlider() {
             }
         });
     }
-    
+
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
     }
-    
+
     // Show first slide
     showSlide(0);
-    
+
     // Auto advance every 5 seconds
     setInterval(nextSlide, 5000);
 }
@@ -287,33 +287,33 @@ function initHeroSlider() {
 function initProductsPage() {
     const productsGrid = document.getElementById('productsGrid');
     const filterTabs = document.querySelectorAll('.filter-tab');
-    
+
     if (!productsGrid) return;
-    
+
     // Display all products initially
     displayProducts('all');
-    
+
     // Filter tabs
     filterTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
+        tab.addEventListener('click', function () {
             // Remove active class from all tabs
             filterTabs.forEach(t => t.classList.remove('active'));
             // Add active class to clicked tab
             this.classList.add('active');
-            
+
             // Get category
             const category = this.dataset.category;
             displayProducts(category);
         });
     });
-    
+
     function displayProducts(category) {
         productsGrid.innerHTML = '';
-        
-        let filteredProducts = category === 'all' 
-            ? products 
+
+        let filteredProducts = category === 'all'
+            ? products
             : products.filter(p => p.category === category);
-        
+
         filteredProducts.forEach((product, index) => {
             const productCard = createProductCard(product);
             productCard.style.animationDelay = `${index * 0.1}s`;
@@ -325,9 +325,9 @@ function initProductsPage() {
 function createProductCard(product) {
     const card = document.createElement('div');
     card.className = 'product-card';
-    
+
     const categoryName = getCategoryDisplayName(product.category);
-    
+
     card.innerHTML = `
         <div class="product-image-wrapper">
             <img src="${product.image}" alt="${product.name}" class="product-image" 
@@ -344,7 +344,7 @@ function createProductCard(product) {
             </button>
         </div>
     `;
-    
+
     return card;
 }
 
@@ -366,7 +366,7 @@ function getCategoryDisplayName(slug) {
 function initCategoriesSection() {
     const categoriesGrid = document.getElementById('categoriesGrid');
     if (!categoriesGrid) return;
-    
+
     categories.forEach(category => {
         const categoryCard = document.createElement('div');
         categoryCard.className = 'category-card';
@@ -378,11 +378,11 @@ function initCategoriesSection() {
                 <p class="category-count">${category.count} Products</p>
             </div>
         `;
-        
-        categoryCard.addEventListener('click', function() {
+
+        categoryCard.addEventListener('click', function () {
             window.location.href = `products.html?category=${category.slug}`;
         });
-        
+
         categoriesGrid.appendChild(categoryCard);
     });
 }
@@ -394,13 +394,13 @@ function initCategoriesSection() {
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
-    
+
     // Get existing cart from localStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
+
     // Check if product already exists in cart
     const existingItem = cart.find(item => item.id === productId);
-    
+
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
@@ -413,13 +413,13 @@ function addToCart(productId) {
             quantity: 1
         });
     }
-    
+
     // Save to localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
-    
+
     // Update cart count
     updateCartCount();
-    
+
     // Show success notification
     showNotification('Product added to cart!');
 }
@@ -427,7 +427,7 @@ function addToCart(productId) {
 function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    
+
     const cartCountElement = document.querySelector('.cart-count');
     if (cartCountElement) {
         cartCountElement.textContent = totalItems;
@@ -453,9 +453,9 @@ function showNotification(message) {
         font-weight: 600;
     `;
     notification.textContent = message;
-    
+
     document.body.appendChild(notification);
-    
+
     // Remove after 3 seconds
     setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease-out';
@@ -470,7 +470,7 @@ function showNotification(message) {
 function initCartPage() {
     const cartItemsContainer = document.getElementById('cartItems');
     if (!cartItemsContainer) return;
-    
+
     displayCart();
 }
 
@@ -479,25 +479,25 @@ function displayCart() {
     const cartItemsContainer = document.getElementById('cartItems');
     const emptyCartMessage = document.getElementById('emptyCart');
     const cartSummary = document.getElementById('cartSummary');
-    
+
     if (cart.length === 0) {
         cartItemsContainer.style.display = 'none';
         cartSummary.style.display = 'none';
         emptyCartMessage.style.display = 'block';
         return;
     }
-    
+
     emptyCartMessage.style.display = 'none';
     cartItemsContainer.style.display = 'block';
     cartSummary.style.display = 'block';
-    
+
     // Display cart items
     cartItemsContainer.innerHTML = '';
     cart.forEach(item => {
         const cartItem = createCartItem(item);
         cartItemsContainer.appendChild(cartItem);
     });
-    
+
     // Update total
     updateCartTotal();
 }
@@ -505,10 +505,10 @@ function displayCart() {
 function createCartItem(item) {
     const div = document.createElement('div');
     div.className = 'cart-item';
-    
+
     const categoryName = getCategoryDisplayName(item.category);
     const subtotal = item.price * item.quantity;
-    
+
     div.innerHTML = `
         <img src="${item.image}" alt="${item.name}" class="cart-item-image"
              onerror="this.src='images/placeholder.jpg'">
@@ -533,22 +533,22 @@ function createCartItem(item) {
             </button>
         </div>
     `;
-    
+
     return div;
 }
 
 function updateQuantity(productId, change) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const item = cart.find(item => item.id === productId);
-    
+
     if (item) {
         item.quantity += change;
-        
+
         if (item.quantity <= 0) {
             removeFromCart(productId);
             return;
         }
-        
+
         localStorage.setItem('cart', JSON.stringify(cart));
         displayCart();
         updateCartCount();
@@ -558,7 +558,7 @@ function updateQuantity(productId, change) {
 function removeFromCart(productId) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart = cart.filter(item => item.id !== productId);
-    
+
     localStorage.setItem('cart', JSON.stringify(cart));
     displayCart();
     updateCartCount();
@@ -568,7 +568,7 @@ function removeFromCart(productId) {
 function updateCartTotal() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    
+
     const totalElement = document.getElementById('cartTotal');
     if (totalElement) {
         totalElement.textContent = `₦${total.toLocaleString()}`;
@@ -591,26 +591,26 @@ function proceedToPayment() {
 function initPaymentPage() {
     const orderSummaryContainer = document.getElementById('orderSummary');
     if (!orderSummaryContainer) return;
-    
+
     displayOrderSummary();
 }
 
 function displayOrderSummary() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const orderSummaryContainer = document.getElementById('orderSummary');
-    
+
     if (cart.length === 0) {
         window.location.href = 'cart.html';
         return;
     }
-    
+
     orderSummaryContainer.innerHTML = '';
     let total = 0;
-    
+
     cart.forEach(item => {
         const subtotal = item.price * item.quantity;
         total += subtotal;
-        
+
         const orderItem = document.createElement('div');
         orderItem.className = 'order-item';
         orderItem.innerHTML = `
@@ -626,7 +626,7 @@ function displayOrderSummary() {
         `;
         orderSummaryContainer.appendChild(orderItem);
     });
-    
+
     // Add total
     const totalDiv = document.createElement('div');
     totalDiv.className = 'cart-total';
@@ -640,12 +640,12 @@ function displayOrderSummary() {
 function sendWhatsAppReceipt() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length === 0) return;
-    
+
     // Build message
     let message = "Hello, I have completed payment. Here is my receipt:\n\n";
     message += "*Order Summary:*\n";
     message += "━━━━━━━━━━━━━━━━\n";
-    
+
     let total = 0;
     cart.forEach((item, index) => {
         const subtotal = item.price * item.quantity;
@@ -654,16 +654,16 @@ function sendWhatsAppReceipt() {
         message += `   Qty: ${item.quantity} × ₦${item.price.toLocaleString()}\n`;
         message += `   Subtotal: ₦${subtotal.toLocaleString()}\n\n`;
     });
-    
+
     message += "━━━━━━━━━━━━━━━━\n";
     message += `*Total Amount: ₦${total.toLocaleString()}*\n\n`;
     message += "Thank you for your business!";
-    
+
     // Encode message for URL
     const encodedMessage = encodeURIComponent(message);
     const whatsappNumber = "2347040062388"; // Format: country code + number without +
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    
+
     // Open WhatsApp
     window.open(whatsappURL, '_blank');
 }
@@ -672,19 +672,19 @@ function sendWhatsAppReceipt() {
 // Initialize based on current page
 // ========================================
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    
+
     // Home page
     if (currentPage === 'index.html' || currentPage === '') {
         initHeroSlider();
         initCategoriesSection();
     }
-    
+
     // Products page
     if (currentPage === 'products.html') {
         initProductsPage();
-        
+
         // Check for category parameter
         const urlParams = new URLSearchParams(window.location.search);
         const category = urlParams.get('category');
@@ -693,17 +693,17 @@ document.addEventListener('DOMContentLoaded', function() {
             if (tab) tab.click();
         }
     }
-    
+
     // Cart page
     if (currentPage === 'cart.html') {
         initCartPage();
     }
-    
+
     // Payment page
     if (currentPage === 'payment.html') {
         initPaymentPage();
     }
-    
+
     // Add scroll animations
     observeElements();
 });
@@ -720,7 +720,7 @@ function observeElements() {
             }
         });
     }, { threshold: 0.1 });
-    
+
     document.querySelectorAll('.section-header, .product-card, .category-card').forEach(el => {
         observer.observe(el);
     });
