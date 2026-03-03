@@ -38,7 +38,7 @@ const products = [
     {
         id: 5,
         name: "Ocean Breeze",
-        category: "body-spray",
+        category: "perfume",
         price: 4500,
         image: "images/body-spray-1.jpg",
         badge: "Fresh"
@@ -46,7 +46,7 @@ const products = [
     {
         id: 6,
         name: "Kaly",
-        category: "body-spray",
+        category: "perfume",
         price: 10500,
         image: "images/body-spray-2.jpg",
         badge: "New"
@@ -54,7 +54,7 @@ const products = [
     {
         id: 7,
         name: "Kamrah 30ml",
-        category: "body-spray",
+        category: "perfume",
         price: 4500,
         image: "images/body-spray-3.jpg",
         badge: ""
@@ -62,7 +62,7 @@ const products = [
     {
         id: 8,
         name: "Bakarrat 30ml",
-        category: "body-spray",
+        category: "perfume",
         price: 4500,
         image: "images/image.png",
         badge: "Bestseller"
