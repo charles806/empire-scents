@@ -72,7 +72,7 @@ const products = [
     {
         id: 9,
         name: "My Way",
-        category: "body-mist",
+        category: "perfume",
         price: 4500,
         image: "images/image copy.png",
         badge: "Light"
@@ -80,7 +80,7 @@ const products = [
     {
         id: 10,
         name: "Ophylia",
-        category: "body-mist",
+        category: "perfume",
         price: 4500,
         image: "images/opheli.png",
         badge: "Sweet"
@@ -88,7 +88,7 @@ const products = [
     {
         id: 11,
         name: "Eclaire X Sugar Pink",
-        category: "body-mist",
+        category: "perfume",
         price: 9000,
         image: "images/image copy 2.png",
         badge: "New"
@@ -96,7 +96,7 @@ const products = [
     {
         id: 12,
         name: "Avanti",
-        category: "body-mist",
+        category: "perfume",
         price: 4500,
         image: "images/image copy 3.png",
         badge: ""
@@ -106,7 +106,7 @@ const products = [
     {
         id: 13,
         name: "Asad X Avantos",
-        category: "body-mist",
+        category: "perfume",
         price: 9000,
         image: "images/image copy 4.png",
         badge: "Travel"
@@ -114,7 +114,7 @@ const products = [
     {
         id: 14,
         name: "Berries Weekend X Now men",
-        category: "body-mist",
+        category: "perfume",
         price: 9000,
         image: "images/image copy 5.png",
         badge: "Woody"
@@ -122,7 +122,7 @@ const products = [
     {
         id: 15,
         name: "Yara",
-        category: "body-mist",
+        category: "perfume",
         price: 4500,
         image: "images/image copy 6.png",
         badge: "Cool"
@@ -130,7 +130,7 @@ const products = [
     {
         id: 16,
         name: "Asad",
-        category: "body-mist",
+        category: "perfume",
         price: 4500,
         image: "images/image copy 7.png",
         badge: ""
@@ -375,7 +375,6 @@ function initCategoriesSection() {
                  onerror="this.src='images/placeholder.jpg'">
             <div class="category-overlay">
                 <h3 class="category-name">${category.name}</h3>
-                <p class="category-count">${category.count} Products</p>
             </div>
         `;
 
