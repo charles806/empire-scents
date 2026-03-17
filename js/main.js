@@ -1,646 +1,822 @@
-// Product Data
-const products = [
-    // Oil Perfumes
-    // {
-    //     id: 1,
-    //     name: "Midnight Oud",
-    //     category: "oil-perfume",
-    //     price: 8500,
-    //     image: "images/oil-perfume-1.jpg",
-    //     badge: "Premium"
-    // },
-    // {
-    //     id: 2,
-    //     name: "Royal Amber",
-    //     category: "oil-perfume",
-    //     price: 7500,
-    //     image: "images/oil-perfume-2.jpg",
-    //     badge: "New"
-    // },
-    // {
-    //     id: 3,
-    //     name: "Silk Musk",
-    //     category: "oil-perfume",
-    //     price: 9000,
-    //     image: "images/oil-perfume-3.jpg",
-    //     badge: "Bestseller"
-    // },
-    // {
-    //     id: 4,
-    //     name: "Desert Rose",
-    //     category: "oil-perfume",
-    //     price: 8000,
-    //     image: "images/oil-perfume-4.jpg",
-    //     badge: ""
-    // },
+// Main Application JavaScript
+// Empier Scents - Premium Fragrance E-commerce
 
-    // Body Sprays
-    {
-        id: 5,
-        name: "Ocean Breeze",
-        category: "perfume",
-        price: 4500,
-        image: "images/body-spray-1.jpg",
-        badge: "Fresh"
-    },
-    {
-        id: 6,
-        name: "Kaly",
-        category: "perfume",
-        price: 10500,
-        image: "images/body-spray-2.jpg",
-        badge: "New"
-    },
-    {
-        id: 7,
-        name: "Kamrah 30ml",
-        category: "perfume",
-        price: 4500,
-        image: "images/body-spray-3.jpg",
-        badge: ""
-    },
-    {
-        id: 8,
-        name: "Bakarrat 30ml",
-        category: "perfume",
-        price: 4500,
-        image: "images/image.png",
-        badge: "Bestseller"
-    },
-
-    // Body Mists
-    {
-        id: 9,
-        name: "My Way",
-        category: "perfume",
-        price: 4500,
-        image: "images/image copy.png",
-        badge: "Light"
-    },
-    {
-        id: 10,
-        name: "Ophylia",
-        category: "perfume",
-        price: 4500,
-        image: "images/opheli.png",
-        badge: "Sweet"
-    },
-    {
-        id: 11,
-        name: "Eclaire X Sugar Pink",
-        category: "perfume",
-        price: 9000,
-        image: "images/image copy 2.png",
-        badge: "New"
-    },
-    {
-        id: 12,
-        name: "Avanti",
-        category: "perfume",
-        price: 4500,
-        image: "images/image copy 3.png",
-        badge: ""
-    },
-
-    // Roll-Ons
-    {
-        id: 13,
-        name: "Asad X Avantos",
-        category: "perfume",
-        price: 9000,
-        image: "images/image copy 4.png",
-        badge: "Travel"
-    },
-    {
-        id: 14,
-        name: "Berries Weekend X Now men",
-        category: "perfume",
-        price: 9000,
-        image: "images/image copy 5.png",
-        badge: "Woody"
-    },
-    {
-        id: 15,
-        name: "Yara",
-        category: "perfume",
-        price: 4500,
-        image: "images/image copy 6.png",
-        badge: "Cool"
-    },
-    {
-        id: 16,
-        name: "Asad",
-        category: "perfume",
-        price: 4500,
-        image: "images/image copy 7.png",
-        badge: ""
-    },
-
-    // Perfumes
-    // {
-    //     id: 17,
-    //     name: "Elegance Noir",
-    //     category: "perfume",
-    //     price: 15000,
-    //     image: "images/perfume-1.jpg",
-    //     badge: "Luxury"
-    // },
-    // {
-    //     id: 18,
-    //     name: "Azure Dream",
-    //     category: "perfume",
-    //     price: 12000,
-    //     image: "images/perfume-2.jpg",
-    //     badge: "Premium"
-    // },
-    // {
-    //     id: 19,
-    //     name: "Golden Hour",
-    //     category: "perfume",
-    //     price: 13500,
-    //     image: "images/perfume-3.jpg",
-    //     badge: "Exclusive"
-    // },
-    // {
-    //     id: 20,
-    //     name: "Velvet Rose",
-    //     category: "perfume",
-    //     price: 14000,
-    //     image: "images/perfume-4.jpg",
-    //     badge: "Bestseller"
-    // }
-];
-
-// Category Data
-const categories = [
-    {
-        name: "Oil Perfume",
-        slug: "oil-perfume",
-        count: 4,
-        image: "images/category-oil.jpg"
-    },
-    {
-        name: "Body Spray",
-        slug: "body-spray",
-        count: 4,
-        image: "images/category-spray.jpg"
-    },
-    {
-        name: "Body Mist",
-        slug: "body-mist",
-        count: 4,
-        image: "images/category-mist.jpg"
-    },
-    {
-        name: "Roll-On",
-        slug: "roll-on",
-        count: 4,
-        image: "images/category-rollon.jpg"
-    },
-    {
-        name: "Perfumes",
-        slug: "perfume",
-        count: 4,
-        image: "images/category-perfume.jpg"
-    }
-];
-
-// ========================================
-// Navigation & Mobile Menu
-// ========================================
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Mobile menu toggle
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', function () {
-            navMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function () {
-                navMenu.classList.remove('active');
-            });
-        });
-    }
-
-    // Header scroll effect
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-    // Active nav link
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-link').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
-        }
-    });
-
-    // Update cart count
-    updateCartCount();
+document.addEventListener('DOMContentLoaded', function() {
+    App.init();
 });
 
-// ========================================
-// Hero Slider
-// ========================================
+const App = {
+    products: [],
+    
+    async init() {
+        ThemeManager.init();
+        await this.loadProducts();
+        Navigation.init();
+        this.initPage();
+        this.updateProductCount();
+    },
 
-function initHeroSlider() {
-    const slides = document.querySelectorAll('.hero-slide');
-    if (slides.length === 0) return;
+    async loadProducts() {
+        try {
+            this.products = await ProductService.getAll();
+        } catch (error) {
+            console.error('Failed to load products:', error);
+            this.products = DEFAULT_PRODUCTS;
+        }
+    },
 
-    let currentSlide = 0;
+    initPage() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (i === index) {
-                slide.classList.add('active');
+        if (currentPage === 'index.html' || currentPage === '') {
+            HomePage.init(this.products);
+        } else if (currentPage === 'products.html') {
+            ProductsPage.init(this.products);
+        } else if (currentPage === 'cart.html') {
+            CartPage.init();
+        } else if (currentPage === 'payment.html') {
+            PaymentPage.init();
+        } else if (currentPage === 'admin.html') {
+            AdminPage.init();
+        } else if (currentPage === 'contact.html') {
+            ContactPage.init();
+        } else if (currentPage === 'about.html') {
+            AboutPage.init();
+        }
+    },
+
+    async updateProductCount() {
+        const count = await ProductService.getCount();
+        const badge = document.querySelector('.product-count-badge');
+        if (badge) {
+            badge.textContent = `${count} Products`;
+        }
+    }
+};
+
+const ThemeManager = {
+    init() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        this.setTheme(savedTheme);
+        this.createToggle();
+    },
+
+    setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    },
+
+    toggle() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const newTheme = current === 'dark' ? 'light' : 'dark';
+        this.setTheme(newTheme);
+        this.updateIcon(newTheme);
+    },
+
+    updateIcon(theme) {
+        const icon = document.querySelector('.theme-toggle i');
+        if (icon) {
+            icon.className = theme === 'dark' ? 'bx bx-sun' : 'bx bx-moon';
+        }
+    },
+
+    createToggle() {
+        const navMenu = document.querySelector('.nav-menu');
+        if (!navMenu) return;
+
+        const themeBtn = document.createElement('button');
+        themeBtn.className = 'theme-toggle';
+        themeBtn.setAttribute('aria-label', 'Toggle theme');
+        themeBtn.innerHTML = '<i class="bx bx-moon"></i>';
+        
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        this.updateIcon(currentTheme);
+
+        themeBtn.addEventListener('click', () => this.toggle());
+        
+        const cartLi = navMenu.querySelector('li:last-child');
+        if (cartLi) {
+            navMenu.insertBefore(themeBtn, cartLi);
+        }
+    }
+};
+
+const Navigation = {
+    init() {
+        this.mobileMenu();
+        this.headerScroll();
+        this.activeLink();
+        CartManager.init();
+    },
+
+    mobileMenu() {
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        const menu = document.querySelector('.nav-menu');
+
+        if (toggle && menu) {
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('active');
+            });
+
+            menu.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('active');
+                });
+            });
+        }
+    },
+
+    headerScroll() {
+        const header = document.querySelector('.header');
+        if (!header) return;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    },
+
+    activeLink() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
             }
         });
     }
+};
 
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
+const HomePage = {
+    init(products) {
+        HeroSlider.init();
+        this.renderCategories();
+        this.renderFeaturedProducts(products);
+        ScrollAnimations.init();
+    },
 
-    // Show first slide
-    showSlide(0);
+    renderCategories() {
+        const grid = document.getElementById('categoriesGrid');
+        if (!grid) return;
 
-    // Auto advance every 5 seconds
-    setInterval(nextSlide, 5000);
-}
-
-// ========================================
-// Products Page
-// ========================================
-
-function initProductsPage() {
-    const productsGrid = document.getElementById('productsGrid');
-    const filterTabs = document.querySelectorAll('.filter-tab');
-
-    if (!productsGrid) return;
-
-    // Display all products initially
-    displayProducts('all');
-
-    // Filter tabs
-    filterTabs.forEach(tab => {
-        tab.addEventListener('click', function () {
-            // Remove active class from all tabs
-            filterTabs.forEach(t => t.classList.remove('active'));
-            // Add active class to clicked tab
-            this.classList.add('active');
-
-            // Get category
-            const category = this.dataset.category;
-            displayProducts(category);
-        });
-    });
-
-    function displayProducts(category) {
-        productsGrid.innerHTML = '';
-
-        let filteredProducts = category === 'all'
-            ? products
-            : products.filter(p => p.category === category);
-
-        filteredProducts.forEach((product, index) => {
-            const productCard = createProductCard(product);
-            productCard.style.animationDelay = `${index * 0.1}s`;
-            productsGrid.appendChild(productCard);
-        });
-    }
-}
-
-function createProductCard(product) {
-    const card = document.createElement('div');
-    card.className = 'product-card';
-
-    const categoryName = getCategoryDisplayName(product.category);
-
-    card.innerHTML = `
-        <div class="product-image-wrapper">
-            <img src="${product.image}" alt="${product.name}" class="product-image" 
-                 onerror="this.src='images/placeholder.jpg'">
-            ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
-        </div>
-        <div class="product-info">
-            <div class="product-category">${categoryName}</div>
-            <h3 class="product-name">${product.name}</h3>
-            <div class="product-price">₦${product.price.toLocaleString()}</div>
-            <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
-                <i class='bx bx-cart-add'></i>
-                <span class="btn-text">Add to Cart</span>
-            </button>
-        </div>
-    `;
-
-    return card;
-}
-
-function getCategoryDisplayName(slug) {
-    const categoryMap = {
-        'oil-perfume': 'Oil Perfume',
-        'body-spray': 'Body Spray',
-        'body-mist': 'Body Mist',
-        'roll-on': 'Roll-On',
-        'perfume': 'Perfume'
-    };
-    return categoryMap[slug] || slug;
-}
-
-// ========================================
-// Categories Display
-// ========================================
-
-function initCategoriesSection() {
-    const categoriesGrid = document.getElementById('categoriesGrid');
-    if (!categoriesGrid) return;
-
-    categories.forEach(category => {
-        const categoryCard = document.createElement('div');
-        categoryCard.className = 'category-card';
-        categoryCard.innerHTML = `
-            <img src="${category.image}" alt="${category.name}" class="category-image"
-                 onerror="this.src='images/placeholder.jpg'">
-            <div class="category-overlay">
-                <h3 class="category-name">${category.name}</h3>
+        grid.innerHTML = CATEGORIES.map((category, index) => `
+            <div class="category-card" data-category="${Security.sanitizeHTML(category.slug)}" 
+                 style="animation-delay: ${index * 0.1}s">
+                <img src="${Security.sanitizeURL(category.image)}" 
+                     alt="${Security.sanitizeHTML(category.name)}" 
+                     class="category-image"
+                     onerror="this.src='images/placeholder.jpg'">
+                <div class="category-overlay">
+                    <h3 class="category-name">${Security.sanitizeHTML(category.name)}</h3>
+                </div>
             </div>
-        `;
+        `).join('');
 
-        categoryCard.addEventListener('click', function () {
-            window.location.href = `products.html?category=${category.slug}`;
+        grid.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const category = card.dataset.category;
+                window.location.href = `products.html?category=${encodeURIComponent(category)}`;
+            });
         });
+    },
 
-        categoriesGrid.appendChild(categoryCard);
-    });
-}
+    renderFeaturedProducts(products) {
+        const container = document.getElementById('featuredProducts');
+        if (!container) return;
 
-// ========================================
-// Shopping Cart Functions
-// ========================================
+        const featured = products
+            .filter(p => p.badge === 'Bestseller')
+            .slice(0, 4);
 
-function addToCart(productId) {
-    const product = products.find(p => p.id === productId);
-    if (!product) return;
+        const remaining = featured.length < 4 
+            ? products.filter(p => p.badge !== 'Bestseller').slice(0, 4 - featured.length)
+            : [];
 
-    // Get existing cart from localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const displayProducts = [...featured, ...remaining];
 
-    // Check if product already exists in cart
-    const existingItem = cart.find(item => item.id === productId);
-
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({
-            id: product.id,
-            name: product.name,
-            category: product.category,
-            price: product.price,
-            image: product.image,
-            quantity: 1
-        });
+        container.innerHTML = displayProducts.map((product, index) => 
+            ProductCard.create(product, index)
+        ).join('');
     }
+};
 
-    // Save to localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
+const ProductsPage = {
+    init(products) {
+        this.products = products;
+        this.renderFilterTabs();
+        this.renderProducts('all');
+        this.checkCategoryParam();
+    },
 
-    // Update cart count
-    updateCartCount();
+    renderFilterTabs() {
+        const container = document.querySelector('.filter-tabs');
+        if (!container) return;
 
-    // Show success notification
-    showNotification('Product added to cart!');
-}
+        const tabs = [
+            { name: 'All Products', slug: 'all' },
+            ...CATEGORIES
+        ];
 
-function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-    const cartCountElement = document.querySelector('.cart-count');
-    if (cartCountElement) {
-        cartCountElement.textContent = totalItems;
-        cartCountElement.style.display = totalItems > 0 ? 'flex' : 'none';
-    }
-}
-
-function showNotification(message) {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 12px;
-        box-shadow: 0 8px 30px rgba(30, 58, 138, 0.3);
-        z-index: 10000;
-        animation: slideIn 0.3s ease-out;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 600;
-    `;
-    notification.textContent = message;
-
-    document.body.appendChild(notification);
-
-    // Remove after 3 seconds
-    setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease-out';
-        setTimeout(() => notification.remove(), 300);
-    }, 3000);
-}
-
-// ========================================
-// Cart Page
-// ========================================
-
-function initCartPage() {
-    const cartItemsContainer = document.getElementById('cartItems');
-    if (!cartItemsContainer) return;
-
-    displayCart();
-}
-
-function displayCart() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartItemsContainer = document.getElementById('cartItems');
-    const emptyCartMessage = document.getElementById('emptyCart');
-    const cartSummary = document.getElementById('cartSummary');
-
-    if (cart.length === 0) {
-        cartItemsContainer.style.display = 'none';
-        cartSummary.style.display = 'none';
-        emptyCartMessage.style.display = 'block';
-        return;
-    }
-
-    emptyCartMessage.style.display = 'none';
-    cartItemsContainer.style.display = 'block';
-    cartSummary.style.display = 'block';
-
-    // Display cart items
-    cartItemsContainer.innerHTML = '';
-    cart.forEach(item => {
-        const cartItem = createCartItem(item);
-        cartItemsContainer.appendChild(cartItem);
-    });
-
-    // Update total
-    updateCartTotal();
-}
-
-function createCartItem(item) {
-    const div = document.createElement('div');
-    div.className = 'cart-item';
-
-    const categoryName = getCategoryDisplayName(item.category);
-    const subtotal = item.price * item.quantity;
-
-    div.innerHTML = `
-        <img src="${item.image}" alt="${item.name}" class="cart-item-image"
-             onerror="this.src='images/placeholder.jpg'">
-        <div class="cart-item-details">
-            <div class="cart-item-category">${categoryName}</div>
-            <h3>${item.name}</h3>
-            <div class="cart-item-price">₦${item.price.toLocaleString()}</div>
-            <div class="quantity-controls">
-                <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">
-                    <i class='bx bx-minus'></i>
-                </button>
-                <span class="quantity-display">${item.quantity}</span>
-                <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">
-                    <i class='bx bx-plus'></i>
-                </button>
-            </div>
-        </div>
-        <div class="cart-item-actions">
-            <div class="cart-item-subtotal">₦${subtotal.toLocaleString()}</div>
-            <button class="remove-item-btn" onclick="removeFromCart(${item.id})">
-                <i class='bx bx-trash'></i>
+        container.innerHTML = tabs.map(tab => `
+            <button class="filter-tab ${tab.slug === 'all' ? 'active' : ''}" 
+                    data-category="${Security.sanitizeHTML(tab.slug)}">
+                ${Security.sanitizeHTML(tab.name)}
             </button>
-        </div>
-    `;
+        `).join('');
 
-    return div;
-}
+        container.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                container.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                this.renderProducts(tab.dataset.category);
+            });
+        });
+    },
 
-function updateQuantity(productId, change) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const item = cart.find(item => item.id === productId);
+    renderProducts(category) {
+        const grid = document.getElementById('productsGrid');
+        if (!grid) return;
 
-    if (item) {
-        item.quantity += change;
+        const filtered = category === 'all' 
+            ? this.products 
+            : this.products.filter(p => p.category === category);
 
-        if (item.quantity <= 0) {
-            removeFromCart(productId);
+        if (filtered.length === 0) {
+            grid.innerHTML = `
+                <div class="text-center" style="grid-column: 1/-1; padding: 3rem;">
+                    <i class="bx bx-package" style="font-size: 4rem; color: var(--color-gray);"></i>
+                    <h3 style="margin-top: 1rem;">No products found</h3>
+                    <p>Try selecting a different category</p>
+                </div>
+            `;
             return;
         }
 
-        localStorage.setItem('cart', JSON.stringify(cart));
-        displayCart();
-        updateCartCount();
+        grid.innerHTML = filtered.map((product, index) => 
+            ProductCard.create(product, index)
+        ).join('');
+    },
+
+    checkCategoryParam() {
+        const params = new URLSearchParams(window.location.search);
+        const category = params.get('category');
+        
+        if (category) {
+            const tab = document.querySelector(`[data-category="${Security.escapeSelector(category)}"]`);
+            if (tab) {
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                this.renderProducts(category);
+            }
+        }
     }
+};
+
+const ProductCard = {
+    create(product, index = 0) {
+        const sanitized = Security.sanitizeProduct(product);
+        const categoryName = this.getCategoryName(sanitized.category);
+
+        return `
+            <div class="product-card" style="animation-delay: ${index * 0.1}s">
+                <div class="product-image-wrapper">
+                    <img src="${sanitized.image}" alt="${sanitized.name}" class="product-image" 
+                         onerror="this.src='images/placeholder.jpg'">
+                    ${sanitized.badge ? `<span class="product-badge">${sanitized.badge}</span>` : ''}
+                </div>
+                <div class="product-info">
+                    <div class="product-category">${categoryName}</div>
+                    <h3 class="product-name">${sanitized.name}</h3>
+                    <div class="product-price">₦${Number(sanitized.price).toLocaleString()}</div>
+                    <button class="add-to-cart-btn" onclick="addToCart(${sanitized.id})">
+                        <i class='bx bx-cart-add'></i>
+                        <span class="btn-text">Add to Cart</span>
+                    </button>
+                </div>
+            </div>
+        `;
+    },
+
+    getCategoryName(slug) {
+        const map = {
+            'oil-perfume': 'Oil Perfume',
+            'body-spray': 'Body Spray',
+            'body-mist': 'Body Mist',
+            'roll-on': 'Roll-On',
+            'perfume': 'Perfume'
+        };
+        return map[slug] || slug;
+    }
+};
+
+const CartManager = {
+    init() {
+        this.updateCount();
+    },
+
+    getCart() {
+        return JSON.parse(localStorage.getItem('cart')) || [];
+    },
+
+    saveCart(cart) {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        this.updateCount();
+    },
+
+    updateCount() {
+        const cart = this.getCart();
+        const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+        
+        const badge = document.querySelector('.cart-count');
+        if (badge) {
+            badge.textContent = total;
+            badge.style.display = total > 0 ? 'flex' : 'none';
+        }
+    },
+
+    add(productId) {
+        const products = (typeof App !== 'undefined' && App.products && App.products.length > 0) 
+            ? App.products 
+            : DEFAULT_PRODUCTS;
+        const product = products.find(p => p.id === Number(productId));
+        
+        if (!product) return;
+
+        let cart = this.getCart();
+        const existing = cart.find(item => item.id === Number(productId));
+
+        if (existing) {
+            existing.quantity += 1;
+        } else {
+            cart.push({
+                id: product.id,
+                name: product.name,
+                category: product.category,
+                price: product.price,
+                image: product.image,
+                quantity: 1
+            });
+        }
+
+        this.saveCart(cart);
+        Notification.show('Product added to cart!', 'success');
+    },
+
+    remove(productId) {
+        let cart = this.getCart();
+        cart = cart.filter(item => item.id !== Number(productId));
+        this.saveCart(cart);
+        Notification.show('Item removed from cart', 'success');
+    },
+
+    updateQuantity(productId, change) {
+        let cart = this.getCart();
+        const item = cart.find(i => i.id === Number(productId));
+
+        if (item) {
+            item.quantity += change;
+            if (item.quantity <= 0) {
+                this.remove(productId);
+                return;
+            }
+            this.saveCart(cart);
+        }
+    },
+
+    getTotal() {
+        const cart = this.getCart();
+        return cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    },
+
+    clear() {
+        localStorage.removeItem('cart');
+        this.updateCount();
+    }
+};
+
+const CartPage = {
+    init() {
+        this.render();
+    },
+
+    render() {
+        const cart = CartManager.getCart();
+        const container = document.getElementById('cartItems');
+        const empty = document.getElementById('emptyCart');
+        const summary = document.getElementById('cartSummary');
+
+        if (!container || !empty || !summary) return;
+
+        if (cart.length === 0) {
+            container.style.display = 'none';
+            summary.style.display = 'none';
+            empty.style.display = 'block';
+            return;
+        }
+
+        container.style.display = 'block';
+        summary.style.display = 'block';
+        empty.style.display = 'none';
+
+        container.innerHTML = cart.map(item => this.createCartItem(item)).join('');
+        this.updateTotal();
+    },
+
+    createCartItem(item) {
+        const categoryName = ProductCard.getCategoryName(item.category);
+        const subtotal = item.price * item.quantity;
+
+        return `
+            <div class="cart-item">
+                <img src="${Security.sanitizeURL(item.image)}" alt="${Security.sanitizeHTML(item.name)}" 
+                     class="cart-item-image" onerror="this.src='images/placeholder.jpg'">
+                <div class="cart-item-details">
+                    <div class="cart-item-category">${categoryName}</div>
+                    <h3>${Security.sanitizeHTML(item.name)}</h3>
+                    <div class="cart-item-price">₦${Number(item.price).toLocaleString()}</div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="CartManager.updateQuantity(${item.id}, -1)">
+                            <i class='bx bx-minus'></i>
+                        </button>
+                        <span class="quantity-display">${item.quantity}</span>
+                        <button class="quantity-btn" onclick="CartManager.updateQuantity(${item.id}, 1)">
+                            <i class='bx bx-plus'></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="cart-item-actions">
+                    <div class="cart-item-subtotal">₦${subtotal.toLocaleString()}</div>
+                    <button class="remove-item-btn" onclick="CartManager.remove(${item.id}); CartPage.render();">
+                        <i class='bx bx-trash'></i>
+                    </button>
+                </div>
+            </div>
+        `;
+    },
+
+    updateTotal() {
+        const total = CartManager.getTotal();
+        const elements = ['cartTotal', 'cartTotal2'];
+        
+        elements.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = `₦${total.toLocaleString()}`;
+        });
+    }
+};
+
+const PaymentPage = {
+    init() {
+        this.renderOrderSummary();
+        this.renderPaymentDetails();
+    },
+
+    renderOrderSummary() {
+        const container = document.getElementById('orderSummary');
+        if (!container) return;
+
+        const cart = CartManager.getCart();
+        
+        if (cart.length === 0) {
+            window.location.href = 'cart.html';
+            return;
+        }
+
+        let total = 0;
+        
+        container.innerHTML = cart.map(item => {
+            const subtotal = item.price * item.quantity;
+            total += subtotal;
+            return `
+                <div class="order-item">
+                    <div>
+                        <div class="order-item-name">${Security.sanitizeHTML(item.name)}</div>
+                        <div class="order-item-details">
+                            <span>Qty: ${item.quantity}</span> × <span>₦${Number(item.price).toLocaleString()}</span>
+                        </div>
+                    </div>
+                    <div class="order-item-details">
+                        <strong>₦${subtotal.toLocaleString()}</strong>
+                    </div>
+                </div>
+            `;
+        }).join('') + `
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>₦${total.toLocaleString()}</span>
+            </div>
+        `;
+    },
+
+    renderPaymentDetails() {
+        const accountNumber = document.getElementById('accountNumber');
+        const accountName = document.getElementById('accountName');
+        const bankName = document.getElementById('bankName');
+
+        if (accountNumber) accountNumber.textContent = PAYMENT_DETAILS.accountNumber;
+        if (accountName) accountName.textContent = PAYMENT_DETAILS.accountName;
+        if (bankName) bankName.textContent = PAYMENT_DETAILS.bank;
+    },
+
+    copyAccountNumber() {
+        navigator.clipboard.writeText(PAYMENT_DETAILS.accountNumber)
+            .then(() => Notification.show('Account number copied!', 'success'))
+            .catch(() => Notification.show('Failed to copy', 'error'));
+    }
+};
+
+const ContactPage = {
+    init() {
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', (e) => this.handleSubmit(e));
+        }
+    },
+
+    handleSubmit(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const phone = formData.get('phone') || '';
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+
+        if (!Security.validateEmail(email)) {
+            Notification.show('Please enter a valid email', 'error');
+            return;
+        }
+
+        let whatsappMessage = `*New Contact Form Submission*\n\n`;
+        whatsappMessage += `*Name:* ${name}\n`;
+        whatsappMessage += `*Email:* ${email}\n`;
+        if (phone) whatsappMessage += `*Phone:* ${phone}\n`;
+        whatsappMessage += `*Subject:* ${subject}\n\n`;
+        whatsappMessage += `*Message:*\n${message}`;
+
+        const encoded = encodeURIComponent(whatsappMessage);
+        window.open(`https://wa.me/2347040062388?text=${encoded}`, '_blank');
+        
+        Notification.show('Redirecting to WhatsApp...', 'success');
+        e.target.reset();
+    }
+};
+
+const AboutPage = {
+    init() {
+        ScrollAnimations.init();
+    }
+};
+
+const HeroSlider = {
+    init() {
+        const slides = document.querySelectorAll('.hero-slide');
+        if (slides.length === 0) return;
+
+        let current = 0;
+
+        const showSlide = (index) => {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        };
+
+        showSlide(0);
+
+        setInterval(() => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }, 5000);
+    }
+};
+
+const ScrollAnimations = {
+    init() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section-header, .product-card, .category-card, .stat-card').forEach(el => {
+            observer.observe(el);
+        });
+    }
+};
+
+const Notification = {
+    show(message, type = 'info') {
+        const existing = document.querySelector('.notification');
+        if (existing) existing.remove();
+
+        const notif = document.createElement('div');
+        notif.className = `notification ${type}`;
+        notif.textContent = message;
+        
+        document.body.appendChild(notif);
+
+        setTimeout(() => {
+            notif.style.animation = 'slideInRight 0.3s ease-out reverse';
+            setTimeout(() => notif.remove(), 300);
+        }, 3000);
+    }
+};
+
+const AdminPage = {
+    products: [],
+    
+    async init() {
+        if (!Security.isAuthenticated()) {
+            this.showLoginModal();
+            return;
+        }
+        
+        await this.loadProducts();
+        this.render();
+    },
+
+    showLoginModal() {
+        const modal = document.getElementById('loginModal');
+        if (modal) modal.classList.add('active');
+    },
+
+    login(password) {
+        const result = Security.login(password);
+        if (result.success) {
+            document.getElementById('loginModal')?.classList.remove('active');
+            this.init();
+        } else {
+            Notification.show(result.error, 'error');
+        }
+    },
+
+    logout() {
+        Security.logout();
+        window.location.reload();
+    },
+
+    async loadProducts() {
+        try {
+            this.products = await ProductService.getAll();
+        } catch (error) {
+            this.products = DEFAULT_PRODUCTS;
+        }
+    },
+
+    render() {
+        this.renderStats();
+        this.renderProductTable();
+    },
+
+    renderStats() {
+        const totalProducts = this.products.length;
+        const totalValue = this.products.reduce((sum, p) => sum + Number(p.price), 0);
+        const categories = [...new Set(this.products.map(p => p.category))].length;
+
+        const stats = [
+            { icon: 'bx-package', value: totalProducts, label: 'Total Products' },
+            { icon: 'bx-naira', value: `₦${totalValue.toLocaleString()}`, label: 'Total Value' },
+            { icon: 'bx-category', value: categories, label: 'Categories' }
+        ];
+
+        const container = document.getElementById('adminStats');
+        if (!container) return;
+
+        container.innerHTML = stats.map(stat => `
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bx ${stat.icon}"></i></div>
+                <div class="stat-value">${stat.value}</div>
+                <div class="stat-label">${stat.label}</div>
+            </div>
+        `).join('');
+    },
+
+    renderProductTable() {
+        const tbody = document.getElementById('productTableBody');
+        if (!tbody) return;
+
+        tbody.innerHTML = this.products.map(product => `
+            <tr>
+                <td><img src="${Security.sanitizeURL(product.image)}" alt="${Security.sanitizeHTML(product.name)}" 
+                         onerror="this.src='images/placeholder.jpg'"></td>
+                <td>${Security.sanitizeHTML(product.name)}</td>
+                <td>${Security.sanitizeHTML(product.category)}</td>
+                <td>₦${Number(product.price).toLocaleString()}</td>
+                <td>${product.badge ? Security.sanitizeHTML(product.badge) : '-'}</td>
+                <td>
+                    <div class="action-btns">
+                        <button class="action-btn edit" onclick="AdminPage.editProduct(${product.id})">
+                            <i class="bx bx-edit"></i>
+                        </button>
+                        <button class="action-btn delete" onclick="AdminPage.deleteProduct(${product.id})">
+                            <i class="bx bx-trash"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        `).join('');
+    },
+
+    async deleteProduct(id) {
+        if (!confirm('Are you sure you want to delete this product?')) return;
+
+        try {
+            await ProductService.delete(id);
+            await this.loadProducts();
+            this.render();
+            Notification.show('Product deleted successfully', 'success');
+        } catch (error) {
+            Notification.show('Failed to delete product', 'error');
+        }
+    },
+
+    editProduct(id) {
+        const product = this.products.find(p => p.id === id);
+        if (!product) return;
+
+        document.getElementById('editId').value = product.id;
+        document.getElementById('editName').value = product.name;
+        document.getElementById('editCategory').value = product.category;
+        document.getElementById('editPrice').value = product.price;
+        document.getElementById('editImage').value = product.image;
+        document.getElementById('editBadge').value = product.badge || '';
+
+        document.getElementById('productModal')?.classList.add('active');
+    },
+
+    async saveProduct(e) {
+        e.preventDefault();
+
+        const id = document.getElementById('editId').value;
+        const product = {
+            name: document.getElementById('editName').value,
+            category: document.getElementById('editCategory').value,
+            price: Number(document.getElementById('editPrice').value),
+            image: document.getElementById('editImage').value,
+            badge: document.getElementById('editBadge').value
+        };
+
+        try {
+            if (id) {
+                await ProductService.update(Number(id), product);
+                Notification.show('Product updated successfully', 'success');
+            } else {
+                await ProductService.create(product);
+                Notification.show('Product created successfully', 'success');
+            }
+
+            document.getElementById('productModal')?.classList.remove('active');
+            await this.loadProducts();
+            this.render();
+        } catch (error) {
+            Notification.show('Failed to save product', 'error');
+        }
+    },
+
+    openAddModal() {
+        document.getElementById('editId').value = '';
+        document.getElementById('editName').value = '';
+        document.getElementById('editCategory').value = 'perfume';
+        document.getElementById('editPrice').value = '';
+        document.getElementById('editImage').value = '';
+        document.getElementById('editBadge').value = '';
+
+        document.getElementById('productModal')?.classList.add('active');
+    }
+};
+
+function addToCart(productId) {
+    CartManager.add(productId);
+}
+
+function updateQuantity(productId, change) {
+    CartManager.updateQuantity(productId, change);
+    CartPage.render();
 }
 
 function removeFromCart(productId) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart = cart.filter(item => item.id !== productId);
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    displayCart();
-    updateCartCount();
-    showNotification('Item removed from cart');
-}
-
-function updateCartTotal() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-    const totalElement = document.getElementById('cartTotal');
-    if (totalElement) {
-        totalElement.textContent = `₦${total.toLocaleString()}`;
-    }
+    CartManager.remove(productId);
+    CartPage.render();
 }
 
 function proceedToPayment() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = CartManager.getCart();
     if (cart.length === 0) {
-        showNotification('Your cart is empty');
+        Notification.show('Your cart is empty', 'error');
         return;
     }
     window.location.href = 'payment.html';
 }
 
-// ========================================
-// Payment Page
-// ========================================
-
-function initPaymentPage() {
-    const orderSummaryContainer = document.getElementById('orderSummary');
-    if (!orderSummaryContainer) return;
-
-    displayOrderSummary();
-}
-
-function displayOrderSummary() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const orderSummaryContainer = document.getElementById('orderSummary');
-
-    if (cart.length === 0) {
-        window.location.href = 'cart.html';
-        return;
-    }
-
-    orderSummaryContainer.innerHTML = '';
-    let total = 0;
-
-    cart.forEach(item => {
-        const subtotal = item.price * item.quantity;
-        total += subtotal;
-
-        const orderItem = document.createElement('div');
-        orderItem.className = 'order-item';
-        orderItem.innerHTML = `
-            <div>
-                <div class="order-item-name">${item.name}</div>
-                <div class="order-item-details">
-                    <span>Qty: ${item.quantity}</span> × <span>₦${item.price.toLocaleString()}</span>
-                </div>
-            </div>
-            <div class="order-item-details">
-                <strong>₦${subtotal.toLocaleString()}</strong>
-            </div>
-        `;
-        orderSummaryContainer.appendChild(orderItem);
-    });
-
-    // Add total
-    const totalDiv = document.createElement('div');
-    totalDiv.className = 'cart-total';
-    totalDiv.innerHTML = `
-        <span>Total:</span>
-        <span>₦${total.toLocaleString()}</span>
-    `;
-    orderSummaryContainer.appendChild(totalDiv);
-}
-
 function sendWhatsAppReceipt() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = CartManager.getCart();
     if (cart.length === 0) return;
 
-    // Build message
     let message = "Hello, I have completed payment. Here is my receipt:\n\n";
     message += "*Order Summary:*\n";
     message += "━━━━━━━━━━━━━━━━\n";
@@ -658,69 +834,6 @@ function sendWhatsAppReceipt() {
     message += `*Total Amount: ₦${total.toLocaleString()}*\n\n`;
     message += "Thank you for your business!";
 
-    // Encode message for URL
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappNumber = "2347040062388"; // Format: country code + number without +
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-    // Open WhatsApp
-    window.open(whatsappURL, '_blank');
-}
-
-// ========================================
-// Initialize based on current page
-// ========================================
-
-document.addEventListener('DOMContentLoaded', function () {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-
-    // Home page
-    if (currentPage === 'index.html' || currentPage === '') {
-        initHeroSlider();
-        initCategoriesSection();
-    }
-
-    // Products page
-    if (currentPage === 'products.html') {
-        initProductsPage();
-
-        // Check for category parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const category = urlParams.get('category');
-        if (category) {
-            const tab = document.querySelector(`[data-category="${category}"]`);
-            if (tab) tab.click();
-        }
-    }
-
-    // Cart page
-    if (currentPage === 'cart.html') {
-        initCartPage();
-    }
-
-    // Payment page
-    if (currentPage === 'payment.html') {
-        initPaymentPage();
-    }
-
-    // Add scroll animations
-    observeElements();
-});
-
-// ========================================
-// Scroll Animations
-// ========================================
-
-function observeElements() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.section-header, .product-card, .category-card').forEach(el => {
-        observer.observe(el);
-    });
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/2347040062388?text=${encoded}`, '_blank');
 }

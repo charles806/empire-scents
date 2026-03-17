@@ -5,22 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Shopping Cart - Empier Scents" />
     <title>Shopping Cart - Empier Scents</title>
-
-    <!-- Boxicons -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Header -->
     <header class="header">
       <nav class="nav-container">
         <a href="index.html" class="logo">EMPIER SCENTS</a>
-
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
@@ -33,14 +27,12 @@
             </a>
           </li>
         </ul>
-
         <button class="mobile-menu-toggle">
           <i class="bx bx-menu"></i>
         </button>
       </nav>
     </header>
 
-    <!-- Cart Section -->
     <section class="cart-container">
       <div class="container">
         <div class="section-header">
@@ -49,7 +41,6 @@
             Review your selected items before checkout
           </p>
         </div>
-
         <div
           style="
             display: grid;
@@ -58,13 +49,8 @@
             align-items: start;
           "
         >
-          <!-- Cart Items -->
           <div>
-            <div class="cart-items" id="cartItems">
-              <!-- Cart items will be dynamically loaded here -->
-            </div>
-
-            <!-- Empty Cart Message -->
+            <div class="cart-items" id="cartItems"></div>
             <div class="empty-cart" id="emptyCart" style="display: none">
               <i class="bx bx-shopping-bag"></i>
               <h2>Your Cart is Empty</h2>
@@ -77,11 +63,8 @@
               </a>
             </div>
           </div>
-
-          <!-- Cart Summary -->
           <div class="cart-summary" id="cartSummary">
             <h3>Order Summary</h3>
-
             <div style="margin-bottom: 2rem">
               <div
                 style="
@@ -90,8 +73,10 @@
                   margin-bottom: 0.5rem;
                 "
               >
-                <span style="color: #64748b">Subtotal:</span>
-                <span id="cartTotal" style="font-weight: 600; color: #1e3a8a"
+                <span style="color: var(--color-gray)">Subtotal:</span>
+                <span
+                  id="cartTotal"
+                  style="font-weight: 600; color: var(--primary-blue)"
                   >₦0</span
                 >
               </div>
@@ -102,17 +87,21 @@
                   margin-bottom: 1rem;
                 "
               >
-                <span style="color: #64748b">Delivery:</span>
+                <span style="color: var(--color-gray)">Delivery:</span>
                 <span style="font-weight: 600; color: #10b981">Free</span>
               </div>
-              <div style="border-top: 2px solid #e2e8f0; padding-top: 1rem">
+              <div
+                style="
+                  border-top: 2px solid var(--color-light-gray);
+                  padding-top: 1rem;
+                "
+              >
                 <div class="cart-total">
                   <span>Total:</span>
                   <span id="cartTotal2">₦0</span>
                 </div>
               </div>
             </div>
-
             <button
               class="btn btn-primary"
               style="width: 100%; justify-content: center"
@@ -121,7 +110,6 @@
               <span class="btn-text">Proceed to Payment</span>
               <i class="bx bx-right-arrow-alt"></i>
             </button>
-
             <a
               href="products.html"
               class="btn btn-secondary"
@@ -135,19 +123,13 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
             <h3>Empier Scents</h3>
-            <p>
-              Your premier destination for luxury fragrances. We bring you the
-              finest selection of perfumes, body sprays, and scents from around
-              the world.
-            </p>
+            <p>Your premier destination for luxury fragrances.</p>
           </div>
-
           <div class="footer-section">
             <h3>Quick Links</h3>
             <a href="index.html">Home</a>
@@ -156,7 +138,6 @@
             <a href="contact.html">Contact</a>
             <a href="cart.html">Shopping Cart</a>
           </div>
-
           <div class="footer-section">
             <h3>Contact Info</h3>
             <p><i class="bx bxl-whatsapp"></i> WhatsApp: 07040062388</p>
@@ -164,7 +145,6 @@
             <p><i class="bx bx-envelope"></i> egwingift@gmail.com</p>
             <p><i class="bx bx-map"></i> Rivers State, Nigeria</p>
           </div>
-
           <div class="footer-section">
             <h3>Follow Us</h3>
             <div class="social-links">
@@ -181,37 +161,14 @@
             </div>
           </div>
         </div>
-
         <div class="footer-bottom">
-          <p>
-            &copy; 2026 Empier Scents. All rights reserved. | Designed with
-            excellence
-          </p>
+          <p>&copy; 2026 Empier Scents. All rights reserved.</p>
         </div>
       </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
-    <script>
-      // Update cart total in both places
-      function updateCartTotal() {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const total = cart.reduce(
-          (sum, item) => sum + item.price * item.quantity,
-          0,
-        );
-
-        const totalElement = document.getElementById("cartTotal");
-        const totalElement2 = document.getElementById("cartTotal2");
-        if (totalElement) {
-          totalElement.textContent = `₦${total.toLocaleString()}`;
-        }
-        if (totalElement2) {
-          totalElement2.textContent = `₦${total.toLocaleString()}`;
-        }
-      }
-    </script>
+    <script src="js/config.js"></script>
+    <script src="js/security.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

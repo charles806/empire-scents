@@ -8,22 +8,16 @@
       content="Empier Scents - Premium luxury perfumes, body sprays, and fragrances"
     />
     <title>Empier Scents - Premium Luxury Perfumes</title>
-
-    <!-- Boxicons -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Header -->
     <header class="header">
       <nav class="nav-container">
         <a href="index.html" class="logo">EMPIER SCENTS</a>
-
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
@@ -36,14 +30,12 @@
             </a>
           </li>
         </ul>
-
         <button class="mobile-menu-toggle">
           <i class="bx bx-menu"></i>
         </button>
       </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-slider">
         <div
@@ -59,7 +51,6 @@
           style="background-image: url(&quot;images/opheli.png&quot;)"
         ></div>
       </div>
-
       <div class="hero-content">
         <h1 class="hero-title">Welcome to Empier Scents</h1>
         <p class="hero-subtitle">Luxury Fragrances for Every Moment</p>
@@ -87,7 +78,6 @@
       </div>
     </section>
 
-    <!-- About Preview Section -->
     <section class="section">
       <div class="container">
         <div class="about-content">
@@ -129,7 +119,6 @@
       </div>
     </section>
 
-    <!-- Categories Section -->
     <section
       class="section"
       style="background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%)"
@@ -141,14 +130,10 @@
             Discover your signature scent from our premium fragrance categories
           </p>
         </div>
-
-        <div class="categories-grid" id="categoriesGrid">
-          <!-- Categories will be dynamically loaded here -->
-        </div>
+        <div class="categories-grid" id="categoriesGrid"></div>
       </div>
     </section>
 
-    <!-- Featured Products Section -->
     <section class="section">
       <div class="container">
         <div class="section-header">
@@ -157,11 +142,7 @@
             Our most loved scents, chosen by fragrance enthusiasts worldwide
           </p>
         </div>
-
-        <div class="products-grid" id="featuredProducts">
-          <!-- Featured products will be loaded here via JavaScript -->
-        </div>
-
+        <div class="products-grid" id="featuredProducts"></div>
         <div class="text-center" style="margin-top: 3rem">
           <a href="products.html" class="btn btn-primary">
             <span class="btn-text">View All Products</span>
@@ -171,7 +152,6 @@
       </div>
     </section>
 
-    <!-- Call to Action Section -->
     <section
       class="section"
       style="
@@ -224,7 +204,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
@@ -236,7 +215,6 @@
               the world.
             </p>
           </div>
-
           <div class="footer-section">
             <h3>Quick Links</h3>
             <a href="index.html">Home</a>
@@ -245,7 +223,6 @@
             <a href="contact.html">Contact</a>
             <a href="cart.html">Shopping Cart</a>
           </div>
-
           <div class="footer-section">
             <h3>Contact Info</h3>
             <p><i class="bx bxl-whatsapp"></i> WhatsApp: 07040062388</p>
@@ -253,7 +230,6 @@
             <p><i class="bx bx-envelope"></i> egwingift@gmail.com</p>
             <p><i class="bx bx-map"></i> Rivers State, Nigeria</p>
           </div>
-
           <div class="footer-section">
             <h3>Follow Us</h3>
             <div class="social-links">
@@ -270,44 +246,17 @@
             </div>
           </div>
         </div>
-
         <div class="footer-bottom">
           <p>
-            &copy; 2026 Empier Scents. All rights reserved. | Designed By Greenxchange tech labs
+            &copy; 2026 Empier Scents. All rights reserved. | Designed By
+            Greenxchange tech labs
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- JavaScript -->
+    <script src="js/config.js"></script>
+    <script src="js/security.js"></script>
     <script src="js/main.js"></script>
-
-    <!-- Additional script for featured products on home page -->
-    <script>
-      // Display 4 featured products on home page
-      document.addEventListener("DOMContentLoaded", function () {
-        const featuredContainer = document.getElementById("featuredProducts");
-        if (featuredContainer && typeof products !== "undefined") {
-          // Get products with "Bestseller" badge
-          const featured = products
-            .filter((p) => p.badge === "Bestseller")
-            .slice(0, 4);
-
-          // If less than 4, add more products
-          if (featured.length < 4) {
-            const remaining = products
-              .filter((p) => p.badge !== "Bestseller")
-              .slice(0, 4 - featured.length);
-            featured.push(...remaining);
-          }
-
-          featured.forEach((product, index) => {
-            const card = createProductCard(product);
-            card.style.animationDelay = `${index * 0.1}s`;
-            featuredContainer.appendChild(card);
-          });
-        }
-      });
-    </script>
   </body>
 </html>
