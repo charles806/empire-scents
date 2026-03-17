@@ -702,13 +702,13 @@ const AdminPage = {
 
         tbody.innerHTML = this.products.map(product => `
             <tr>
-                <td><img src="${Security.sanitizeURL(product.image)}" alt="${Security.sanitizeHTML(product.name)}" 
+                <td data-label="Image"><img src="${Security.sanitizeURL(product.image)}" alt="${Security.sanitizeHTML(product.name)}" 
                          onerror="this.src='images/placeholder.jpg'"></td>
-                <td>${Security.sanitizeHTML(product.name)}</td>
-                <td>${Security.sanitizeHTML(product.category)}</td>
-                <td>₦${Number(product.price).toLocaleString()}</td>
-                <td>${product.badge ? Security.sanitizeHTML(product.badge) : '-'}</td>
-                <td>
+                <td data-label="Name">${Security.sanitizeHTML(product.name)}</td>
+                <td data-label="Category">${Security.sanitizeHTML(product.category)}</td>
+                <td data-label="Price">₦${Number(product.price).toLocaleString()}</td>
+                <td data-label="Badge">${product.badge ? Security.sanitizeHTML(product.badge) : '-'}</td>
+                <td data-label="Actions">
                     <div class="action-btns">
                         <button class="action-btn edit" onclick="AdminPage.editProduct(${product.id})">
                             <i class="bx bx-edit"></i>
