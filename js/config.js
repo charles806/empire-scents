@@ -1,14 +1,29 @@
 const SUPABASE_URL = 'https://gnmdtbvjtdykcfqgtexm.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdubWR0YnZqdGR5a2NmcWd0ZXhtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3NjQzODAsImV4cCI6MjA4OTM0MDM4MH0.zV1-SjYtCwLIsDQdLY5BH6oxbnPZjfntelvlXAGQ4lk';
-const SUPABASE_STORAGE_URL = 'https://gnmdtbvjtdykcfqgtexm.supabase.co/storage/v1';
 
 let supabaseClient;
+let supabaseAvailable = false;
 
 async function initSupabase() {
+    if (supabaseClient) return supabaseClient;
+    
     if (typeof supabase !== 'undefined') {
-        supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-        return supabaseClient;
+        try {
+            supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+                auth: { persistSession: false }
+            });
+            await supabaseClient.from('products').select('id').limit(1);
+            supabaseAvailable = true;
+            return supabaseClient;
+        } catch (e) {
+            console.warn('Supabase not available, using local storage');
+            supabaseAvailable = false;
+            return null;
+        }
     }
+    console.warn('Supabase SDK not loaded - using local storage fallback');
+    return null;
+}
     console.warn('Supabase SDK not loaded - using local storage fallback');
     return null;
 }
@@ -19,9 +34,14 @@ const ImageService = {
             return null;
         }
 
+        if (!supabaseAvailable) {
+            console.warn('Supabase not available, converting to base64');
+            return await this.convertToBase64(file);
+        }
+
         const client = await initSupabase();
         if (!client) {
-            return null;
+            return await this.convertToBase64(file);
         }
 
         const fileName = `${Date.now()}-${file.name.replace(/\s+/g, '-')}`;
@@ -38,7 +58,7 @@ const ImageService = {
 
             if (error) {
                 console.error('Upload error:', error);
-                return null;
+                return await this.convertToBase64(file);
             }
 
             const { data: urlData } = client
@@ -49,12 +69,24 @@ const ImageService = {
             return urlData.publicUrl;
         } catch (err) {
             console.error('Image upload failed:', err);
-            return null;
+            return await this.convertToBase64(file);
         }
+    },
+
+    async convertToBase64(file) {
+        return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.readAsDataURL(file);
+        });
     },
 
     async deleteImage(imageUrl) {
         if (!imageUrl || !imageUrl.includes('supabase')) {
+            return true;
+        }
+
+        if (!supabaseAvailable) {
             return true;
         }
 
@@ -76,30 +108,38 @@ const ImageService = {
 
 const ProductService = {
     async getAll() {
-        const client = await initSupabase();
-        if (client) {
-            const { data, error } = await client
-                .from('products')
-                .select('*')
-                .order('created_at', { ascending: false });
-            
-            if (error) throw error;
-            return data;
+        try {
+            const client = await initSupabase();
+            if (client && supabaseAvailable) {
+                const { data, error } = await client
+                    .from('products')
+                    .select('*')
+                    .order('created_at', { ascending: false });
+                
+                if (error) throw error;
+                return data;
+            }
+        } catch (e) {
+            console.warn('Supabase fetch failed, using local fallback');
         }
         return getLocalProducts();
     },
 
     async getByCategory(category) {
-        const client = await initSupabase();
-        if (client) {
-            const { data, error } = await client
-                .from('products')
-                .select('*')
-                .eq('category', category)
-                .order('created_at', { ascending: false });
-            
-            if (error) throw error;
-            return data;
+        try {
+            const client = await initSupabase();
+            if (client && supabaseAvailable) {
+                const { data, error } = await client
+                    .from('products')
+                    .select('*')
+                    .eq('category', category)
+                    .order('created_at', { ascending: false });
+                
+                if (error) throw error;
+                return data;
+            }
+        } catch (e) {
+            console.warn('Supabase fetch failed, using local fallback');
         }
         
         const products = getLocalProducts();
@@ -107,16 +147,20 @@ const ProductService = {
     },
 
     async getFeatured(limit = 4) {
-        const client = await initSupabase();
-        if (client) {
-            const { data, error } = await client
-                .from('products')
-                .select('*')
-                .in('badge', ['Bestseller', 'Premium', 'New'])
-                .limit(limit);
-            
-            if (error) throw error;
-            return data;
+        try {
+            const client = await initSupabase();
+            if (client && supabaseAvailable) {
+                const { data, error } = await client
+                    .from('products')
+                    .select('*')
+                    .in('badge', ['Bestseller', 'Premium', 'New'])
+                    .limit(limit);
+                
+                if (error) throw error;
+                return data;
+            }
+        } catch (e) {
+            console.warn('Supabase fetch failed, using local fallback');
         }
         
         const products = getLocalProducts();
@@ -125,22 +169,26 @@ const ProductService = {
     },
 
     async create(product) {
-        const client = await initSupabase();
-        const sanitizedProduct = Security.sanitizeProduct(product);
-        
-        if (client) {
-            const { data, error } = await client
-                .from('products')
-                .insert([sanitizedProduct])
-                .select();
+        try {
+            const client = await initSupabase();
+            const sanitizedProduct = Security.sanitizeProduct(product);
             
-            if (error) throw error;
-            return data[0];
+            if (client && supabaseAvailable) {
+                const { data, error } = await client
+                    .from('products')
+                    .insert([sanitizedProduct])
+                    .select();
+                
+                if (error) throw error;
+                return data[0];
+            }
+        } catch (e) {
+            console.warn('Supabase create failed, using local fallback');
         }
         
         const products = getLocalProducts();
         const newProduct = {
-            ...sanitizedProduct,
+            ...Security.sanitizeProduct(product),
             id: Date.now(),
             created_at: new Date().toISOString()
         };
@@ -150,24 +198,28 @@ const ProductService = {
     },
 
     async update(id, updates) {
-        const client = await initSupabase();
-        const sanitizedUpdates = Security.sanitizeProduct(updates);
-        
-        if (client) {
-            const { data, error } = await client
-                .from('products')
-                .update(sanitizedUpdates)
-                .eq('id', id)
-                .select();
+        try {
+            const client = await initSupabase();
+            const sanitizedUpdates = Security.sanitizeProduct(updates);
             
-            if (error) throw error;
-            return data[0];
+            if (client && supabaseAvailable) {
+                const { data, error } = await client
+                    .from('products')
+                    .update(sanitizedUpdates)
+                    .eq('id', id)
+                    .select();
+                
+                if (error) throw error;
+                return data[0];
+            }
+        } catch (e) {
+            console.warn('Supabase update failed, using local fallback');
         }
         
         const products = getLocalProducts();
         const index = products.findIndex(p => p.id === id);
         if (index !== -1) {
-            products[index] = { ...products[index], ...sanitizedUpdates };
+            products[index] = { ...products[index], ...Security.sanitizeProduct(updates) };
             localStorage.setItem('products', JSON.stringify(products));
             return products[index];
         }
@@ -175,16 +227,20 @@ const ProductService = {
     },
 
     async delete(id) {
-        const client = await initSupabase();
-        
-        if (client) {
-            const { error } = await client
-                .from('products')
-                .delete()
-                .eq('id', id);
+        try {
+            const client = await initSupabase();
             
-            if (error) throw error;
-            return true;
+            if (client && supabaseAvailable) {
+                const { error } = await client
+                    .from('products')
+                    .delete()
+                    .eq('id', id);
+                
+                if (error) throw error;
+                return true;
+            }
+        } catch (e) {
+            console.warn('Supabase delete failed, using local fallback');
         }
         
         const products = getLocalProducts();
