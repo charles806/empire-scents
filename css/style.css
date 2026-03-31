@@ -1181,6 +1181,63 @@ p {
     min-height: 150px;
 }
 
+.form-hint {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-gray);
+    margin-top: 0.5rem;
+}
+
+.image-upload-container {
+    position: relative;
+}
+
+.image-preview-wrapper {
+    width: 100%;
+    height: 150px;
+    border: 2px dashed var(--color-light-gray);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: var(--transition-normal);
+    background: var(--color-light);
+}
+
+.image-preview-wrapper:hover {
+    border-color: var(--primary-blue);
+    background: rgba(30, 58, 138, 0.05);
+}
+
+.image-preview-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-gray);
+}
+
+.image-placeholder i {
+    font-size: 2rem;
+}
+
+.image-placeholder span {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+}
+
+.image-upload-input {
+    display: none;
+}
+
 .footer {
     background: var(--gradient-secondary);
     color: white;
@@ -1684,7 +1741,51 @@ p {
 }
 
 /* Admin Page Responsive Styles */
-@media (max-width: 1022px) {
+/* XL Breakpoint (1280px - 1536px) */
+@media (min-width: 1280px) {
+    .admin-container .container {
+        max-width: 1200px;
+    }
+    
+    .admin-table th,
+    .admin-table td {
+        padding: 1.25rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .admin-table img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* LG Breakpoint (1024px - 1279px) */
+@media (max-width: 1279px) and (min-width: 1024px) {
+    .admin-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .admin-header > div:last-child {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: nowrap;
+    }
+
+    .admin-header > div:last-child .btn {
+        white-space: nowrap;
+    }
+
+    .admin-table {
+        display: table;
+        table-layout: auto;
+        width: 100%;
+    }
+}
+
+/* MD Breakpoint (768px - 1023px) */
+@media (max-width: 1023px) {
     .admin-header {
         flex-direction: column;
         align-items: flex-start;
@@ -1701,7 +1802,7 @@ p {
 
     .admin-header > div:last-child .btn {
         flex: 1;
-        min-width: 150px;
+        min-width: 140px;
         justify-content: center;
     }
 
@@ -1709,35 +1810,33 @@ p {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
-    }
-}
-
-@media (max-width: 768px) {
-    .admin-header > div:last-child {
-        flex-direction: column;
+        -webkit-overflow-scrolling: touch;
     }
 
-    .admin-header > div:last-child .btn {
-        width: 100%;
+    .admin-table thead {
+        display: table-header-group;
     }
 
-    .admin-table th,
+    .admin-table tbody {
+        display: table-row-group;
+    }
+
+    .admin-table tr {
+        display: table-row;
+    }
+
     .admin-table td {
-        padding: 0.75rem;
-        font-size: 0.9rem;
+        display: table-cell;
     }
 
     .admin-table img {
-        width: 45px;
-        height: 45px;
-    }
-
-    .stat-value {
-        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
     }
 }
 
-@media (max-width: 480px) {
+/* XS Breakpoint (< 640px) */
+@media (max-width: 639px) {
     .admin-container {
         padding-top: calc(var(--header-height) + 20px);
     }
@@ -1760,24 +1859,24 @@ p {
     }
 
     .stat-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 
     .stat-value {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .stat-label {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 
     .admin-card {
         padding: 1rem;
+        border-radius: 12px;
     }
 
-    /* Convert table to card layout on mobile */
     .admin-table thead {
         display: none;
     }
@@ -1796,7 +1895,6 @@ p {
         border-radius: 12px;
         padding: 1rem;
         box-shadow: var(--shadow-sm);
-        position: relative;
     }
 
     [data-theme="dark"] .admin-table tr {
@@ -1823,14 +1921,14 @@ p {
         font-weight: 600;
         color: var(--primary-blue);
         text-transform: uppercase;
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         letter-spacing: 0.05em;
         text-align: left;
     }
 
     .admin-table img {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
 
     .action-btns {

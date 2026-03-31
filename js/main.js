@@ -745,6 +745,18 @@ const AdminPage = {
         document.getElementById('editPrice').value = product.price;
         document.getElementById('editImage').value = product.image;
         document.getElementById('editBadge').value = product.badge || '';
+        
+        const preview = document.getElementById('imagePreview');
+        const placeholder = document.getElementById('imagePlaceholder');
+        if (product.image) {
+            preview.src = product.image;
+            preview.style.display = 'block';
+            placeholder.style.display = 'none';
+        } else {
+            preview.style.display = 'none';
+            placeholder.style.display = 'flex';
+        }
+        document.getElementById('editImageFile').value = '';
 
         document.getElementById('productModal')?.classList.add('active');
     },
@@ -784,10 +796,32 @@ const AdminPage = {
         document.getElementById('editCategory').value = 'perfume';
         document.getElementById('editPrice').value = '';
         document.getElementById('editImage').value = '';
-        document.getElementById('editBadge').value = '';
+        document.getElementById('editImageFile').value = '';
+        document.getElementById('imagePreview').style.display = 'none';
+        document.getElementById('imagePlaceholder').style.display = 'flex';
 
         document.getElementById('productModal')?.classList.add('active');
-    }
+    },
+
+    handleImageUpload(input) {
+        const file = input.files[0];
+        if (!file) return;
+
+        const preview = document.getElementById('imagePreview');
+        const placeholder = document.getElementById('imagePlaceholder');
+        const hiddenInput = document.getElementById('editImage');
+
+        if (file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+                placeholder.style.display = 'none';
+                hiddenInput.value = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    },
 };
 
 function addToCart(productId) {

@@ -165,13 +165,19 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="editImage">Image URL</label>
-            <input
-              type="text"
-              id="editImage"
-              required
-              placeholder="images/product.jpg"
-            />
+            <label for="editImage">Product Image</label>
+            <div class="image-upload-container">
+              <div class="image-preview-wrapper" id="imagePreviewWrapper">
+                <img id="imagePreview" src="" alt="Preview" style="display: none;">
+                <div class="image-placeholder" id="imagePlaceholder">
+                  <i class="bx bx-image"></i>
+                  <span>Click to upload image</span>
+                </div>
+              </div>
+              <input type="file" id="editImageFile" accept="image/*" class="image-upload-input">
+              <input type="hidden" id="editImage" placeholder="images/product.jpg">
+            </div>
+            <small class="form-hint">Upload an image or enter a URL below</small>
           </div>
           <div class="form-group">
             <label for="editBadge">Badge (Optional)</label>
@@ -195,5 +201,14 @@
     <script src="js/config.js"></script>
     <script src="js/security.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      document.getElementById('editImageFile').addEventListener('change', function() {
+        AdminPage.handleImageUpload(this);
+      });
+      
+      document.getElementById('imagePreviewWrapper').addEventListener('click', function() {
+        document.getElementById('editImageFile').click();
+      });
+    </script>
   </body>
 </html>
