@@ -1,256 +1,167 @@
-# Empier Scents - Premium Perfume E-Commerce Website
+# Emiper Scents - Premium Fragrance E-commerce
 
-A modern, elegant, and fully functional e-commerce website for **Empier Scents**, a luxury perfume brand. Built with pure HTML, CSS, and JavaScript with smooth animations, premium design, and complete shopping cart functionality.
+A modern e-commerce website for premium fragrances built with vanilla HTML, CSS, and JavaScript. Uses Supabase for backend services including database and image storage.
 
-## 🎨 Features
+## Features
 
-### Design & UI
-- **Premium Luxury Design** - Elegant blue color scheme with sophisticated typography
-- **Smooth Animations** - Fade-in effects, hover transitions, and micro-interactions
-- **Fully Responsive** - Optimized for mobile, tablet, and desktop devices
-- **Modern Layout** - Clean, minimalist design with attention to detail
-- **Custom Fonts** - Playfair Display, Cormorant Garamond, and Montserrat
+- **Product Catalog**: Browse fragrances by category (Oil Perfume, Body Spray, Body Mist, Roll-On, Perfume)
+- **Shopping Cart**: Add products to cart with quantity management
+- **Checkout**: Payment via bank transfer with WhatsApp notification
+- **Admin Dashboard**: Add, edit, and delete products with image upload to Supabase
+- **Dark/Light Theme**: Toggle between themes
+- **Responsive Design**: Works on all screen sizes (XL, LG, MD, SM, XS)
+- **CRUD Operations**: Full Create, Read, Update, Delete for products
 
-### Pages
-1. **Home Page** - Hero slider, about preview, categories, featured products
-2. **About Page** - Brand story, values, product offerings
-3. **Products Page** - Category filtering, product cards with add to cart
-4. **Shopping Cart** - View cart, update quantities, remove items
-5. **Payment Page** - Bank transfer details, order summary, WhatsApp receipt
-6. **Contact Page** - Contact information, animated contact form
+## Tech Stack
 
-### Functionality
-- ✅ Product category filtering (All, Oil Perfume, Body Spray, Body Mist, Roll-On, Perfumes)
-- ✅ Add to cart functionality
-- ✅ Cart management (increase/decrease quantity, remove items)
-- ✅ localStorage for persistent cart data
-- ✅ Real-time cart count in header
-- ✅ Automatic total calculation
-- ✅ WhatsApp integration for sending receipts
-- ✅ Mobile-responsive navigation menu
-- ✅ Smooth scroll animations
-- ✅ Hero image slider with auto-advance
+- HTML5, CSS3, JavaScript (Vanilla)
+- Supabase (Database + Storage)
+- BoxIcons for icons
 
-## 📁 Project Structure
+## Getting Started
 
-```
-empier-scents/
-│
-├── index.html           # Home page
-├── about.html           # About page
-├── products.html        # Products page with filtering
-├── cart.html            # Shopping cart page
-├── payment.html         # Payment page
-├── contact.html         # Contact page
-│
-├── css/
-│   └── style.css        # Main stylesheet with premium design
-│
-├── js/
-│   └── main.js          # JavaScript functionality
-│
-├── images/              # Product and website images (see below)
-│   ├── hero-1.jpg       # Hero slider image 1
-│   ├── hero-2.jpg       # Hero slider image 2
-│   ├── hero-3.jpg       # Hero slider image 3
-│   ├── about-preview.jpg
-│   ├── about-story.jpg
-│   ├── category-oil.jpg
-│   ├── category-spray.jpg
-│   ├── category-mist.jpg
-│   ├── category-rollon.jpg
-│   ├── category-perfume.jpg
-│   ├── oil-perfume-1.jpg to oil-perfume-4.jpg
-│   ├── body-spray-1.jpg to body-spray-4.jpg
-│   ├── body-mist-1.jpg to body-mist-4.jpg
-│   ├── roll-on-1.jpg to roll-on-4.jpg
-│   ├── perfume-1.jpg to perfume-4.jpg
-│   └── placeholder.jpg  # Fallback image
-│
-└── README.md            # This file
+### 1. Clone the Repository
+```bash
+git clone https://github.com/charles806/empire-scents.git
+cd empire-scents
 ```
 
-## 🖼️ Images Required
+### 2. Supabase Setup
 
-To complete the website, add the following images to the `images/` folder:
+1. Create a project at [supabase.com](https://supabase.com)
+2. Go to SQL Editor and run the following:
 
-### Hero Slider (3 images)
-- `hero-1.jpg` - Main hero banner
-- `hero-2.jpg` - Second hero banner
-- `hero-3.jpg` - Third hero banner
+```sql
+-- Create products table
+CREATE TABLE products (
+    id BIGSERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    category TEXT NOT NULL,
+    price NUMERIC NOT NULL,
+    image TEXT NOT NULL,
+    badge TEXT DEFAULT '',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
 
-### About Section (2 images)
-- `about-preview.jpg` - For home page about section
-- `about-story.jpg` - For about page
-
-### Category Images (5 images)
-- `category-oil.jpg` - Oil perfume category
-- `category-spray.jpg` - Body spray category
-- `category-mist.jpg` - Body mist category
-- `category-rollon.jpg` - Roll-on category
-- `category-perfume.jpg` - Perfume category
-
-### Product Images (20 images total)
-**Oil Perfumes (4 images):**
-- `oil-perfume-1.jpg` - Midnight Oud
-- `oil-perfume-2.jpg` - Royal Amber
-- `oil-perfume-3.jpg` - Silk Musk
-- `oil-perfume-4.jpg` - Desert Rose
-
-**Body Sprays (4 images):**
-- `body-spray-1.jpg` - Ocean Breeze
-- `body-spray-2.jpg` - Citrus Burst
-- `body-spray-3.jpg` - Tropical Paradise
-- `body-spray-4.jpg` - Lavender Dreams
-
-**Body Mists (4 images):**
-- `body-mist-1.jpg` - Cherry Blossom
-- `body-mist-2.jpg` - Vanilla Cloud
-- `body-mist-3.jpg` - Peach Delight
-- `body-mist-4.jpg` - Rose Garden
-
-**Roll-Ons (4 images):**
-- `roll-on-1.jpg` - Jasmine Touch
-- `roll-on-2.jpg` - Sandalwood Essence
-- `roll-on-3.jpg` - Mint Fresh
-- `roll-on-4.jpg` - Lily White
-
-**Perfumes (4 images):**
-- `perfume-1.jpg` - Elegance Noir
-- `perfume-2.jpg` - Azure Dream
-- `perfume-3.jpg` - Golden Hour
-- `perfume-4.jpg` - Velvet Rose
-
-### Image Specifications
-- **Format:** JPG or PNG
-- **Hero images:** 1920x1080px (landscape)
-- **Category images:** 800x800px (square)
-- **Product images:** 600x600px (square)
-- **About images:** 800x600px (landscape)
-
-## 🚀 Getting Started
-
-1. **Extract the files** to your desired location
-2. **Add images** to the `images/` folder (see list above)
-3. **Update bank details** in `payment.html` (Account Name, Number, Bank)
-4. **Update contact information** if needed in all pages
-5. **Open `index.html`** in your web browser
-
-## 📝 Customization
-
-### Change Colors
-Edit the CSS variables in `css/style.css`:
-```css
-:root {
-    --primary-blue: #1e3a8a;
-    --primary-blue-light: #3b82f6;
-    /* ... other colors */
-}
+-- Allow public access for all operations
+CREATE POLICY "Allow public read" ON products FOR SELECT USING (true);
+CREATE POLICY "Allow public insert" ON products FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow public update" ON products FOR UPDATE USING (true);
+CREATE POLICY "Allow public delete" ON products FOR DELETE USING (true);
 ```
 
-### Update Products
-Edit the products array in `js/main.js`:
+### 3. Storage Setup (for Images)
+
+1. Go to **Storage** in Supabase dashboard
+2. Create a new bucket named `products`
+3. Make it **Public** bucket
+4. Add policy to allow public access:
+
+```sql
+-- Run in SQL Editor to allow public read access to storage
+CREATE POLICY "Public Access" ON storage.objects
+FOR SELECT USING (bucket_id = 'products');
+```
+
+### 4. Update Config
+
+Edit `js/config.js` with your Supabase credentials:
+
 ```javascript
-const products = [
-    {
-        id: 1,
-        name: "Product Name",
-        category: "category-slug",
-        price: 8500,
-        image: "images/product.jpg",
-        badge: "New"
-    },
-    // ... more products
-];
+const SUPABASE_URL = 'https://your-project.supabase.co';
+const SUPABASE_ANON_KEY = 'your-anon-key';
 ```
 
-### Update Bank Details
-Edit the bank details section in `payment.html`:
-```html
-<div class="bank-detail-item">
-    <span class="bank-detail-label">Account Name:</span>
-    <span class="bank-detail-value">Your Account Name</span>
-</div>
+### 5. Admin Access
+
+- URL: `admin.html`
+- Password: `EmiperAdmin2026!`
+
+## Pages
+
+| Page | Description |
+|------|-------------|
+| `index.html` | Home - Hero slider, categories, featured products |
+| `products.html` | Product listing with category filters |
+| `cart.html` | Shopping cart with quantity management |
+| `payment.html` | Checkout with bank transfer details |
+| `admin.html` | Admin dashboard (password protected) |
+| `contact.html` | Contact form with WhatsApp integration |
+| `about.html` | Brand story and information |
+
+## Project Structure
+
+```
+Emiper Scents/
+├── index.html          # Home page
+├── products.html       # Products page
+├── cart.html           # Shopping cart
+├── payment.html        # Checkout/payment
+├── admin.html          # Admin dashboard
+├── contact.html        # Contact page
+├── about.html          # About page
+├── css/
+│   └── style.css       # All styles
+├── js/
+│   ├── config.js       # Supabase config & product service
+│   ├── main.js         # Main application logic
+│   └── security.js     # Admin authentication
+└── images/             # Local images (fallback)
 ```
 
-### Update Contact Information
-Update contact details in all pages:
-- WhatsApp: 07040062388
-- Phone: 09073824064
-- Email: egwingift@gmail.com
-- Location: Rivers State, Nigeria
+## Image Handling
 
-## 🛠️ Technologies Used
+When adding products in admin:
+1. Click the image upload area
+2. Select an image file (JPG, PNG, WebP)
+3. Image is uploaded to Supabase storage
+4. Public URL is saved to database
+
+You can also enter an image URL directly if you have hosted images elsewhere.
+
+## Default Products (SQL)
+
+Run this in Supabase SQL Editor to add sample products:
+
+```sql
+INSERT INTO products (name, category, price, image, badge) VALUES
+('Ocean Breeze', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Ocean+Breeze', 'Fresh'),
+('Kaly', 'perfume', 10500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Kaly', 'New'),
+('Kamrah 30ml', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Kamrah', ''),
+('Bakarrat 30ml', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Bakarrat', 'Bestseller'),
+('My Way', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=My+Way', 'Light'),
+('Ophylia', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Ophylia', 'Sweet'),
+('Eclaire X Sugar Pink', 'perfume', 9000, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Eclaire', 'New'),
+('Avanti', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Avanti', ''),
+('Asad X Avantos', 'perfume', 9000, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Asad+X', 'Travel'),
+('Berries Weekend X Now Men', 'perfume', 9000, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Berries', 'Woody'),
+('Yara', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Yara', 'Cool'),
+('Asad', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Asad', '');
+```
+
+## Responsive Breakpoints
+
+| Breakpoint | Width | Description |
+|------------|-------|-------------|
+| XS | < 640px | Mobile - card layout |
+| SM | 640-767px | Large mobile |
+| MD | 768-1023px | Tablet |
+| LG | 1024-1279px | Small desktop |
+| XL | ≥ 1280px | Large desktop |
+
+## Technologies Used
 
 - **HTML5** - Semantic markup
 - **CSS3** - Custom properties, animations, flexbox, grid
-- **JavaScript (ES6)** - Modern JavaScript features
-- **Boxicons** - Icon library
+- **JavaScript ES6** - Modern JavaScript features
+- **Supabase** - Backend (Database + Storage)
+- **BoxIcons** - Icon library
 - **Google Fonts** - Playfair Display, Cormorant Garamond, Montserrat
-- **localStorage** - For cart persistence
 
-## 📱 Responsive Breakpoints
+## License
 
-- **Mobile:** < 768px
-- **Tablet:** 768px - 1024px
-- **Desktop:** > 1024px
-
-## 🎯 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## 🔧 Features Breakdown
-
-### Shopping Cart
-- Stores data in localStorage (persists across sessions)
-- Real-time cart count display
-- Add/remove items
-- Increase/decrease quantities
-- Automatic price calculations
-- Empty cart handling
-
-### Product Filtering
-- Filter by category
-- Smooth transitions
-- Dynamic product loading
-- Category count display
-
-### WhatsApp Integration
-- Auto-generates receipt message
-- Includes all order details
-- Opens WhatsApp with pre-filled message
-- Works on mobile and desktop
-
-### Animations
-- Fade-in on scroll
-- Hover effects
-- Smooth page transitions
-- Loading animations
-- Staggered element reveals
-
-## 📞 Support & Contact
-
-For support or inquiries:
-- **WhatsApp:** 07040062388
-- **Phone:** 09073824064
-- **Email:** egwingift@gmail.com
-
-## 📄 License
-
-This project is created for Empier Scents. All rights reserved.
-
-## 🎨 Design Credits
-
-- Custom design with premium luxury aesthetic
-- Blue gradient color scheme
-- Sophisticated typography pairing
-- Modern minimalist approach
+MIT
 
 ---
 
-**Built with ❤️ for Empier Scents**
-
-*Last Updated: February 2026*
+Built with ❤️ for Emiper Scents
