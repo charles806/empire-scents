@@ -765,11 +765,23 @@ const AdminPage = {
         e.preventDefault();
 
         const id = document.getElementById('editId').value;
+        const fileInput = document.getElementById('editImageFile');
+        const existingImage = document.getElementById('editImage').value;
+        
+        let imageUrl = existingImage;
+
+        if (fileInput && fileInput.files[0]) {
+            const uploadedUrl = await ImageService.uploadImage(fileInput.files[0]);
+            if (uploadedUrl) {
+                imageUrl = uploadedUrl;
+            }
+        }
+
         const product = {
             name: document.getElementById('editName').value,
             category: document.getElementById('editCategory').value,
             price: Number(document.getElementById('editPrice').value),
-            image: document.getElementById('editImage').value,
+            image: imageUrl,
             badge: document.getElementById('editBadge').value
         };
 

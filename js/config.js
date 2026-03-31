@@ -1,5 +1,6 @@
 const SUPABASE_URL = 'https://gnmdtbvjtdykcfqgtexm.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdubWR0YnZqdGR5a2NmcWd0ZXhtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3NjQzODAsImV4cCI6MjA4OTM0MDM4MH0.zV1-SjYtCwLIsDQdLY5BH6oxbnPZjfntelvlXAGQ4lk';
+const SUPABASE_STORAGE_URL = 'https://gnmdtbvjtdykcfqgtexm.supabase.co/storage/v1';
 
 let supabaseClient;
 
@@ -11,6 +12,67 @@ async function initSupabase() {
     console.warn('Supabase SDK not loaded - using local storage fallback');
     return null;
 }
+
+const ImageService = {
+    async uploadImage(file) {
+        if (!file || !file.type.startsWith('image/')) {
+            return null;
+        }
+
+        const client = await initSupabase();
+        if (!client) {
+            return null;
+        }
+
+        const fileName = `${Date.now()}-${file.name.replace(/\s+/g, '-')}`;
+        
+        try {
+            const { data, error } = await client
+                .storage
+                .from('products')
+                .upload(fileName, file, {
+                    cacheControl: '3600',
+                    upsert: false,
+                    contentType: file.type
+                });
+
+            if (error) {
+                console.error('Upload error:', error);
+                return null;
+            }
+
+            const { data: urlData } = client
+                .storage
+                .from('products')
+                .getPublicUrl(fileName);
+
+            return urlData.publicUrl;
+        } catch (err) {
+            console.error('Image upload failed:', err);
+            return null;
+        }
+    },
+
+    async deleteImage(imageUrl) {
+        if (!imageUrl || !imageUrl.includes('supabase')) {
+            return true;
+        }
+
+        const client = await initSupabase();
+        if (!client) return true;
+
+        try {
+            const fileName = imageUrl.split('/storage/v1/object/public/products/')[1];
+            if (fileName) {
+                await client.storage.from('products').remove([fileName]);
+            }
+            return true;
+        } catch (err) {
+            console.error('Image delete failed:', err);
+            return true;
+        }
+    }
+};
 
 const ProductService = {
     async getAll() {
