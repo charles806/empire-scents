@@ -24,9 +24,6 @@ async function initSupabase() {
     console.warn('Supabase SDK not loaded - using local storage fallback');
     return null;
 }
-    console.warn('Supabase SDK not loaded - using local storage fallback');
-    return null;
-}
 
 const ImageService = {
     async uploadImage(file) {
