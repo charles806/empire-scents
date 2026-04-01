@@ -1,24 +1,25 @@
-# Supabase Configuration
+# Supabase Setup Checklist
 
-1. Create a project at https://supabase.com
-2. Go to Project Settings > API
-3. Copy your Project URL and anon/public key
+## What You Need from Supabase
 
-# Update config.js
+### 1. Project URL
+- Found in: Settings → API → Project URL
+- Format: `https://xxxxxxxxxxxxxx.supabase.co`
 
-Replace these values in js/config.js:
+### 2. Anon Key
+- Found in: Settings → API → Project API keys → `anon` key
+- Format: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`
 
-```javascript
-const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
-```
+### 3. Storage Bucket
+- Create a bucket named: `products`
+- Set as **Public**
 
-# Database Setup
+---
 
-Run this SQL in your Supabase SQL Editor:
+## SQL Code to Run in Supabase SQL Editor
 
+### 1. Create Products Table
 ```sql
--- Create products table
 CREATE TABLE products (
     id BIGSERIAL PRIMARY KEY,
     name TEXT NOT NULL,
@@ -28,27 +29,64 @@ CREATE TABLE products (
     badge TEXT DEFAULT '',
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
--- Enable Row Level Security (optional)
-ALTER TABLE products ENABLE ROW LEVEL SECURITY;
-
--- Allow public read access
-CREATE POLICY "Allow public read access" ON products
-    FOR SELECT USING (true);
-
--- Allow authenticated write access
-CREATE POLICY "Allow authenticated insert" ON products
-    FOR INSERT WITH CHECK (auth.role() = 'authenticated');
-
-CREATE POLICY "Allow authenticated update" ON products
-    FOR UPDATE USING (auth.role() = 'authenticated');
-
-CREATE POLICY "Allow authenticated delete" ON products
-    FOR DELETE USING (auth.role() = 'authenticated');
 ```
 
-# Admin Password
+### 2. Allow Public Access (Run all 4)
+```sql
+-- Allow public read
+CREATE POLICY "Allow public read" ON products
+    FOR SELECT USING (true);
 
-The default admin password is: `EmiperAdmin2026!`
+-- Allow public insert
+CREATE POLICY "Allow public insert" ON products
+    FOR INSERT WITH CHECK (true);
 
-Change this in js/security.js if needed.
+-- Allow public update
+CREATE POLICY "Allow public update" ON products
+    FOR UPDATE USING (true);
+
+-- Allow public delete
+CREATE POLICY "Allow public delete" ON products
+    FOR DELETE USING (true);
+```
+
+### 3. Add Sample Products (Optional)
+```sql
+INSERT INTO products (name, category, price, image, badge) VALUES
+('Ocean Breeze', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Ocean+Breeze', 'Fresh'),
+('Kaly', 'perfume', 10500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Kaly', 'New'),
+('Kamrah 30ml', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Kamrah', ''),
+('Bakarrat 30ml', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Bakarrat', 'Bestseller'),
+('My Way', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=My+Way', 'Light'),
+('Ophylia', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Ophylia', 'Sweet'),
+('Eclaire X Sugar Pink', 'perfume', 9000, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Eclaire', 'New'),
+('Avanti', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Avanti', ''),
+('Asad X Avantos', 'perfume', 9000, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Asad+X', 'Travel'),
+('Berries Weekend', 'perfume', 9000, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Berries', 'Woody'),
+('Yara', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Yara', 'Cool'),
+('Asad', 'perfume', 4500, 'https://placehold.co/400x400/1e3a8a/ffffff?text=Asad', '');
+```
+
+### 4. Storage Setup (Go to Storage → New Bucket)
+```sql
+-- In Storage > Policies, create these policies for 'products' bucket:
+
+-- Allow public read access
+CREATE POLICY "Public read access" ON storage.objects
+    FOR SELECT USING (bucket_id = 'products');
+
+-- Allow public upload
+CREATE POLICY "Public upload" ON storage.objects
+    FOR INSERT WITH CHECK (bucket_id = 'products');
+
+-- Allow public delete  
+CREATE POLICY "Public delete" ON storage.objects
+    FOR DELETE USING (bucket_id = 'products');
+```
+
+---
+
+## After Setup
+1. Update `js/config.js` with your URL and key (if different)
+2. Make sure your Supabase project is **NOT PAUSED**
+3. Check your project is active in Supabase dashboard
