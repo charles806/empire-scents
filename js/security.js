@@ -20,7 +20,7 @@ const Security = {
     sanitizeURL(url) {
         if (typeof url !== 'string') return '';
         const trimmed = url.trim().toLowerCase();
-        if (trimmed.startsWith('javascript:') || trimmed.startsWith('data:')) {
+        if (trimmed.startsWith('javascript:')) {
             return '';
         }
         return url;
