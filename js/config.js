@@ -30,44 +30,7 @@ const ImageService = {
         if (!file || !file.type.startsWith('image/')) {
             return null;
         }
-
-        if (!supabaseAvailable) {
-            console.warn('Supabase not available, converting to base64');
-            return await this.convertToBase64(file);
-        }
-
-        const client = await initSupabase();
-        if (!client) {
-            return await this.convertToBase64(file);
-        }
-
-        const fileName = `${Date.now()}-${file.name.replace(/\s+/g, '-')}`;
-        
-        try {
-            const { data, error } = await client
-                .storage
-                .from('products')
-                .upload(fileName, file, {
-                    cacheControl: '3600',
-                    upsert: false,
-                    contentType: file.type
-                });
-
-            if (error) {
-                console.error('Upload error:', error);
-                return await this.convertToBase64(file);
-            }
-
-            const { data: urlData } = client
-                .storage
-                .from('products')
-                .getPublicUrl(fileName);
-
-            return urlData.publicUrl;
-        } catch (err) {
-            console.error('Image upload failed:', err);
-            return await this.convertToBase64(file);
-        }
+        return await this.convertToBase64(file);
     },
 
     async convertToBase64(file) {
@@ -79,110 +42,27 @@ const ImageService = {
     },
 
     async deleteImage(imageUrl) {
-        if (!imageUrl || !imageUrl.includes('supabase')) {
-            return true;
-        }
-
-        if (!supabaseAvailable) {
-            return true;
-        }
-
-        const client = await initSupabase();
-        if (!client) return true;
-
-        try {
-            const fileName = imageUrl.split('/storage/v1/object/public/products/')[1];
-            if (fileName) {
-                await client.storage.from('products').remove([fileName]);
-            }
-            return true;
-        } catch (err) {
-            console.error('Image delete failed:', err);
-            return true;
-        }
+        return true;
     }
 };
 
 const ProductService = {
     async getAll() {
-        try {
-            const client = await initSupabase();
-            if (client && supabaseAvailable) {
-                const { data, error } = await client
-                    .from('products')
-                    .select('*')
-                    .order('created_at', { ascending: false });
-                
-                if (error) throw error;
-                return data;
-            }
-        } catch (e) {
-            console.warn('Supabase fetch failed, using local fallback');
-        }
         return getLocalProducts();
     },
 
     async getByCategory(category) {
-        try {
-            const client = await initSupabase();
-            if (client && supabaseAvailable) {
-                const { data, error } = await client
-                    .from('products')
-                    .select('*')
-                    .eq('category', category)
-                    .order('created_at', { ascending: false });
-                
-                if (error) throw error;
-                return data;
-            }
-        } catch (e) {
-            console.warn('Supabase fetch failed, using local fallback');
-        }
-        
         const products = getLocalProducts();
         return category === 'all' ? products : products.filter(p => p.category === category);
     },
 
     async getFeatured(limit = 4) {
-        try {
-            const client = await initSupabase();
-            if (client && supabaseAvailable) {
-                const { data, error } = await client
-                    .from('products')
-                    .select('*')
-                    .in('badge', ['Bestseller', 'Premium', 'New'])
-                    .limit(limit);
-                
-                if (error) throw error;
-                return data;
-            }
-        } catch (e) {
-            console.warn('Supabase fetch failed, using local fallback');
-        }
-        
         const products = getLocalProducts();
         const featured = products.filter(p => ['Bestseller', 'Premium', 'New'].includes(p.badge));
         return featured.slice(0, limit);
     },
 
     async create(product) {
-        try {
-            const client = await initSupabase();
-            const sanitizedProduct = Security.sanitizeProduct(product);
-            
-            if (client && supabaseAvailable) {
-                const { data, error } = await client
-                    .from('products')
-                    .insert([sanitizedProduct])
-                    .select();
-                
-                if (error) throw error;
-                return data[0];
-            }
-        } catch (e) {
-            console.warn('Supabase create failed, using local fallback');
-        }
-        
         const products = getLocalProducts();
         const newProduct = {
             ...Security.sanitizeProduct(product),
@@ -195,24 +75,6 @@ const ProductService = {
     },
 
     async update(id, updates) {
-        try {
-            const client = await initSupabase();
-            const sanitizedUpdates = Security.sanitizeProduct(updates);
-            
-            if (client && supabaseAvailable) {
-                const { data, error } = await client
-                    .from('products')
-                    .update(sanitizedUpdates)
-                    .eq('id', id)
-                    .select();
-                
-                if (error) throw error;
-                return data[0];
-            }
-        } catch (e) {
-            console.warn('Supabase update failed, using local fallback');
-        }
-        
         const products = getLocalProducts();
         const index = products.findIndex(p => p.id === id);
         if (index !== -1) {
@@ -224,22 +86,6 @@ const ProductService = {
     },
 
     async delete(id) {
-        try {
-            const client = await initSupabase();
-            
-            if (client && supabaseAvailable) {
-                const { error } = await client
-                    .from('products')
-                    .delete()
-                    .eq('id', id);
-                
-                if (error) throw error;
-                return true;
-            }
-        } catch (e) {
-            console.warn('Supabase delete failed, using local fallback');
-        }
-        
         const products = getLocalProducts();
         const filtered = products.filter(p => p.id !== id);
         localStorage.setItem('products', JSON.stringify(filtered));
