@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contact Empier Scents - Get in touch with us"
+      content="Contact AkuSparkle - questions about products, routines or consultations"
     />
-    <title>Contact Us - Empier Scents</title>
+    <title>Contact Us - AkuSparkle</title>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -17,20 +17,21 @@
   <body>
     <header class="header">
       <nav class="nav-container">
-        <a href="index.html" class="logo">EMPIER SCENTS</a>
+        <a href="index.html" class="logo">AkuSparkle</a>
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-          <li>
-            <a href="cart.html" class="cart-icon-wrapper">
-              <i class="bx bx-shopping-bag"></i>
-              <span class="cart-count">0</span>
-            </a>
-          </li>
+          <li><a href="products.html" class="nav-link">Shop</a></li>
+          <li><a href="index.html#guide" class="nav-link">Haircare Guide</a></li>
+          <li><a href="index.html#story" class="nav-link">Our Story</a></li>
+          <li><a href="index.html#consultations" class="nav-link">Consultations</a></li>
+          <li class="mobile-only"><a href="index.html#faq" class="nav-link">FAQs</a></li>
+          <li class="mobile-only"><a href="index.html#contact" class="nav-link">Contact Us</a></li>
+          <li class="theme-toggle-item"></li>
         </ul>
-        <button class="mobile-menu-toggle">
+        <a href="products.html" class="nav-cta">
+          Shop Now
+          <i class="bx bx-right-arrow-alt"></i>
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Open menu">
           <i class="bx bx-menu"></i>
         </button>
       </nav>
@@ -40,14 +41,16 @@
       class="section"
       style="
         padding-top: 140px;
-        background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%);
+        background: linear-gradient(135deg, #f3eee4 0%, #f7f2ea 100%);
       "
     >
       <div class="container">
         <div class="section-header">
-          <h1 class="section-title">Get in Touch</h1>
+          <p class="eyebrow" style="justify-content: center">Get in Touch</p>
+          <h1 class="section-title">Let's talk about your hair</h1>
           <p class="section-subtitle">
-            We'd love to hear from you. Reach out to us anytime!
+            Questions, consultations or a routine that isn't quite working?
+            Reach out — we're here to help.
           </p>
         </div>
       </div>
@@ -59,11 +62,11 @@
           <div class="contact-info">
             <h2>Contact Information</h2>
             <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem">
-              Feel free to reach out to us through any of these channels. We're
-              here to help!
+              Reach us through any of these channels. We'd love to hear from
+              you.
             </p>
 
-            <div class="contact-item">
+            <div class="contact-item-full">
               <div class="contact-icon"><i class="bx bxl-whatsapp"></i></div>
               <div class="contact-details">
                 <h4>WhatsApp</h4>
@@ -71,7 +74,7 @@
               </div>
             </div>
 
-            <div class="contact-item">
+            <div class="contact-item-full">
               <div class="contact-icon"><i class="bx bx-phone"></i></div>
               <div class="contact-details">
                 <h4>Phone</h4>
@@ -79,7 +82,7 @@
               </div>
             </div>
 
-            <div class="contact-item">
+            <div class="contact-item-full">
               <div class="contact-icon"><i class="bx bx-envelope"></i></div>
               <div class="contact-details">
                 <h4>Email</h4>
@@ -87,7 +90,7 @@
               </div>
             </div>
 
-            <div class="contact-item">
+            <div class="contact-item-full">
               <div class="contact-icon"><i class="bx bx-map"></i></div>
               <div class="contact-details">
                 <h4>Location</h4>
@@ -149,7 +152,7 @@
                   id="subject"
                   name="subject"
                   required
-                  placeholder="What is this regarding?"
+                  placeholder="e.g., Consultation, product question"
                 />
               </div>
               <div class="form-group">
@@ -158,7 +161,7 @@
                   id="message"
                   name="message"
                   required
-                  placeholder="Write your message here..."
+                  placeholder="Tell us about your hair and what you need..."
                 ></textarea>
               </div>
               <button
@@ -176,28 +179,27 @@
     </section>
 
     <section
-      class="section"
-      style="background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%)"
+      class="section section-dark"
     >
       <div class="container text-center">
-        <h2 style="margin-bottom: 1rem">Prefer to Chat?</h2>
+        <h2 style="color: white; margin-bottom: 1rem">Prefer to Chat?</h2>
         <p
           style="
-            font-size: 1.2rem;
-            color: var(--color-gray);
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 2rem;
-            max-width: 600px;
+            max-width: 580px;
             margin-left: auto;
             margin-right: auto;
           "
         >
           Connect with us directly on WhatsApp for instant responses to your
-          queries.
+          haircare questions.
         </p>
         <a
           href="https://wa.me/2347040062388"
           target="_blank"
-          class="btn btn-primary"
+          class="btn btn-accent"
           style="display: inline-flex"
         >
           <i class="bx bxl-whatsapp" style="font-size: 1.5rem"></i>
@@ -210,16 +212,17 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
-            <h3>Empier Scents</h3>
-            <p>Your premier destination for luxury fragrances.</p>
+            <h3>AkuSparkle</h3>
+            <p>Thoughtful haircare, one strand at a time.</p>
           </div>
           <div class="footer-section">
             <h3>Quick Links</h3>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-            <a href="cart.html">Shopping Cart</a>
+            <a href="products.html">Shop</a>
+            <a href="index.html#guide">Haircare Guide</a>
+            <a href="index.html#story">Our Story</a>
+            <a href="index.html#consultations">Consultations</a>
+            <a href="index.html#faq">FAQs</a>
+            <a href="index.html#contact">Contact</a>
           </div>
           <div class="footer-section">
             <h3>Contact Info</h3>
@@ -231,21 +234,15 @@
           <div class="footer-section">
             <h3>Follow Us</h3>
             <div class="social-links">
-              <a href="#" class="social-link"
-                ><i class="bx bxl-facebook"></i
-              ></a>
-              <a href="#" class="social-link"
-                ><i class="bx bxl-instagram"></i
-              ></a>
+              <a href="#" class="social-link"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="social-link"><i class="bx bxl-instagram"></i></a>
               <a href="#" class="social-link"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="social-link"
-                ><i class="bx bxl-whatsapp"></i
-              ></a>
+              <a href="#" class="social-link"><i class="bx bxl-whatsapp"></i></a>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2026 Empier Scents. All rights reserved.</p>
+          <p>&copy; 2026 AkuSparkle. All rights reserved.</p>
         </div>
       </div>
     </footer>

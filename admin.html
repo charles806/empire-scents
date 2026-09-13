@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Admin Dashboard - Empier Scents" />
-    <title>Admin Dashboard - Empier Scents</title>
+    <meta name="description" content="Admin Dashboard - AkuSparkle" />
+    <title>Admin Dashboard - AkuSparkle</title>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -14,19 +14,21 @@
   <body>
     <header class="header">
       <nav class="nav-container">
-        <a href="index.html" class="logo">EMPIER SCENTS</a>
+        <a href="index.html" class="logo">AkuSparkle</a>
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="admin.html" class="nav-link active">Admin</a></li>
-          <li>
-            <a href="cart.html" class="cart-icon-wrapper">
-              <i class="bx bx-shopping-bag"></i>
-              <span class="cart-count">0</span>
-            </a>
-          </li>
+          <li><a href="products.html" class="nav-link">Shop</a></li>
+          <li><a href="index.html#guide" class="nav-link">Haircare Guide</a></li>
+          <li><a href="index.html#story" class="nav-link">Our Story</a></li>
+          <li><a href="index.html#consultations" class="nav-link">Consultations</a></li>
+          <li class="mobile-only"><a href="index.html#faq" class="nav-link">FAQs</a></li>
+          <li class="mobile-only"><a href="index.html#contact" class="nav-link">Contact Us</a></li>
+          <li class="theme-toggle-item"></li>
         </ul>
-        <button class="mobile-menu-toggle">
+        <a href="products.html" class="nav-cta">
+          Shop Now
+          <i class="bx bx-right-arrow-alt"></i>
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Open menu">
           <i class="bx bx-menu"></i>
         </button>
       </nav>
@@ -146,11 +148,12 @@
                   font-family: var(--font-body);
                 "
               >
-                <option value="oil-perfume">Oil Perfume</option>
-                <option value="body-spray">Body Spray</option>
-                <option value="body-mist">Body Mist</option>
-                <option value="roll-on">Roll-On</option>
-                <option value="perfume" selected>Perfume</option>
+                <option value="shampoo" selected>Shampoo</option>
+                <option value="conditioner">Conditioner</option>
+                <option value="hair-oil">Hair & Scalp Oil</option>
+                <option value="leave-in">Leave-in</option>
+                <option value="treatment">Treatment</option>
+                <option value="styling">Styling</option>
               </select>
             </div>
             <div class="form-group">

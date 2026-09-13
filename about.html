@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="About Empier Scents - Learn about our luxury perfume brand"
+      content="Our Story - AkuSparkle. Built by Gift Egwim, strand by strand. Thoughtful haircare for attention-driven care."
     />
-    <title>About Us - Empier Scents</title>
+    <title>Our Story - AkuSparkle</title>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -17,20 +17,21 @@
   <body>
     <header class="header">
       <nav class="nav-container">
-        <a href="index.html" class="logo">EMPIER SCENTS</a>
+        <a href="index.html" class="logo">AkuSparkle</a>
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-          <li>
-            <a href="cart.html" class="cart-icon-wrapper">
-              <i class="bx bx-shopping-bag"></i>
-              <span class="cart-count">0</span>
-            </a>
-          </li>
+          <li><a href="products.html" class="nav-link">Shop</a></li>
+          <li><a href="index.html#guide" class="nav-link">Haircare Guide</a></li>
+          <li><a href="index.html#story" class="nav-link">Our Story</a></li>
+          <li><a href="index.html#consultations" class="nav-link">Consultations</a></li>
+          <li class="mobile-only"><a href="index.html#faq" class="nav-link">FAQs</a></li>
+          <li class="mobile-only"><a href="index.html#contact" class="nav-link">Contact Us</a></li>
+          <li class="theme-toggle-item"></li>
         </ul>
-        <button class="mobile-menu-toggle">
+        <a href="products.html" class="nav-cta">
+          Shop Now
+          <i class="bx bx-right-arrow-alt"></i>
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Open menu">
           <i class="bx bx-menu"></i>
         </button>
       </nav>
@@ -40,155 +41,117 @@
       class="section"
       style="
         padding-top: 140px;
-        background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%);
+        background: linear-gradient(135deg, #f3eee4 0%, #f7f2ea 100%);
       "
     >
       <div class="container">
         <div class="section-header">
-          <h1 class="section-title">Our Story</h1>
+          <p class="eyebrow" style="justify-content: center">Our Story</p>
+          <h1 class="section-title">Attention, one strand at a time</h1>
           <p class="section-subtitle">
-            Crafting memorable moments through the art of fine fragrance
+            The story of AkuSparkle, and why thoughtful haircare matters to us
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-cream">
       <div class="container">
         <div class="about-content">
           <div class="about-image" style="animation: slideInLeft 1s ease-out">
             <img
-              src="images/img.jpeg"
-              alt="Empier Scents Story"
-              onerror="this.src = 'images/placeholder.jpg'"
+              src="images/founder.jpg"
+              alt="Gift Egwim, founder of AkuSparkle"
+              onerror="this.src = 'images/placeholder.svg'"
             />
           </div>
           <div class="about-text" style="animation: slideInRight 1s ease-out">
-            <h2>The Birth of Empier Scents</h2>
+            <h3 style="color: var(--accent-warm)">How it began</h3>
+            <h2>The birth of AkuSparkle</h2>
             <p>
-              Empier Scents was born from a passion for creating memorable
-              experiences through the power of fragrance. Founded with a vision
-              to bring luxury perfumery to everyone, we embarked on a journey to
-              source the finest ingredients and craft scents that resonate with
-              the soul.
+              AkuSparkle started with a simple frustration: haircare that
+              promised everything but explained nothing. Gift Egwim spent years
+              cycling through products that over-promised and under-delivered —
+              and watching her hair pay for it.
             </p>
             <p>
-              Our name, "Empier," represents the empire of elegance and
-              sophistication we aim to build—one fragrance at a time. Each
-              product in our collection is carefully selected to ensure it meets
-              our rigorous standards of quality, longevity, and uniqueness.
+              So she started paying closer attention. Reading her own strands.
+              Noting how they responded to water, to oils, to different types
+              of care. She began making products for herself — simple,
+              thoughtful formulations for exactly what her hair needed. Friends
+              noticed, asked, and AkuSparkle was born.
             </p>
             <p>
-              We believe that everyone deserves to smell amazing, and that's why
-              we offer a diverse range of fragrances, from bold and daring to
-              soft and subtle, ensuring there's something perfect for every
-              personality and occasion.
+              "Sparkle" isn't about shine that fades by evening. It's the way
+              healthy, well-cared-for hair reflects your attention — that quiet
+              confidence that comes from understanding your own curls, coils or
+              strands and showing up for them consistently.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section
-      class="section"
-      style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)"
-    >
+    <section class="section section-dark">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title" style="color: white">Our Core Values</h2>
-          <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9)">
-            The principles that guide everything we do
+          <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.85)">
+            The principles that guide every product we make
           </p>
         </div>
         <div class="categories-grid">
-          <div
-            style="
-              background: rgba(255, 255, 255, 0.1);
-              backdrop-filter: blur(10px);
-              border-radius: 20px;
-              padding: 2rem;
-              text-align: center;
-              animation: fadeInUp 0.8s ease-out 0.1s both;
-            "
-          >
-            <div style="font-size: 3rem; color: white; margin-bottom: 1rem">
-              <i class="bx bx-heart"></i>
+          <div class="concern-card">
+            <div style="font-size: 3rem; color: var(--accent-warm-light); margin-bottom: 1rem">
+              <i class="bx bx-spa"></i>
             </div>
-            <h3 style="color: white; margin-bottom: 1rem">Quality First</h3>
-            <p style="color: rgba(255, 255, 255, 0.9)">
-              We never compromise on quality. Every product is carefully tested
-              to ensure it meets our exceptional standards.
+            <h3 style="color: white; margin-bottom: 1rem">Attention</h3>
+            <p style="color: rgba(255, 255, 255, 0.85)">
+              We treat every strand like it matters — because it does. Products
+              and guidance built around understanding, not guessing.
             </p>
           </div>
-          <div
-            style="
-              background: rgba(255, 255, 255, 0.1);
-              backdrop-filter: blur(10px);
-              border-radius: 20px;
-              padding: 2rem;
-              text-align: center;
-              animation: fadeInUp 0.8s ease-out 0.2s both;
-            "
-          >
-            <div style="font-size: 3rem; color: white; margin-bottom: 1rem">
-              <i class="bx bx-star"></i>
+          <div class="concern-card">
+            <div style="font-size: 3rem; color: var(--accent-warm-light); margin-bottom: 1rem">
+              <i class="bx bx-shield-quarter"></i>
             </div>
-            <h3 style="color: white; margin-bottom: 1rem">Excellence</h3>
-            <p style="color: rgba(255, 255, 255, 0.9)">
-              We strive for excellence in every aspect of our business, from
-              product selection to customer service.
+            <h3 style="color: white; margin-bottom: 1rem">Honesty</h3>
+            <p style="color: rgba(255, 255, 255, 0.85)">
+              No miracle promises, no exaggerated transformations. Just honest
+              products and clear guidance you can trust.
             </p>
           </div>
-          <div
-            style="
-              background: rgba(255, 255, 255, 0.1);
-              backdrop-filter: blur(10px);
-              border-radius: 20px;
-              padding: 2rem;
-              text-align: center;
-              animation: fadeInUp 0.8s ease-out 0.3s both;
-            "
-          >
-            <div style="font-size: 3rem; color: white; margin-bottom: 1rem">
-              <i class="bx bx-smile"></i>
+          <div class="concern-card">
+            <div style="font-size: 3rem; color: var(--accent-warm-light); margin-bottom: 1rem">
+              <i class="bx bx-calendar-check"></i>
             </div>
-            <h3 style="color: white; margin-bottom: 1rem">
-              Customer Satisfaction
-            </h3>
-            <p style="color: rgba(255, 255, 255, 0.9)">
-              Your happiness is our success. We go above and beyond to ensure
-              every customer has an amazing experience.
+            <h3 style="color: white; margin-bottom: 1rem">Consistency</h3>
+            <p style="color: rgba(255, 255, 255, 0.85)">
+              Good haircare is a rhythm, not a one-off. We build products that
+              are easy to keep up — consistently.
             </p>
           </div>
-          <div
-            style="
-              background: rgba(255, 255, 255, 0.1);
-              backdrop-filter: blur(10px);
-              border-radius: 20px;
-              padding: 2rem;
-              text-align: center;
-              animation: fadeInUp 0.8s ease-out 0.4s both;
-            "
-          >
-            <div style="font-size: 3rem; color: white; margin-bottom: 1rem">
+          <div class="concern-card">
+            <div style="font-size: 3rem; color: var(--accent-warm-light); margin-bottom: 1rem">
               <i class="bx bx-leaf"></i>
             </div>
-            <h3 style="color: white; margin-bottom: 1rem">Authenticity</h3>
-            <p style="color: rgba(255, 255, 255, 0.9)">
-              We believe in genuine products and honest relationships with our
-              customers. No fake promises, just real quality.
+            <h3 style="color: white; margin-bottom: 1rem">Natural Care</h3>
+            <p style="color: rgba(255, 255, 255, 0.85)">
+              Thoughtful formulations with natural, effective ingredients —
+              because your scalp deserves care, not harsh stripping.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-cream">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">What We Offer</h2>
+          <h2 class="section-title">What AkuSparkle Offers</h2>
           <p class="section-subtitle">
-            A curated selection of fragrances for every preference
+            A simple, intentional system for washing, treating and sealing your
+            hair
           </p>
         </div>
         <div
@@ -198,162 +161,72 @@
             gap: 2rem;
           "
         >
-          <div
-            style="
-              background: white;
-              border-radius: 20px;
-              padding: 2rem;
-              box-shadow: var(--shadow-md);
-              animation: fadeInUp 0.8s ease-out 0.1s both;
-            "
-          >
-            <div
-              style="
-                width: 60px;
-                height: 60px;
-                background: var(--gradient-primary);
-                border-radius: 12px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 2rem;
-                color: white;
-                margin-bottom: 1.5rem;
-              "
-            >
-              <i class="bx bxs-droplet"></i>
-            </div>
-            <h3 style="margin-bottom: 1rem; color: var(--primary-blue)">
-              Oil Perfumes
-            </h3>
+          <div class="guide-card">
+            <i class="bx bx-droplet"></i>
+            <h3 style="color: var(--color-black)">Shampoos</h3>
             <p>
-              Long-lasting, concentrated fragrances that evolve beautifully on
-              your skin. Our oil-based perfumes are perfect for those who
-              appreciate depth and complexity in their scent.
+              Gentle cleansers that respect your scalp's natural balance while
+              leaving hair clean and ready for care.
             </p>
           </div>
-          <div
-            style="
-              background: white;
-              border-radius: 20px;
-              padding: 2rem;
-              box-shadow: var(--shadow-md);
-              animation: fadeInUp 0.8s ease-out 0.2s both;
-            "
-          >
-            <div
-              style="
-                width: 60px;
-                height: 60px;
-                background: var(--gradient-primary);
-                border-radius: 12px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 2rem;
-                color: white;
-                margin-bottom: 1.5rem;
-              "
-            >
-              <i class="bx bx-cloud"></i>
-            </div>
-            <h3 style="margin-bottom: 1rem; color: var(--primary-blue)">
-              Body Sprays & Mists
-            </h3>
+          <div class="guide-card">
+            <i class="bx bx-heart"></i>
+            <h3 style="color: var(--color-black)">Conditioners</h3>
             <p>
-              Light, refreshing fragrances perfect for everyday wear. Our body
-              sprays and mists provide a subtle scent that keeps you fresh
-              throughout the day.
+              Deep repair and moisture to restore softness and strength where
+              hair is driest and most fragile.
             </p>
           </div>
-          <div
-            style="
-              background: white;
-              border-radius: 20px;
-              padding: 2rem;
-              box-shadow: var(--shadow-md);
-              animation: fadeInUp 0.8s ease-out 0.3s both;
-            "
-          >
-            <div
-              style="
-                width: 60px;
-                height: 60px;
-                background: var(--gradient-primary);
-                border-radius: 12px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 2rem;
-                color: white;
-                margin-bottom: 1.5rem;
-              "
-            >
-              <i class="bx bxs-circle"></i>
-            </div>
-            <h3 style="margin-bottom: 1rem; color: var(--primary-blue)">
-              Roll-Ons
-            </h3>
+          <div class="guide-card">
+            <i class="bx bx-water"></i>
+            <h3 style="color: var(--color-black)">Hair & Scalp Oils</h3>
             <p>
-              Convenient and travel-friendly, our roll-on perfumes are perfect
-              for on-the-go touch-ups. Small enough for your pocket, powerful
-              enough to make an impression.
+              Light, sealing oils that lock in hydration and nourish the scalp
+              — the foundation of healthy growth.
             </p>
           </div>
-          <div
-            style="
-              background: white;
-              border-radius: 20px;
-              padding: 2rem;
-              box-shadow: var(--shadow-md);
-              animation: fadeInUp 0.8s ease-out 0.4s both;
-            "
-          >
-            <div
-              style="
-                width: 60px;
-                height: 60px;
-                background: var(--gradient-primary);
-                border-radius: 12px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 2rem;
-                color: white;
-                margin-bottom: 1.5rem;
-              "
-            >
-              <i class="bx bxs-bottle"></i>
-            </div>
-            <h3 style="margin-bottom: 1rem; color: var(--primary-blue)">
-              Premium Perfumes
-            </h3>
+          <div class="guide-card">
+            <i class="bx bx-leaf"></i>
+            <h3 style="color: var(--color-black)">Leave-in & Treatments</h3>
             <p>
-              Our flagship collection featuring sophisticated, luxurious
-              fragrances that make a statement. These are the scents that define
-              elegance.
+              Repair creams, moisture masks and scalp care for the times your
+              hair needs something more.
+            </p>
+          </div>
+          <div class="guide-card">
+            <i class="bx bx-trim"></i>
+            <h3 style="color: var(--color-black)">Styling & Protection</h3>
+            <p>
+              Gentle hold, edges care and daily protection that never strips
+              your hair of what it needs.
+            </p>
+          </div>
+          <div class="guide-card">
+            <i class="bx bx-message-rounded-dots"></i>
+            <h3 style="color: var(--color-black)">Consultations</h3>
+            <p>
+              Not sure where to start? We'll help you read your hair and build
+              a routine that actually fits it.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section
-      class="section"
-      style="background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%)"
-    >
+    <section class="section section-sand">
       <div class="container text-center">
-        <h2 style="margin-bottom: 1rem">Experience the Empier Difference</h2>
+        <p class="eyebrow" style="justify-content: center">Join Us</p>
+        <h2 style="margin-bottom: 1rem">Give your hair the attention it deserves</h2>
         <p
           style="
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--color-gray);
-            max-width: 700px;
+            max-width: 620px;
             margin: 0 auto 2rem;
           "
         >
-          Join thousands of satisfied customers who have made Empier Scents
-          their fragrance destination of choice.
+          Start with the right products, guided by honest care. Your hair will
+          thank you — one strand at a time.
         </p>
         <div
           style="
@@ -364,12 +237,12 @@
           "
         >
           <a href="products.html" class="btn btn-primary">
-            <span class="btn-text">Shop Collection</span>
+            <span class="btn-text">Shop AkuSparkle</span>
             <i class="bx bx-right-arrow-alt"></i>
           </a>
-          <a href="contact.html" class="btn btn-secondary">
-            <span class="btn-text">Get in Touch</span>
-            <i class="bx bx-message-dots"></i>
+          <a href="index.html#contact" class="btn btn-secondary">
+            <span class="btn-text">Book a Consultation</span>
+            <i class="bx bx-message-rounded-dots"></i>
           </a>
         </div>
       </div>
@@ -379,16 +252,17 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
-            <h3>Empier Scents</h3>
-            <p>Your premier destination for luxury fragrances.</p>
+            <h3>AkuSparkle</h3>
+            <p>Thoughtful haircare, one strand at a time.</p>
           </div>
           <div class="footer-section">
             <h3>Quick Links</h3>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-            <a href="cart.html">Shopping Cart</a>
+            <a href="products.html">Shop</a>
+            <a href="index.html#guide">Haircare Guide</a>
+            <a href="index.html#story">Our Story</a>
+            <a href="index.html#consultations">Consultations</a>
+            <a href="index.html#faq">FAQs</a>
+            <a href="index.html#contact">Contact</a>
           </div>
           <div class="footer-section">
             <h3>Contact Info</h3>
@@ -400,21 +274,15 @@
           <div class="footer-section">
             <h3>Follow Us</h3>
             <div class="social-links">
-              <a href="#" class="social-link"
-                ><i class="bx bxl-facebook"></i
-              ></a>
-              <a href="#" class="social-link"
-                ><i class="bx bxl-instagram"></i
-              ></a>
+              <a href="#" class="social-link"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="social-link"><i class="bx bxl-instagram"></i></a>
               <a href="#" class="social-link"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="social-link"
-                ><i class="bx bxl-whatsapp"></i
-              ></a>
+              <a href="#" class="social-link"><i class="bx bxl-whatsapp"></i></a>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2026 Empier Scents. All rights reserved.</p>
+          <p>&copy; 2026 AkuSparkle. All rights reserved.</p>
         </div>
       </div>
     </footer>

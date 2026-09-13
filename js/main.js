@@ -1,5 +1,5 @@
 // Main Application JavaScript
-// Empier Scents - Premium Fragrance E-commerce
+// AkuSparkle - Thoughtful Haircare
 
 document.addEventListener('DOMContentLoaded', function() {
     App.init();
@@ -81,8 +81,8 @@ const ThemeManager = {
     },
 
     createToggle() {
-        const navMenu = document.querySelector('.nav-menu');
-        if (!navMenu) return;
+        const menuItem = document.querySelector('.theme-toggle-item');
+        if (!menuItem) return;
 
         const themeBtn = document.createElement('button');
         themeBtn.className = 'theme-toggle';
@@ -93,11 +93,7 @@ const ThemeManager = {
         this.updateIcon(currentTheme);
 
         themeBtn.addEventListener('click', () => this.toggle());
-        
-        const cartLi = navMenu.querySelector('li:last-child');
-        if (cartLi) {
-            navMenu.insertBefore(themeBtn, cartLi);
-        }
+        menuItem.appendChild(themeBtn);
     }
 };
 
@@ -301,11 +297,12 @@ const ProductCard = {
 
     getCategoryName(slug) {
         const map = {
-            'oil-perfume': 'Oil Perfume',
-            'body-spray': 'Body Spray',
-            'body-mist': 'Body Mist',
-            'roll-on': 'Roll-On',
-            'perfume': 'Perfume'
+            'shampoo': 'Shampoo',
+            'conditioner': 'Conditioner',
+            'hair-oil': 'Hair & Scalp Oil',
+            'leave-in': 'Leave-in',
+            'treatment': 'Treatment',
+            'styling': 'Styling'
         };
         return map[slug] || slug;
     }
@@ -603,7 +600,7 @@ const ScrollAnimations = {
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.section-header, .product-card, .category-card, .stat-card').forEach(el => {
+        document.querySelectorAll('.section-header, .product-card, .category-card, .stat-card, .step-card, .guide-card, .testimonial-card, .nugget-card, .founder-content, .statement, .concern-card').forEach(el => {
             observer.observe(el);
         });
     }
@@ -805,7 +802,7 @@ const AdminPage = {
     openAddModal() {
         document.getElementById('editId').value = '';
         document.getElementById('editName').value = '';
-        document.getElementById('editCategory').value = 'perfume';
+        document.getElementById('editCategory').value = 'shampoo';
         document.getElementById('editPrice').value = '';
         document.getElementById('editImage').value = '';
         document.getElementById('editImageFile').value = '';

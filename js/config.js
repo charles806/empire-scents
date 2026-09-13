@@ -109,108 +109,93 @@ function getLocalProducts() {
 const DEFAULT_PRODUCTS = [
     {
         id: 5,
-        name: "Ocean Breeze",
-        category: "perfume",
-        price: 4500,
-        image: "images/body-spray-1.jpg",
-        badge: "Fresh"
-    },
-    {
-        id: 6,
-        name: "Kaly",
-        category: "perfume",
-        price: 10500,
-        image: "images/body-spray-2.jpg",
-        badge: "New"
-    },
-    {
-        id: 7,
-        name: "Kamrah 30ml",
-        category: "perfume",
-        price: 4500,
-        image: "images/body-spray-3.jpg",
-        badge: ""
-    },
-    {
-        id: 8,
-        name: "Bakarrat 30ml",
-        category: "perfume",
-        price: 4500,
-        image: "images/image.png",
+        name: "Strengthening Shampoo",
+        category: "shampoo",
+        price: 8000,
+        image: "images/products/shampoo.jpg",
         badge: "Bestseller"
     },
     {
-        id: 9,
-        name: "My Way",
-        category: "perfume",
-        price: 4500,
-        image: "images/image copy.png",
-        badge: "Light"
-    },
-    {
-        id: 10,
-        name: "Ophylia",
-        category: "perfume",
-        price: 4500,
-        image: "images/opheli.png",
-        badge: "Sweet"
-    },
-    {
-        id: 11,
-        name: "Eclaire X Sugar Pink",
-        category: "perfume",
-        price: 9000,
-        image: "images/image copy 2.png",
-        badge: "New"
-    },
-    {
-        id: 12,
-        name: "Avanti",
-        category: "perfume",
-        price: 4500,
-        image: "images/image copy 3.png",
+        id: 6,
+        name: "Deep Repair Conditioner",
+        category: "conditioner",
+        price: 8500,
+        image: "images/products/conditioner.jpg",
         badge: ""
     },
     {
-        id: 13,
-        name: "Asad X Avantos",
-        category: "perfume",
+        id: 7,
+        name: "Hair & Scalp Oil",
+        category: "hair-oil",
         price: 9000,
-        image: "images/image copy 4.png",
-        badge: "Travel"
+        image: "images/products/hair-oil.jpg",
+        badge: "Bestseller"
+    },
+    {
+        id: 8,
+        name: "Leave-in Repair Cream",
+        category: "leave-in",
+        price: 7500,
+        image: "images/products/leave-in.jpg",
+        badge: "New"
+    },
+    {
+        id: 9,
+        name: "Moisture Restore Mask",
+        category: "treatment",
+        price: 9500,
+        image: "images/products/mask.jpg",
+        badge: ""
+    },
+    {
+        id: 10,
+        name: "Gentle Clarifying Rinse",
+        category: "shampoo",
+        price: 6500,
+        image: "images/products/clarifying.jpg",
+        badge: "New"
+    },
+    {
+        id: 11,
+        name: "Edges & Hairline Butter",
+        category: "styling",
+        price: 7000,
+        image: "images/products/edges-butter.jpg",
+        badge: ""
+    },
+    {
+        id: 12,
+        name: "Satin Bonding Serum",
+        category: "leave-in",
+        price: 8500,
+        image: "images/products/serum.jpg",
+        badge: "Bestseller"
+    },
+    {
+        id: 13,
+        name: "Scalp Balance Scrub",
+        category: "treatment",
+        price: 8000,
+        image: "images/products/scalp-scrub.jpg",
+        badge: "New"
     },
     {
         id: 14,
-        name: "Berries Weekend X Now men",
-        category: "perfume",
-        price: 9000,
-        image: "images/image copy 5.png",
-        badge: "Woody"
-    },
-    {
-        id: 15,
-        name: "Yara",
-        category: "perfume",
-        price: 4500,
-        image: "images/image copy 6.png",
-        badge: "Cool"
-    },
-    {
-        id: 16,
-        name: "Asad",
-        category: "perfume",
-        price: 4500,
-        image: "images/image copy 7.png",
+        name: "Everyday Soft Hold Gel",
+        category: "styling",
+        price: 6500,
+        image: "images/products/soft-gel.jpg",
         badge: ""
     }
 ];
 
 const CATEGORIES = [
-    { name: "Oil Perfume", slug: "oil-perfume", image: "images/category-oil.jpg" },
-    { name: "Body Spray", slug: "body-spray", image: "images/category-spray.jpg" },
-    { name: "Body Mist", slug: "body-mist", image: "images/category-mist.jpg" },
-    { name: "Roll-On", slug: "roll-on", image: "images/category-rollon.jpg" },
-    { name: "Perfumes", slug: "perfume", image: "images/category-perfume.jpg" }
+    { name: "Shampoo", slug: "shampoo", image: "images/products/shampoo.jpg" },
+    { name: "Conditioner", slug: "conditioner", image: "images/products/conditioner.jpg" },
+    { name: "Hair & Scalp Oil", slug: "hair-oil", image: "images/products/hair-oil.jpg" },
+    { name: "Leave-in", slug: "leave-in", image: "images/products/leave-in.jpg" },
+    { name: "Treatments", slug: "treatment", image: "images/products/mask.jpg" },
+    { name: "Styling", slug: "styling", image: "images/products/soft-gel.jpg" }
 ];
 
 const PAYMENT_DETAILS = {
