@@ -35,7 +35,7 @@
     </header>
 
     <section class="cart-container">
-      <div class="container-small">
+      <div class="container-narrow">
         <div class="section-header">
           <h1 class="section-title">Complete Your Order</h1>
           <p class="section-subtitle">
@@ -43,7 +43,7 @@
           </p>
         </div>
 
-        <div class="payment-container" style="grid-template-columns: 1fr">
+        <div class="payment-container">
           <div class="payment-section">
             <h2><i class="bx bxs-bank"></i> Bank Transfer Details</h2>
 
@@ -55,55 +55,24 @@
               <div class="bank-detail-item">
                 <span class="bank-detail-label">Account Number:</span>
                 <span class="bank-detail-value">
-                  <span
-                    id="accountNumber"
-                    style="font-size: 1.4rem; font-weight: 700"
-                    >9073824064</span
-                  >
-                  <button class="copy-btn" onclick="copyAccountNumber()">
+                  <span id="accountNumber" class="account-number">9073824064</span>
+                  <button class="copy-btn btn btn-ghost btn--sm" onclick="copyAccountNumber()">
                     <i class="bx bx-copy"></i> Copy
                   </button>
                 </span>
               </div>
               <div class="bank-detail-item">
                 <span class="bank-detail-label">Account Name:</span>
-                <span class="bank-detail-value" id="accountName"
-                  >Egwim Gift Rosemary</span
-                >
+                <span class="bank-detail-value" id="accountName">Egwim Gift Rosemary</span>
               </div>
             </div>
 
-            <div
-              style="
-                background: linear-gradient(
-                  135deg,
-                  rgba(24, 43, 33, 0.08),
-                  rgba(156, 179, 154, 0.12)
-                );
-                border-radius: 16px;
-                padding: 1.5rem;
-                margin-top: 1.5rem;
-              "
-            >
-              <h4
-                style="
-                  color: var(--primary-blue);
-                  margin-bottom: 1rem;
-                  display: flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                "
-              >
-                <i class="bx bx-info-circle" style="font-size: 1.3rem"></i>
+            <div class="payment-instructions">
+              <h4>
+                <i class="bx bx-info-circle"></i>
                 Payment Instructions
               </h4>
-              <ol
-                style="
-                  color: var(--color-gray);
-                  line-height: 2;
-                  padding-left: 1.5rem;
-                "
-              >
+              <ol>
                 <li>Transfer the exact amount to the account above</li>
                 <li>Keep your payment receipt or screenshot</li>
                 <li>Click the WhatsApp button below to send your receipt</li>
@@ -112,12 +81,8 @@
               </ol>
             </div>
 
-            <button
-              class="whatsapp-btn"
-              onclick="sendWhatsAppReceipt()"
-              style="margin-top: 2rem"
-            >
-              <i class="bx bxl-whatsapp" style="font-size: 1.5rem"></i>
+            <button class="btn btn-accent btn--full btn--whatsapp" onclick="sendWhatsAppReceipt()">
+              <i class="bx bxl-whatsapp"></i>
               <span>Send Receipt on WhatsApp</span>
             </button>
           </div>
@@ -126,42 +91,15 @@
             <h2>Order Summary</h2>
             <div id="orderSummary"></div>
 
-            <div
-              style="
-                background: var(--gradient-primary);
-                border-radius: 16px;
-                padding: 1.5rem;
-                margin-top: 1.5rem;
-                text-align: center;
-                color: white;
-              "
-            >
-              <p
-                style="
-                  color: rgba(255, 255, 255, 0.9);
-                  margin-bottom: 0.5rem;
-                  font-size: 0.9rem;
-                "
-              >
-                Need Help?
-              </p>
-              <p style="color: white; font-weight: 600; font-size: 1.1rem">
-                <i class="bx bxl-whatsapp"></i> 07040062388
-              </p>
-              <p
-                style="
-                  color: rgba(255, 255, 255, 0.9);
-                  margin-top: 0.5rem;
-                  font-size: 0.9rem;
-                "
-              >
-                We're here to assist you
-              </p>
+            <div class="support-box">
+              <p>Need Help?</p>
+              <p class="support-phone"><i class="bx bxl-whatsapp"></i> 07040062388</p>
+              <p>We're here to assist you</p>
             </div>
           </div>
         </div>
 
-        <div class="text-center" style="margin-top: 2rem">
+        <div class="text-center mt-5">
           <a href="cart.html" class="btn btn-secondary">
             <i class="bx bx-left-arrow-alt"></i>
             <span class="btn-text">Back to Cart</span>

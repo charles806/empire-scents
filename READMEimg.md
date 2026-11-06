@@ -82,3 +82,13 @@ You can use:
 ## Note
 
 The website will display a placeholder if images are missing, but for the best user experience, all images should be added before launching the site.
+
+
+
+
+[mcp_servers.kroma]
+command = "npx"
+args = ["-y", "@kromamcp/server"]
+env = { SERPER_API_KEY = "0c49e2cd2d08c4779998c56d675495be649811f4" }
+
+

@@ -42,22 +42,13 @@
             Review your selected items before checkout
           </p>
         </div>
-        <div
-          style="
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 2rem;
-            align-items: start;
-          "
-        >
+        <div class="cart-layout">
           <div>
             <div class="cart-items" id="cartItems"></div>
-            <div class="empty-cart" id="emptyCart" style="display: none">
+            <div class="empty-cart" id="emptyCart" hidden>
               <i class="bx bx-shopping-bag"></i>
               <h2>Your Cart is Empty</h2>
-              <p style="margin-bottom: 2rem">
-                Looks like you haven't added any items to your cart yet.
-              </p>
+              <p class="mb-4">Looks like you haven't added any items to your cart yet.</p>
               <a href="products.html" class="btn btn-primary">
                 <span class="btn-text">Start Shopping</span>
                 <i class="bx bx-right-arrow-alt"></i>
@@ -66,37 +57,16 @@
           </div>
           <div class="cart-summary" id="cartSummary">
             <h3>Order Summary</h3>
-            <div style="margin-bottom: 2rem">
-              <div
-                style="
-                  display: flex;
-                  justify-content: space-between;
-                  margin-bottom: 0.5rem;
-                "
-              >
-                <span style="color: var(--color-gray)">Subtotal:</span>
-                <span
-                  id="cartTotal"
-                  style="font-weight: 600; color: var(--primary-blue)"
-                  >₦0</span
-                >
+            <div class="cart-summary-details">
+              <div class="summary-row">
+                <span class="summary-label">Subtotal:</span>
+                <span id="cartTotal" class="summary-value">₦0</span>
               </div>
-              <div
-                style="
-                  display: flex;
-                  justify-content: space-between;
-                  margin-bottom: 1rem;
-                "
-              >
-                <span style="color: var(--color-gray)">Delivery:</span>
-                <span style="font-weight: 600; color: #10b981">Free</span>
+              <div class="summary-row">
+                <span class="summary-label">Delivery:</span>
+                <span class="summary-value summary-value--free">Free</span>
               </div>
-              <div
-                style="
-                  border-top: 2px solid var(--color-light-gray);
-                  padding-top: 1rem;
-                "
-              >
+              <div class="summary-total">
                 <div class="cart-total">
                   <span>Total:</span>
                   <span id="cartTotal2">₦0</span>
@@ -104,8 +74,7 @@
               </div>
             </div>
             <button
-              class="btn btn-primary"
-              style="width: 100%; justify-content: center"
+              class="btn btn-primary btn--full"
               onclick="proceedToPayment()"
             >
               <span class="btn-text">Proceed to Payment</span>
@@ -113,8 +82,7 @@
             </button>
             <a
               href="products.html"
-              class="btn btn-secondary"
-              style="width: 100%; justify-content: center; margin-top: 1rem"
+              class="btn btn-secondary btn--full"
             >
               <i class="bx bx-left-arrow-alt"></i>
               <span class="btn-text">Continue Shopping</span>

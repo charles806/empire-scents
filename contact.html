@@ -37,16 +37,10 @@
       </nav>
     </header>
 
-    <section
-      class="section"
-      style="
-        padding-top: 140px;
-        background: linear-gradient(135deg, #f3eee4 0%, #f7f2ea 100%);
-      "
-    >
+    <section class="section section-hero">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow" style="justify-content: center">Get in Touch</p>
+          <p class="eyebrow">Get in Touch</p>
           <h1 class="section-title">Let's talk about your hair</h1>
           <p class="section-subtitle">
             Questions, consultations or a routine that isn't quite working?
@@ -56,15 +50,12 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-dark">
       <div class="container">
         <div class="contact-container">
           <div class="contact-info">
             <h2>Contact Information</h2>
-            <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem">
-              Reach us through any of these channels. We'd love to hear from
-              you.
-            </p>
+            <p class="contact-intro">Reach us through any of these channels. We'd love to hear from you.</p>
 
             <div class="contact-item-full">
               <div class="contact-icon"><i class="bx bxl-whatsapp"></i></div>
@@ -98,77 +89,36 @@
               </div>
             </div>
 
-            <div
-              style="
-                margin-top: 2rem;
-                padding-top: 2rem;
-                border-top: 1px solid rgba(255, 255, 255, 0.2);
-              "
-            >
-              <h4 style="color: white; margin-bottom: 1rem">Business Hours</h4>
-              <p style="color: rgba(255, 255, 255, 0.9)">
-                Monday - Saturday: 9:00 AM - 7:00 PM<br />Sunday: 10:00 AM -
-                5:00 PM
-              </p>
+            <div class="business-hours">
+              <h4>Business Hours</h4>
+              <p>Monday - Saturday: 9:00 AM - 7:00 PM<br />Sunday: 10:00 AM - 5:00 PM</p>
             </div>
           </div>
 
           <div class="contact-form">
-            <h2 style="margin-bottom: 1.5rem">Send us a Message</h2>
+            <h2>Send us a Message</h2>
             <form id="contactForm">
-              <div class="form-group">
-                <label for="name">Your Name *</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Enter your full name"
-                />
+              <div class="form-field">
+                <label for="name" class="form-label">Your Name *</label>
+                <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name" />
               </div>
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="your@email.com"
-                />
+              <div class="form-field">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-input" required placeholder="your@email.com" />
               </div>
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Enter your phone number"
-                />
+              <div class="form-field">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number" />
               </div>
-              <div class="form-group">
-                <label for="subject">Subject *</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  placeholder="e.g., Consultation, product question"
-                />
+              <div class="form-field">
+                <label for="subject" class="form-label">Subject *</label>
+                <input type="text" id="subject" name="subject" class="form-input" required placeholder="e.g., Consultation, product question" />
               </div>
-              <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  placeholder="Tell us about your hair and what you need..."
-                ></textarea>
+              <div class="form-field">
+                <label for="message" class="form-label">Message *</label>
+                <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your hair and what you need..."></textarea>
               </div>
-              <button
-                type="submit"
-                class="btn btn-primary"
-                style="width: 100%; justify-content: center"
-              >
+              <button type="submit" class="btn btn-primary btn--full">
                 <span class="btn-text">Send Message</span>
                 <i class="bx bx-send"></i>
               </button>
@@ -178,31 +128,19 @@
       </div>
     </section>
 
-    <section
-      class="section section-dark"
-    >
+    <section class="section section-dark section-cta">
       <div class="container text-center">
-        <h2 style="color: white; margin-bottom: 1rem">Prefer to Chat?</h2>
-        <p
-          style="
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 2rem;
-            max-width: 580px;
-            margin-left: auto;
-            margin-right: auto;
-          "
-        >
+        <h2 class="section-title section-title--light mb-3">Prefer to Chat?</h2>
+        <p class="section-subtitle section-subtitle--constrained">
           Connect with us directly on WhatsApp for instant responses to your
           haircare questions.
         </p>
         <a
           href="https://wa.me/2347040062388"
           target="_blank"
-          class="btn btn-accent"
-          style="display: inline-flex"
+          class="btn btn-accent btn--whatsapp"
         >
-          <i class="bx bxl-whatsapp" style="font-size: 1.5rem"></i>
+          <i class="bx bxl-whatsapp"></i>
           <span class="btn-text">Chat on WhatsApp</span>
         </a>
       </div>

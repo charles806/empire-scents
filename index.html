@@ -12,7 +12,7 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=2" />
   </head>
   <body>
     <header class="header">
@@ -37,56 +37,58 @@
 
     <!-- Hero -->
     <section class="hero" id="top">
-      <div class="hero-split">
-        <div class="hero-copy">
-          <p class="hero-eyebrow">Thoughtful haircare. One strand at a time.</p>
-          <h1 class="hero-title">
-            Your hair deserves more than a routine. It deserves attention.
-          </h1>
-          <p class="hero-description">
-            At AkuSparkle, we create thoughtfully made haircare products and
-            practical guidance to help you understand, care for and maintain
-            your hair with confidence.
-          </p>
-          <div class="hero-cta">
-            <a href="products.html" class="btn btn-primary">
-              <span class="btn-text">Shop AkuSparkle</span>
-              <i class="bx bx-right-arrow-alt"></i>
-            </a>
-            <a href="#consultations" class="btn btn-secondary">
-              <span class="btn-text">Find What Your Hair Needs</span>
-            </a>
-          </div>
-          <p class="hero-meta">
-            Products <span>•</span> Haircare guidance <span>•</span>
-            Consultations
-          </p>
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Thoughtful haircare. One strand at a time.</p>
+        <h1 class="hero-title">
+          Your hair deserves more than a routine. It deserves attention.
+        </h1>
+        <p class="hero-description">
+          At AkuSparkle, we create thoughtfully made haircare products and
+          practical guidance to help you understand, care for and maintain
+          your hair with confidence.
+        </p>
+        <div class="hero-cta">
+          <a href="products.html" class="btn btn-primary">
+            <span class="btn-text">Shop AkuSparkle</span>
+            <i class="bx bx-right-arrow-alt"></i>
+          </a>
+          <a href="#consultations" class="btn btn-secondary">
+            <span class="btn-text">Find What Your Hair Needs</span>
+          </a>
         </div>
-        <div class="hero-visual">
-          <div class="hero-visual-bg"></div>
-          <img
-            src="images/hero-product.png"
-            alt="AkuSparkle haircare products"
-            onerror="this.onerror=null;this.src='images/placeholder.svg'"
-          />
-          <div class="hero-tag hero-tag--top">
+        <p class="hero-meta">
+          Products <span>•</span> Haircare guidance <span>•</span>
+          Consultations
+        </p>
+        <div class="hero-tags">
+          <div class="hero-tag">
             <i class="bx bx-leaf"></i> Thoughtfully made
           </div>
-          <div class="hero-tag hero-tag--bottom">
+          <div class="hero-tag">
             <i class="bx bx-heart"></i> Made with intention
           </div>
+          <div class="hero-tag">
+            <i class="bx bx-shield-quarter"></i> Natural ingredients
+          </div>
         </div>
+      </div>
+      <div class="hero-visual">
+        <img
+          src="images/logo.png"
+          alt="AkuSparkle haircare products"
+          onerror="this.onerror=null;this.src='images/placeholder.svg'"
+        />
       </div>
     </section>
 
     <!-- Brand statement -->
     <section class="statement">
       <div class="container">
+        <h2>Every hair strand deserves attention.</h2>
         <svg class="strand-rule" viewBox="0 0 160 28" fill="none" aria-hidden="true">
           <path d="M2 14 C 40 2, 120 26, 158 14" stroke="#C08A4D" stroke-width="2" stroke-linecap="round"/>
           <circle cx="158" cy="14" r="3.5" fill="#C08A4D"/>
         </svg>
-        <h2>Every hair strand deserves attention.</h2>
         <p>
           Your hair is unique. Your routine should be too. We believe good
           haircare starts with understanding what your hair needs, choosing
@@ -98,34 +100,32 @@
     <!-- About AkuSparkle -->
     <section class="section section-cream" id="about">
       <div class="container">
-        <div class="about-brand">
-          <div class="about-content">
-            <div class="about-text">
-              <h3>About AkuSparkle</h3>
-              <h2>Care that starts with understanding</h2>
-              <p>
-                AkuSparkle was built on a simple belief: your hair is not a
-                project to fix, it's a part of you to care for. We make
-                thoughtfully formulated haircare products and pair them with
-                honest, practical guidance.
-              </p>
-              <p>
-                Every product we create is intentional — made with natural,
-                effective ingredients and clear instructions, so you always
-                know what you're putting on your hair and why it matters.
-              </p>
-              <a href="#story" class="btn btn-primary" style="margin-top: 1rem">
-                <span class="btn-text">Our Story</span>
-                <i class="bx bx-right-arrow-alt"></i>
-              </a>
-            </div>
-            <div class="about-image">
-              <img
-                src="images/about.jpg"
-                alt="AkuSparkle haircare, made with intention"
-                onerror="this.onerror=null;this.src='images/placeholder.svg'"
-              />
-            </div>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>About AkuSparkle</h3>
+            <h2>Care that starts with understanding</h2>
+            <p>
+              AkuSparkle was built on a simple belief: your hair is not a
+              project to fix, it's a part of you to care for. We make
+              thoughtfully formulated haircare products and pair them with
+              honest, practical guidance.
+            </p>
+            <p>
+              Every product we create is intentional — made with natural,
+              effective ingredients and clear instructions, so you always
+              know what you're putting on your hair and why it matters.
+            </p>
+            <a href="#story" class="btn btn-primary mt-4">
+              <span class="btn-text">Our Story</span>
+              <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </div>
+          <div class="about-image">
+            <img
+              src="images/about.jpg"
+              alt="AkuSparkle haircare, made with intention"
+              onerror="this.onerror=null;this.src='images/placeholder.svg'"
+            />
           </div>
         </div>
       </div>
@@ -135,7 +135,7 @@
     <section class="section section-sand" id="shop">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow" style="justify-content: center">The Shop</p>
+          <p class="eyebrow text-center">The Shop</p>
           <h2 class="section-title">Thoughtfully made, for your hair</h2>
           <p class="section-subtitle">
             Simple, effective products for washing, treating and sealing your
@@ -143,7 +143,7 @@
           </p>
         </div>
         <div class="products-grid" id="featuredProducts"></div>
-        <div class="text-center" style="margin-top: 3rem">
+        <div class="text-center mt-5">
           <a href="products.html" class="btn btn-accent">
             <span class="btn-text">View All Products</span>
             <i class="bx bx-right-arrow-alt"></i>
@@ -156,7 +156,7 @@
     <section class="section section-dark" id="consultations">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow" style="justify-content: center">Hair Concerns</p>
+          <p class="eyebrow text-center">Hair Concerns</p>
           <h2 class="section-title">Find what your hair needs</h2>
           <p class="section-subtitle">
             Not sure where to start? Tell us what your hair is telling you and
@@ -165,27 +165,27 @@
         </div>
         <div class="concerns-grid">
           <div class="concern-card">
-            <i class="bx bx-block"></i>
+            <div class="concern-icon"><i class="bx bx-block"></i></div>
             <h3>Breakage</h3>
             <p>Brittle ends and strands that snap easily signal a need for protein and careful handling.</p>
           </div>
           <div class="concern-card">
-            <i class="bx bx-droplet"></i>
+            <div class="concern-icon"><i class="bx bx-droplet"></i></div>
             <h3>Dryness</h3>
             <p>Rough, thirsty hair needs moisture and sealing to hold hydration where it belongs.</p>
           </div>
           <div class="concern-card">
-            <i class="bx bx-line-chart"></i>
+            <div class="concern-icon"><i class="bx bx-line-chart"></i></div>
             <h3>Slow Growth</h3>
             <p>Growth happens at the scalp — healthy hair starts with a nourished foundation.</p>
           </div>
           <div class="concern-card">
-            <i class="bx bx-spa"></i>
+            <div class="concern-icon"><i class="bx bx-spa"></i></div>
             <h3>Scalp Care</h3>
             <p>An itchy or flaky scalp needs gentle cleansing and balance, not harsh stripping.</p>
           </div>
         </div>
-        <div class="text-center" style="margin-top: 3rem">
+        <div class="text-center mt-5">
           <a href="#contact" class="btn btn-accent">
             <i class="bx bx-message-rounded-dots"></i>
             <span class="btn-text">Book a Consultation</span>
@@ -198,7 +198,7 @@
     <section class="section section-cream" id="how">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow" style="justify-content: center">How It Works</p>
+          <p class="eyebrow text-center">How It Works</p>
           <h2 class="section-title">A simple cycle that respects your hair</h2>
           <p class="section-subtitle">
             Care is a rhythm, not a one-off. Three steps, repeated with
@@ -207,7 +207,7 @@
         </div>
         <div class="steps-grid">
           <div class="step-card">
-            <span class="step-num">1</span>
+            <div class="step-number">1</div>
             <h3>Understand</h3>
             <p>
               Know your hair type, its porosity and what it's asking for. We
@@ -215,7 +215,7 @@
             </p>
           </div>
           <div class="step-card">
-            <span class="step-num">2</span>
+            <div class="step-number">2</div>
             <h3>Choose</h3>
             <p>
               Pick the right products for your hair's needs — never more than
@@ -223,7 +223,7 @@
             </p>
           </div>
           <div class="step-card">
-            <span class="step-num">3</span>
+            <div class="step-number">3</div>
             <h3>Care Consistently</h3>
             <p>
               Stay consistent with a simple routine. Attention over time is
@@ -238,7 +238,7 @@
     <section class="section section-sand" id="guide">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow" style="justify-content: center">Haircare Guide</p>
+          <p class="eyebrow text-center">Haircare Guide</p>
           <h2 class="section-title">How to use, gently</h2>
           <p class="section-subtitle">
             The product is only half the story. Here's how to work with it.
@@ -246,7 +246,7 @@
         </div>
         <div class="guide-grid">
           <div class="guide-card">
-            <i class="bx bx-droplet"></i>
+            <div class="guide-icon"><i class="bx bx-droplet"></i></div>
             <h3>Wash</h3>
             <p>
               Cleanse with lukewarm water and massage the scalp with your
@@ -254,7 +254,7 @@
             </p>
           </div>
           <div class="guide-card">
-            <i class="bx bx-heart"></i>
+            <div class="guide-icon"><i class="bx bx-heart"></i></div>
             <h3>Treat</h3>
             <p>
               Apply treatments while hair is damp and detangled. Work through
@@ -262,7 +262,7 @@
             </p>
           </div>
           <div class="guide-card">
-            <i class="bx bx-shield-quarter"></i>
+            <div class="guide-icon"><i class="bx bx-shield-quarter"></i></div>
             <h3>Seal</h3>
             <p>
               Lock in hydration with a light oil. A little goes a long way —
@@ -270,7 +270,7 @@
             </p>
           </div>
           <div class="guide-card">
-            <i class="bx bx-moon"></i>
+            <div class="guide-icon"><i class="bx bx-moon"></i></div>
             <h3>Protect</h3>
             <p>
               Sleep on a satin or silk pillowcase to reduce friction, breakage
@@ -278,7 +278,7 @@
             </p>
           </div>
         </div>
-        <div class="text-center" style="margin-top: 3rem">
+        <div class="text-center mt-5">
           <a href="#faq" class="btn btn-secondary">
             <span class="btn-text">Read the FAQs</span>
           </a>
@@ -290,7 +290,7 @@
     <section class="section section-cream" id="testimonials">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow" style="justify-content: center">Kind Words</p>
+          <p class="eyebrow text-center">Kind Words</p>
           <h2 class="section-title">Everyone's hair benefits from attention</h2>
         </div>
         <div class="testimonials-grid">
@@ -362,7 +362,7 @@
     <section class="section section-cream" id="nuggets">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow" style="justify-content: center">Haircare Nuggets</p>
+          <p class="eyebrow text-center">Haircare Nuggets</p>
           <h2 class="section-title">Small notes for better hair</h2>
         </div>
         <div class="nuggets-grid">
@@ -380,7 +380,7 @@
     <section class="section section-sand" id="faq">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow" style="justify-content: center">FAQ</p>
+          <p class="eyebrow text-center">FAQ</p>
           <h2 class="section-title">Questions, answered honestly</h2>
         </div>
         <div class="faq-list">
@@ -470,25 +470,22 @@
             </div>
           </div>
           <div class="text-center">
-            <p style="color: rgba(255,255,255,0.85); margin-bottom: 1.5rem">
+            <p class="section-subtitle mb-4">
               Prefer the contact form? It sends straight to us on WhatsApp.
             </p>
             <a
               href="contact.html"
-              class="btn btn-primary"
-              style="background: white; color: var(--primary-blue)"
+              class="btn btn--ghost-white mb-3"
             >
               <span class="btn-text">Contact Page</span>
               <i class="bx bx-right-arrow-alt"></i>
             </a>
-            <div style="margin-top: 1rem"></div>
             <a
               href="https://wa.me/2347040062388"
               target="_blank"
-              class="btn btn-accent"
-              style="display: inline-flex"
+              class="btn btn-accent btn--whatsapp"
             >
-              <i class="bx bxl-whatsapp" style="font-size: 1.4rem"></i>
+              <i class="bx bxl-whatsapp"></i>
               <span class="btn-text">Chat on WhatsApp</span>
             </a>
           </div>

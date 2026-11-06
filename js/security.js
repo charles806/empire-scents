@@ -76,7 +76,7 @@ const Security = {
     },
 
     validateAdminPassword(password) {
-        const ADMIN_PASSWORD = 'EmiperAdmin2026!';
+        const ADMIN_PASSWORD = 'AkuSpakle123!';
         return password === ADMIN_PASSWORD;
     },
 
