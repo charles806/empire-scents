@@ -108,94 +108,52 @@ function getLocalProducts() {
 
 const DEFAULT_PRODUCTS = [
     {
-        id: 5,
-        name: "Strengthening Shampoo",
-        category: "shampoo",
-        price: 8000,
-        image: "images/products/shampoo.jpg",
-        badge: "Bestseller"
-    },
-    {
-        id: 6,
-        name: "Deep Repair Conditioner",
-        category: "conditioner",
-        price: 8500,
-        image: "images/products/conditioner.jpg",
-        badge: ""
-    },
-    {
-        id: 7,
-        name: "Hair & Scalp Oil",
-        category: "hair-oil",
-        price: 9000,
-        image: "images/products/hair-oil.jpg",
-        badge: "Bestseller"
-    },
-    {
-        id: 8,
-        name: "Leave-in Repair Cream",
-        category: "leave-in",
-        price: 7500,
-        image: "images/products/leave-in.jpg",
-        badge: "New"
-    },
-    {
-        id: 9,
-        name: "Moisture Restore Mask",
-        category: "treatment",
+        id: 1,
+        name: "Magic Mix - Dark Currant",
+        category: "magic-mix",
         price: 9500,
-        image: "images/products/mask.jpg",
-        badge: ""
-    },
-    {
-        id: 10,
-        name: "Gentle Clarifying Rinse",
-        category: "shampoo",
-        price: 6500,
-        image: "images/products/clarifying.jpg",
-        badge: "New"
-    },
-    {
-        id: 11,
-        name: "Edges & Hairline Butter",
-        category: "styling",
-        price: 7000,
-        image: "images/products/edges-butter.jpg",
-        badge: ""
-    },
-    {
-        id: 12,
-        name: "Satin Bonding Serum",
-        category: "leave-in",
-        price: 8500,
-        image: "images/products/serum.jpg",
+        image: "images/placeholder.svg",
         badge: "Bestseller"
     },
     {
-        id: 13,
-        name: "Scalp Balance Scrub",
-        category: "treatment",
-        price: 8000,
-        image: "images/products/scalp-scrub.jpg",
+        id: 2,
+        name: "Magic Mix - Exotic Mix",
+        category: "magic-mix",
+        price: 9500,
+        image: "images/placeholder.svg",
         badge: "New"
     },
     {
-        id: 14,
-        name: "Everyday Soft Hold Gel",
-        category: "styling",
-        price: 6500,
-        image: "images/products/soft-gel.jpg",
+        id: 3,
+        name: "Hair Growth Oil",
+        category: "hair-oil",
+        price: 8500,
+        image: "images/placeholder.svg",
+        badge: "Bestseller"
+    },
+    {
+        id: 4,
+        name: "Scalp Cleanser",
+        category: "scalp-care",
+        price: 7500,
+        image: "images/placeholder.svg",
         badge: ""
+    },
+    {
+        id: 5,
+        name: "Beard Oil for Men",
+        category: "beard-care",
+        price: 7000,
+        image: "images/placeholder.svg",
+        badge: "New"
     }
 ];
 
 const CATEGORIES = [
-    { name: "Shampoo", slug: "shampoo", image: "images/products/shampoo.jpg" },
-    { name: "Conditioner", slug: "conditioner", image: "images/products/conditioner.jpg" },
-    { name: "Hair & Scalp Oil", slug: "hair-oil", image: "images/products/hair-oil.jpg" },
-    { name: "Leave-in", slug: "leave-in", image: "images/products/leave-in.jpg" },
-    { name: "Treatments", slug: "treatment", image: "images/products/mask.jpg" },
-    { name: "Styling", slug: "styling", image: "images/products/soft-gel.jpg" }
+    { name: "Magic Mix", slug: "magic-mix", image: "images/placeholder.svg" },
+    { name: "Hair Growth Oil", slug: "hair-oil", image: "images/placeholder.svg" },
+    { name: "Scalp Cleanser", slug: "scalp-care", image: "images/placeholder.svg" },
+    { name: "Beard Oil for Men", slug: "beard-care", image: "images/placeholder.svg" }
 ];
 
 const PAYMENT_DETAILS = {

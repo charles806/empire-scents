@@ -297,12 +297,10 @@ const ProductCard = {
 
     getCategoryName(slug) {
         const map = {
-            'shampoo': 'Shampoo',
-            'conditioner': 'Conditioner',
-            'hair-oil': 'Hair & Scalp Oil',
-            'leave-in': 'Leave-in',
-            'treatment': 'Treatment',
-            'styling': 'Styling'
+            'magic-mix': 'Magic Mix',
+            'hair-oil': 'Hair Growth Oil',
+            'scalp-care': 'Scalp Cleanser',
+            'beard-care': 'Beard Oil for Men'
         };
         return map[slug] || slug;
     }
@@ -802,7 +800,7 @@ const AdminPage = {
     openAddModal() {
         document.getElementById('editId').value = '';
         document.getElementById('editName').value = '';
-        document.getElementById('editCategory').value = 'shampoo';
+        document.getElementById('editCategory').value = 'magic-mix';
         document.getElementById('editPrice').value = '';
         document.getElementById('editImage').value = '';
         document.getElementById('editImageFile').value = '';

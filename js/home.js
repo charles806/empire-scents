@@ -1,5 +1,5 @@
 // AkuSparkle - Homepage behaviors
-// FAQ accordion + auto logo swap when images/akusparkle-logo.png is added
+// FAQ accordion
 
 document.addEventListener('DOMContentLoaded', function() {
     Homepage.init();
@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
 const Homepage = {
     init() {
         this.initFaq();
-        this.initLogo();
     },
 
     initFaq() {
@@ -31,14 +30,5 @@ const Homepage = {
                 }
             });
         });
-    },
-
-    initLogo() {
-        const logo = document.getElementById('siteLogo');
-        if (!logo) return;
-
-        const img = new Image();
-        img.onload = () => { logo.textContent = ''; logo.appendChild(img); };
-        img.src = 'images/akusparkle-logo.png';
     }
 };

@@ -20,14 +20,18 @@
         <a href="index.html" class="logo" id="siteLogo">AkuSparkle</a>
         <ul class="nav-menu">
           <li><a href="products.html" class="nav-link">Shop</a></li>
-          <li><a href="#guide" class="nav-link">Haircare Guide</a></li>
+          <li><a href="#consultations" class="nav-link">Consultation</a></li>
           <li><a href="#story" class="nav-link">Our Story</a></li>
-          <li><a href="#consultations" class="nav-link">Consultations</a></li>
+          <li><a href="#testimonials" class="nav-link">Clients' Reviews</a></li>
           <li class="theme-toggle-item"></li>
         </ul>
         <a href="products.html" class="nav-cta">
           Shop Now
           <i class="bx bx-right-arrow-alt"></i>
+        </a>
+        <a href="cart.html" class="cart-icon-wrapper" aria-label="Shopping cart">
+          <i class="bx bx-cart"></i>
+          <span class="cart-count" style="display: none;">0</span>
         </a>
         <button class="mobile-menu-toggle" aria-label="Open menu">
           <i class="bx bx-menu"></i>
@@ -72,29 +76,6 @@
           </div>
         </div>
       </div>
-      <div class="hero-visual">
-        <img
-          src="images/logo.png"
-          alt="AkuSparkle haircare products"
-          onerror="this.onerror=null;this.src='images/placeholder.svg'"
-        />
-      </div>
-    </section>
-
-    <!-- Brand statement -->
-    <section class="statement">
-      <div class="container">
-        <h2>Every hair strand deserves attention.</h2>
-        <svg class="strand-rule" viewBox="0 0 160 28" fill="none" aria-hidden="true">
-          <path d="M2 14 C 40 2, 120 26, 158 14" stroke="#C08A4D" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="158" cy="14" r="3.5" fill="#C08A4D"/>
-        </svg>
-        <p>
-          Your hair is unique. Your routine should be too. We believe good
-          haircare starts with understanding what your hair needs, choosing
-          products intentionally and staying consistent with your care.
-        </p>
-      </div>
     </section>
 
     <!-- About AkuSparkle -->
@@ -102,28 +83,28 @@
       <div class="container">
         <div class="about-content">
           <div class="about-text">
-            <h3>About AkuSparkle</h3>
-            <h2>Care that starts with understanding</h2>
-            <p>
+            <p class="eyebrow">About AkuSparkle</p>
+            <h2>Thoughtful haircare, one strand at a time.</h2>
+            <p class="lead">
               AkuSparkle was built on a simple belief: your hair is not a
               project to fix, it's a part of you to care for. We make
               thoughtfully formulated haircare products and pair them with
               honest, practical guidance.
             </p>
-            <p>
+            <p class="body-text">
               Every product we create is intentional — made with natural,
               effective ingredients and clear instructions, so you always
               know what you're putting on your hair and why it matters.
             </p>
-            <a href="#story" class="btn btn-primary mt-4">
+            <a href="#story" class="btn btn-primary">
               <span class="btn-text">Our Story</span>
               <i class="bx bx-right-arrow-alt"></i>
             </a>
           </div>
           <div class="about-image">
             <img
-              src="images/about.jpg"
-              alt="AkuSparkle haircare, made with intention"
+              src="images/about-lifestyle.jpg"
+              alt="A woman with natural hair smiling, representing AkuSparkle's thoughtful haircare approach"
               onerror="this.onerror=null;this.src='images/placeholder.svg'"
             />
           </div>
@@ -138,8 +119,7 @@
           <p class="eyebrow text-center">The Shop</p>
           <h2 class="section-title">Thoughtfully made, for your hair</h2>
           <p class="section-subtitle">
-            Simple, effective products for washing, treating and sealing your
-            hair — each one made to fit intentionally into your routine.
+            Simple, effective products for treating your hair.
           </p>
         </div>
         <div class="products-grid" id="featuredProducts"></div>
@@ -152,11 +132,11 @@
       </div>
     </section>
 
-    <!-- Hair concerns / consultations -->
+    <!-- Hair Guidance & Consultation -->
     <section class="section section-dark" id="consultations">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow text-center">Hair Concerns</p>
+          <p class="eyebrow text-center">Hair Guidance & Consultation</p>
           <h2 class="section-title">Find what your hair needs</h2>
           <p class="section-subtitle">
             Not sure where to start? Tell us what your hair is telling you and
@@ -184,6 +164,16 @@
             <h3>Scalp Care</h3>
             <p>An itchy or flaky scalp needs gentle cleansing and balance, not harsh stripping.</p>
           </div>
+          <div class="concern-card">
+            <div class="concern-icon"><i class="bx bx-heart"></i></div>
+            <h3>Treatment</h3>
+            <p>Targeted solutions for specific hair concerns, from deep repair to scalp nourishment.</p>
+          </div>
+          <div class="concern-card">
+            <div class="concern-icon"><i class="bx bx-brush"></i></div>
+            <h3>Styling</h3>
+            <p>Gentle hold and protection that keeps your style intact without compromising hair health.</p>
+          </div>
         </div>
         <div class="text-center mt-5">
           <a href="#contact" class="btn btn-accent">
@@ -194,103 +184,11 @@
       </div>
     </section>
 
-    <!-- How AkuSparkle works -->
-    <section class="section section-cream" id="how">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow text-center">How It Works</p>
-          <h2 class="section-title">A simple cycle that respects your hair</h2>
-          <p class="section-subtitle">
-            Care is a rhythm, not a one-off. Three steps, repeated with
-            intention.
-          </p>
-        </div>
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <h3>Understand</h3>
-            <p>
-              Know your hair type, its porosity and what it's asking for. We
-              help you read your strands instead of guessing.
-            </p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <h3>Choose</h3>
-            <p>
-              Pick the right products for your hair's needs — never more than
-              the routine requires, never less.
-            </p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <h3>Care Consistently</h3>
-            <p>
-              Stay consistent with a simple routine. Attention over time is
-              what makes the difference.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product education / how to use -->
-    <section class="section section-sand" id="guide">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow text-center">Haircare Guide</p>
-          <h2 class="section-title">How to use, gently</h2>
-          <p class="section-subtitle">
-            The product is only half the story. Here's how to work with it.
-          </p>
-        </div>
-        <div class="guide-grid">
-          <div class="guide-card">
-            <div class="guide-icon"><i class="bx bx-droplet"></i></div>
-            <h3>Wash</h3>
-            <p>
-              Cleanse with lukewarm water and massage the scalp with your
-              fingertips — not nails. Let your shampoo sit, then rinse fully.
-            </p>
-          </div>
-          <div class="guide-card">
-            <div class="guide-icon"><i class="bx bx-heart"></i></div>
-            <h3>Treat</h3>
-            <p>
-              Apply treatments while hair is damp and detangled. Work through
-              mid-lengths to ends, where hair is driest and most fragile.
-            </p>
-          </div>
-          <div class="guide-card">
-            <div class="guide-icon"><i class="bx bx-shield-quarter"></i></div>
-            <h3>Seal</h3>
-            <p>
-              Lock in hydration with a light oil. A little goes a long way —
-              warm it between your palms and press into the hair.
-            </p>
-          </div>
-          <div class="guide-card">
-            <div class="guide-icon"><i class="bx bx-moon"></i></div>
-            <h3>Protect</h3>
-            <p>
-              Sleep on a satin or silk pillowcase to reduce friction, breakage
-              and overnight moisture loss.
-            </p>
-          </div>
-        </div>
-        <div class="text-center mt-5">
-          <a href="#faq" class="btn btn-secondary">
-            <span class="btn-text">Read the FAQs</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- Testimonials -->
     <section class="section section-cream" id="testimonials">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow text-center">Kind Words</p>
+          <p class="eyebrow text-center">Clients' Reviews</p>
           <h2 class="section-title">Everyone's hair benefits from attention</h2>
         </div>
         <div class="testimonials-grid">
@@ -369,9 +267,12 @@
           <div class="nugget-card"><i class="bx bx-wind"></i><p><strong>Detangle from ends to roots.</strong> Start at the bottom and work upward to reduce breakage.</p></div>
           <div class="nugget-card"><i class="bx bx-water"></i><p><strong>Water is moisturiser.</strong> If hair is dry, it first needs water — then an oil to seal it in.</p></div>
           <div class="nugget-card"><i class="bx bx-calendar-check"></i><p><strong>Consistency beats intensity.</strong> A simple routine kept up beats a complex one abandoned.</p></div>
-          <div class="nugget-card"><i class="bx bx-trim"></i><p><strong>Trim the dead weight.</strong> Removing split ends helps the rest of your hair thrive.</p></div>
-          <div class="nugget-card"><i class="bx bx-sun"></i><p><strong>Protect from friction.</strong> Satin, loose styles and mindful handling protect your edges.</p></div>
-          <div class="nugget-card"><i class="bx bx-health"></i><p><strong>Scalp first.</strong> Healthy hair grows from a cared-for scalp. Don't skip it.</p></div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="https://wa.me/2349161090417" target="_blank" class="btn btn-accent btn--whatsapp">
+            <i class="bx bxl-whatsapp"></i>
+            <span class="btn-text" style="font-weight: 700;">SEE MORE</span>
+          </a>
         </div>
       </div>
     </section>
@@ -389,7 +290,7 @@
               How often should I wash my hair?
               <i class="bx bx-chevron-down"></i>
             </button>
-            <div class="faq-answer"><p>It depends on your hair type and lifestyle. As a starting point, once a week works for most — adjust based on how quickly your scalp produces oil and how your hair responds. Consistency matters more than frequency.</p></div>
+            <div class="faq-answer"><p>Once a week works for most hair types. We advise that you adjust based on your hair's needs.</p></div>
           </div>
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
@@ -403,7 +304,7 @@
               Will these products grow my hair?
               <i class="bx bx-chevron-down"></i>
             </button>
-            <div class="faq-answer"><p>We don't make miracle promises. Healthy hair grows from a cared-for scalp, good moisture, protection and consistency. Our products support that care — attention over time is what really works.</p></div>
+            <div class="faq-answer"><p>Our products support healthy hair growth. After giving your hair the attention it deserves, we will also work with you throughout your hair journey through weekly check-ins.</p></div>
           </div>
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
@@ -424,7 +325,7 @@
               Do you deliver?
               <i class="bx bx-chevron-down"></i>
             </button>
-            <div class="faq-answer"><p>Yes — delivery is available and free on orders. We're based in Rivers State, Nigeria and will confirm details with you directly when you place an order.</p></div>
+            <div class="faq-answer"><p>Yes, delivery is available. We are based in Port Harcourt, Nigeria, and will confirm the delivery details with you directly.</p></div>
           </div>
         </div>
       </div>
@@ -444,29 +345,33 @@
               <div class="contact-icon"><i class="bx bxl-whatsapp"></i></div>
               <div class="contact-details">
                 <h4>WhatsApp</h4>
-                <p>07040062388</p>
+                <p>09161090417</p>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon"><i class="bx bx-phone"></i></div>
               <div class="contact-details">
                 <h4>Phone</h4>
-                <p>09073824064</p>
+                <p>09116726766</p>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon"><i class="bx bx-envelope"></i></div>
               <div class="contact-details">
                 <h4>Email</h4>
-                <p>egwingift@gmail.com</p>
+                <p>akusparkle10@gmail.com</p>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon"><i class="bx bx-map"></i></div>
               <div class="contact-details">
                 <h4>Location</h4>
-                <p>Rivers State, Nigeria</p>
+                <p>Port Harcourt, Nigeria</p>
               </div>
+            </div>
+            <div class="business-hours">
+              <h4>Business Hours</h4>
+              <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
             </div>
           </div>
           <div class="text-center">
@@ -481,7 +386,7 @@
               <i class="bx bx-right-arrow-alt"></i>
             </a>
             <a
-              href="https://wa.me/2347040062388"
+              href="https://wa.me/2349161090417"
               target="_blank"
               class="btn btn-accent btn--whatsapp"
             >
@@ -507,18 +412,18 @@
           <div class="footer-section">
             <h3>Quick Links</h3>
             <a href="products.html">Shop</a>
-            <a href="#guide">Haircare Guide</a>
+            <a href="#consultations">Consultation</a>
             <a href="#story">Our Story</a>
-            <a href="#consultations">Consultations</a>
+            <a href="#testimonials">Clients' Reviews</a>
             <a href="#faq">FAQs</a>
             <a href="#contact">Contact</a>
           </div>
           <div class="footer-section">
             <h3>Contact Info</h3>
-            <p><i class="bx bxl-whatsapp"></i> WhatsApp: 07040062388</p>
-            <p><i class="bx bx-phone"></i> Call: 09073824064</p>
-            <p><i class="bx bx-envelope"></i> egwingift@gmail.com</p>
-            <p><i class="bx bx-map"></i> Rivers State, Nigeria</p>
+            <p><i class="bx bxl-whatsapp"></i> WhatsApp: 09161090417</p>
+            <p><i class="bx bx-phone"></i> Call: 09116726766</p>
+            <p><i class="bx bx-envelope"></i> akusparkle10@gmail.com</p>
+            <p><i class="bx bx-map"></i> Port Harcourt, Nigeria</p>
           </div>
           <div class="footer-section">
             <h3>Follow Us</h3>
