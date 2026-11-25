@@ -1,6 +1,3 @@
-// AkuSparkle - Homepage behaviors
-// FAQ accordion
-
 document.addEventListener('DOMContentLoaded', function() {
     Homepage.init();
 });
