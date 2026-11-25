@@ -28,7 +28,7 @@ A single-page marketing + e-commerce website for **AkuSparkle**, a thoughtful ha
 | `cart.html` | Shopping cart with quantity management |
 | `payment.html` | Checkout with bank transfer details |
 | `contact.html` | Contact form with WhatsApp integration |
-| `about.html` | Brand story (founder: Gift Egwim) |
+| `about.html` | Brand story (founder: Enyinna Akudo Treasure) |
 | `admin.html` | Admin dashboard (password protected) |
 
 ## Project Structure
@@ -60,7 +60,7 @@ Drop your files into `images/` — the site is already wired to these paths with
 images/akusparkle-logo.png   # Logo (auto-replaces the text wordmark)
 images/hero-product.png      # Hero product shot (clean, premium, natural)
 images/about.jpg             # Brand introduction image
-images/founder.jpg           # Founder portrait (Gift Egwim)
+images/founder.jpg           # Founder portrait (Enyinna Akudo Treasure)
 images/products/*.jpg        # Product shots (see js/config.js for filenames)
 ```
 
@@ -69,7 +69,7 @@ Each page hero/about section falls back to `images/placeholder.svg` until a real
 ## Admin Access
 
 - URL: `admin.html`
-- Password: `EmiperAdmin2026!` (set in `js/security.js`)
+- Password: `AkuSpakle123!` (set in `js/security.js`)
 
 ## Responsive Breakpoints
 
