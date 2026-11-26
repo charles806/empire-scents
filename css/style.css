@@ -593,6 +593,7 @@ p {
   display: flex;
   gap: var(--space-3);
   flex-wrap: wrap;
+  flex-direction: row !important;
   margin-bottom: var(--space-6);
 }
 
@@ -774,6 +775,7 @@ p {
   font-weight: 600;
   color: var(--charcoal);
   white-space: nowrap;
+  cursor: pointer;
   transition:
     border-color var(--transition-instant),
     box-shadow var(--transition-instant);
@@ -815,7 +817,7 @@ p {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-accent);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
 }
 
 .eyebrow::before {
@@ -1038,6 +1040,7 @@ p {
   padding: var(--space-5);
   text-align: left;
   transition: var(--transition-normal);
+  cursor: pointer;
 }
 
 .concern-card:hover {

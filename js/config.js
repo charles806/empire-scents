@@ -46,58 +46,64 @@ const ImageService = {
     }
 };
 
+const API_BASE = 'api';
+
 const ProductService = {
     async getAll() {
+        try {
+            const res = await fetch(API_BASE + '/products.php', { credentials: 'include' });
+            if (res.ok) return await res.json();
+        } catch (e) {}
         return getLocalProducts();
-    },
-
-    async getByCategory(category) {
-        const products = getLocalProducts();
-        return category === 'all' ? products : products.filter(p => p.category === category);
-    },
-
-    async getFeatured(limit = 4) {
-        const products = getLocalProducts();
-        const featured = products.filter(p => ['Bestseller', 'Premium', 'New'].includes(p.badge));
-        return featured.slice(0, limit);
-    },
-
-    async create(product) {
-        const products = getLocalProducts();
-        const newProduct = {
-            ...Security.sanitizeProduct(product),
-            id: Date.now(),
-            created_at: new Date().toISOString()
-        };
-        products.push(newProduct);
-        localStorage.setItem('products', JSON.stringify(products));
-        return newProduct;
-    },
-
-    async update(id, updates) {
-        const products = getLocalProducts();
-        const index = products.findIndex(p => p.id === id);
-        if (index !== -1) {
-            products[index] = { ...products[index], ...Security.sanitizeProduct(updates) };
-            localStorage.setItem('products', JSON.stringify(products));
-            return products[index];
-        }
-        return null;
-    },
-
-    async delete(id) {
-        const products = getLocalProducts();
-        const filtered = products.filter(p => p.id !== id);
-        localStorage.setItem('products', JSON.stringify(filtered));
-        return true;
     },
 
     async getCount() {
         const products = await this.getAll();
         return products.length;
+    },
+
+    async getByCategory(category) {
+        const products = await this.getAll();
+        return category === 'all' ? products : products.filter(p => p.category === category);
+    },
+
+    async getFeatured(limit = 4) {
+        const products = await this.getAll();
+        const featured = products.filter(p => ['Bestseller', 'Premium', 'New'].includes(p.badge));
+        return featured.slice(0, limit);
+    },
+
+    async create(product) {
+        const res = await fetch(API_BASE + '/products.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify(product)
+        });
+        if (res.ok) return await res.json();
+        throw new Error('Create failed');
+    },
+
+    async update(id, updates) {
+        const res = await fetch(API_BASE + '/products.php?id=' + id, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify(updates)
+        });
+        if (res.ok) return await res.json();
+        throw new Error('Update failed');
+    },
+
+    async delete(id) {
+        const res = await fetch(API_BASE + '/products.php?id=' + id, {
+            method: 'DELETE',
+            credentials: 'include'
+        });
+        if (res.ok) return await res.json();
+        throw new Error('Delete failed');
     }
 };
-
 function getLocalProducts() {
     const stored = localStorage.getItem('products');
     if (stored) {

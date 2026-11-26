@@ -1,0 +1,52 @@
+# Environment files
+.env
+.env.local
+.env.production
+
+# Docker
+docker-compose.override.yml
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database
+*.sql
+*.sqlite
+*.db
+
+# Backups
+backup_*.sql
+
+# Node modules (if any)
+node_modules/
+
+# Composer
+vendor/
+composer.phar
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+
+# Build artifacts
+dist/
+build/

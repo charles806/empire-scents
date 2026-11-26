@@ -626,11 +626,12 @@ const AdminPage = {
     products: [],
     
     async init() {
-        if (!Security.isAuthenticated()) {
-            this.showLoginModal();
-            return;
-        }
-        
+        try {
+            const res = await fetch('api/auth.php?action=check', { credentials: 'include' });
+            const data = await res.json();
+            if (!data.authenticated) { this.showLoginModal(); return; }
+        } catch (e) { this.showLoginModal(); return; }
+
         await this.loadProducts();
         this.render();
     },
@@ -640,18 +641,28 @@ const AdminPage = {
         if (modal) modal.classList.add('active');
     },
 
-    login(password) {
-        const result = Security.login(password);
-        if (result.success) {
-            document.getElementById('loginModal')?.classList.remove('active');
-            this.init();
-        } else {
-            Notification.show(result.error, 'error');
+    async login(password) {
+        try {
+            const res = await fetch('api/auth.php?action=login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify({ username: 'admin', password })
+            });
+            const data = await res.json();
+            if (data.success) {
+                document.getElementById('loginModal')?.classList.remove('active');
+                this.init();
+            } else {
+                Notification.show(data.error || 'Invalid password', 'error');
+            }
+        } catch (e) {
+            Notification.show('Login failed', 'error');
         }
     },
 
-    logout() {
-        Security.logout();
+    async logout() {
+        await fetch('api/auth.php?action=logout', { credentials: 'include' });
         window.location.reload();
     },
 
@@ -797,7 +808,12 @@ const AdminPage = {
         }
     },
 
-    openAddModal() {
+    async openAddModal() {
+        try {
+            const res = await fetch('api/auth.php?action=check', { credentials: 'include' });
+            const data = await res.json();
+            if (!data.authenticated) { this.showLoginModal(); return; }
+        } catch (e) { this.showLoginModal(); return; }
         document.getElementById('editId').value = '';
         document.getElementById('editName').value = '';
         document.getElementById('editCategory').value = 'magic-mix';

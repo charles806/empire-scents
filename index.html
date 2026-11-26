@@ -8,10 +8,7 @@
       content="AkuSparkle - Thoughtful haircare. One strand at a time. Thoughtfully made haircare products and practical guidance to help you understand, care for and maintain your hair with confidence."
     />
     <title>AkuSparkle - Thoughtful Haircare, One Strand at a Time</title>
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="css/vendor/boxicons.min.css?v=2" />
     <link rel="stylesheet" href="css/style.css?v=2" />
   </head>
   <body>
@@ -19,10 +16,16 @@
       <nav class="nav-container">
         <a href="index.html" class="logo" id="siteLogo">AkuSparkle</a>
         <ul class="nav-menu">
-          <li><a href="products.html" class="nav-link">Shop</a></li>
-          <li><a href="#consultations" class="nav-link">Consultation</a></li>
-          <li><a href="#story" class="nav-link">Our Story</a></li>
-          <li><a href="#testimonials" class="nav-link">Clients' Reviews</a></li>
+          <li>
+            <a href="index.html#consultations" class="nav-link">Consultation</a>
+          </li>
+          <li><a href="index.html#story" class="nav-link">Our Story</a></li>
+          <li>
+            <a href="index.html#testimonials" class="nav-link"
+              >Clients' Reviews</a
+            >
+          </li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
           <li class="theme-toggle-item"></li>
         </ul>
         <a href="products.html" class="nav-cta">
@@ -79,6 +82,17 @@
             <i class="bx bx-shield-quarter"></i> Natural ingredients
           </div>
         </div>
+      </div>
+
+      <div class="hero-visual">
+        <img
+          src="images/placeholder.jpg"
+          alt="A woman with natural hair, representing AkuSparkle's thoughtful haircare"
+          onerror="
+            this.onerror = null;
+            this.src = 'images/placeholder.svg';
+          "
+        />
       </div>
     </section>
 
@@ -145,6 +159,7 @@
       <div class="container">
         <div class="section-header">
           <p class="eyebrow text-center">Hair Guidance & Consultation</p>
+          <br />
           <h2 class="section-title">Find what your hair needs</h2>
           <p class="section-subtitle">
             Not sure where to start? Tell us what your hair is telling you and
@@ -215,6 +230,7 @@
       <div class="container">
         <div class="section-header">
           <p class="eyebrow text-center">Clients' Reviews</p>
+          <br />
           <h2 class="section-title">Everyone's hair benefits from attention</h2>
         </div>
         <div class="testimonials-grid">
@@ -265,10 +281,15 @@
             <h3>Our Story</h3>
             <h2>Built By Enyinna Akudo Treasure</h2>
             <p>
-              AkuSparkle was born when our founder, a hairstylist, noticed that behind many beautiful hairstyles were clients struggling with hair breakage, thinning and other hair concerns. Their struggles sparked a desire to find answers and do more than just style hair.
+              AkuSparkle was born when our founder, a hairstylist, noticed that
+              behind many beautiful hairstyles were clients struggling with hair
+              breakage, thinning and other hair concerns. Their struggles
+              sparked a desire to find answers and do more than just style hair.
             </p>
             <p>
-              Through research, learning and a passion for healthier hair, AkuSparkle came to life. Since 2025, we've supported over 100 people with haircare guidance and solutions.
+              Through research, learning and a passion for healthier hair,
+              AkuSparkle came to life. Since 2025, we've supported over 100
+              people with haircare guidance and solutions.
             </p>
             <a href="#contact" class="btn btn-primary">
               <span class="btn-text">Say Hello</span>
@@ -528,9 +549,9 @@
       </div>
     </footer>
 
-    <script src="js/config.js"></script>
-    <script src="js/security.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/config.js?v=2"></script>
+    <script src="js/security.js?v=2"></script>
+    <script src="js/main.js?v=2"></script>
     <script src="js/home.js"></script>
   </body>
 </html>

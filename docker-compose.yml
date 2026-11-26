@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - DB_HOST=db:3306
+      - DB_NAME=akusparkle
+      - DB_USER=akusparkle
+      - DB_PASS=akusparkle_password
+      - APP_ENV=development
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - akusparkle-network
+
+  db:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=akusparkle
+      - MYSQL_USER=akusparkle
+      - MYSQL_PASSWORD=akusparkle_password
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./api/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    ports:
+      - "3306:3306"
+    networks:
+      - akusparkle-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db_data:
+
+networks:
+  akusparkle-network:
+    driver: bridge
