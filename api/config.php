@@ -2,8 +2,9 @@
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 $isLocalhost = preg_match('/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/', $origin);
 $isPxllSpace = preg_match('/^https?:\/\/.*\.pxxl\.app$/', $origin);
+$isHostless = preg_match('/^https?:\/\/.*\.hostless\.run$/', $origin);
 
-if ($isLocalhost || $isPxllSpace) {
+if ($isLocalhost || $isPxllSpace || $isHostless) {
     header("Access-Control-Allow-Origin: $origin");
     header('Access-Control-Allow-Credentials: true');
 }

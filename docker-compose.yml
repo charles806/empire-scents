@@ -6,19 +6,26 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:80"
+      - "8080:8080"
     environment:
       - DB_HOST=db:3306
       - DB_NAME=akusparkle
       - DB_USER=akusparkle
       - DB_PASS=akusparkle_password
       - APP_ENV=development
+      - PORT=8080
     volumes:
       - .:/var/www/html
     depends_on:
       - db
     networks:
       - akusparkle-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health.php"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
 
   db:
     image: mysql:8.0

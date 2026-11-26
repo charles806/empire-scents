@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# AkuSparkle Deployment Script for Pxxl Space
+# AkuSparkle Deployment Script for Hostless.cloud
 # Usage: ./deploy.sh [environment]
 # Environment: production (default), staging
 
@@ -8,7 +8,6 @@ set -e
 
 ENVIRONMENT=${1:-production}
 PROJECT_NAME="akusparkle"
-REGISTRY="pxxl.app"
 
 echo "🚀 Starting deployment for $ENVIRONMENT..."
 
@@ -30,16 +29,23 @@ fi
 echo "📦 Building Docker image..."
 docker build -t $PROJECT_NAME:$ENVIRONMENT .
 
-echo "🏷️  Tagging image for Pxxl Space..."
-docker tag $PROJECT_NAME:$ENVIRONMENT $REGISTRY/$PROJECT_NAME:$ENVIRONMENT
-
-echo "📤 Pushing to Pxxl Space registry..."
-docker push $REGISTRY/$PROJECT_NAME:$ENVIRONMENT
-
-echo "🔄 Deploying to Pxxl Space..."
-# Pxxl Space deployment - this will depend on their CLI or API
-# For now, we'll use docker-compose on the server
-# You may need to adapt this based on Pxxl Space's deployment method
-
-echo "✅ Deployment complete!"
-echo "🌐 Your app should be available at: https://$PROJECT_NAME.pxxl.app"
+echo "✅ Docker image built successfully!"
+echo ""
+echo "📋 Next steps for Hostless.cloud deployment:"
+echo "1. Push this repository to GitHub/GitLab"
+echo "2. Connect your repository to Hostless.cloud dashboard"
+echo "3. Hostless will automatically detect the Dockerfile"
+echo "4. Set the following environment variables in Hostless dashboard:"
+echo "   - DB_HOST=$DB_HOST"
+echo "   - DB_NAME=$DB_NAME"
+echo "   - DB_USER=$DB_USER"
+echo "   - DB_PASS=$DB_PASS"
+echo "   - APP_ENV=production"
+echo "   - PORT=8080 (set automatically by Hostless)"
+echo "5. Configure health check path: /health.php"
+echo "6. Deploy!"
+echo ""
+echo "🌐 Your app will be available at: https://<your-app>.hostless.run"
+echo ""
+echo "For local testing with Docker Compose:"
+echo "  docker-compose -f docker-compose.prod.yml up -d"

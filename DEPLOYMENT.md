@@ -1,22 +1,23 @@
 # AkuSparkle Deployment Guide
 
-This guide covers deploying the AkuSparkle application to **Pxxl Space (pxxl.app)** with **AWS RDS (MySQL)** as the database.
+This guide covers deploying the AkuSparkle application to **Hostless.cloud** with **AWS RDS (MySQL)** as the database.
 
 ## Architecture Overview
 
 ```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   Client    │────▶│  Pxxl Space │────▶│  AWS RDS    │
-│  (Browser)  │     │  (PHP/Apache)│     │  (MySQL)    │
-└─────────────┘     └─────────────┘     └─────────────┘
+┌─────────────┐     ┌──────────────────┐     ┌─────────────┐
+│   Client    │────▶│  Hostless.cloud  │────▶│  AWS RDS    │
+│  (Browser)  │     │  (Docker/PHP)    │     │  (MySQL)    │
+└─────────────┘     └──────────────────┘     └─────────────┘
 ```
 
 ## Prerequisites
 
-1. **Pxxl Space Account** - Sign up at [pxxl.app](https://pxxl.app)
+1. **Hostless.cloud Account** - Sign up at [hostless.cloud](https://hostless.cloud)
 2. **AWS Account** - For RDS MySQL instance
 3. **Docker** - For building and testing locally
 4. **Git** - For version control
+5. **GitHub/GitLab Account** - For repository hosting
 
 ## Step 1: Set Up AWS RDS MySQL
 
@@ -31,8 +32,8 @@ This guide covers deploying the AkuSparkle application to **Pxxl Space (pxxl.app
 7. Master password: Generate a strong password (save it!)
 8. Instance class: `db.t3.micro` (free tier) or larger for production
 9. Storage: 20 GB (minimum)
-10. **Important**: Enable **Public Access** = Yes (for Pxxl Space to connect)
-11. VPC Security Group: Create new, allow inbound on port 3306 from anywhere (0.0.0.0/0) or restrict to Pxxl Space IPs
+10. **Important**: Enable **Public Access** = Yes (for Hostless.cloud to connect)
+11. VPC Security Group: Create new, allow inbound on port 3306 from anywhere (0.0.0.0/0) or restrict to Hostless.cloud IPs
 12. Database name: `akusparkle`
 
 ### 1.2 Note the Endpoint
@@ -86,39 +87,58 @@ docker-compose logs -f app
 
 The local setup uses a local MySQL container (not AWS RDS).
 
-## Step 4: Deploy to Pxxl Space
+## Step 4: Deploy to Hostless.cloud
 
-### Option A: Using Pxxl Space CLI (Recommended)
+### Option A: Git-based Deployment (Recommended)
 
-If Pxxl Space provides a CLI:
+1. Push your repository to GitHub or GitLab:
+   ```bash
+   git add .
+   git commit -m "Prepare for Hostless.cloud deployment"
+   git push origin main
+   ```
 
-```bash
-# Login to Pxxl Space
-pxxl login
+2. Go to [Hostless.cloud Dashboard](https://dashboard.hostless.cloud)
+3. Click "New Project" → "Import from Git"
+4. Select your repository
+5. Hostless will automatically detect the `Dockerfile` in the root
+6. Configure the project:
+   - **Build Command**: (leave empty - uses Dockerfile)
+   - **Start Command**: (leave empty - uses Dockerfile CMD)
+   - **Port**: 8080 (Hostless sets PORT automatically)
+   - **Health Check Path**: `/health.php`
 
-# Deploy
-pxxl deploy --app akusparkle --env production
-```
+7. Add Environment Variables in Hostless dashboard:
+   ```
+   DB_HOST=your-rds-endpoint:3306
+   DB_NAME=akusparkle
+   DB_USER=admin
+   DB_PASS=your-secure-password
+   APP_ENV=production
+   ```
+
+8. Click "Deploy"
 
 ### Option B: Using Docker Hub / Container Registry
 
 1. Build and push your image:
-```bash
-docker build -t your-dockerhub-username/akusparkle:latest .
-docker push your-dockerhub-username/akusparkle:latest
-```
+   ```bash
+   docker build -t your-dockerhub-username/akusparkle:latest .
+   docker push your-dockerhub-username/akusparkle:latest
+   ```
 
-2. In Pxxl Space dashboard:
-   - Create new app
+2. In Hostless dashboard:
+   - Create new project
    - Select "Deploy from Docker Image"
    - Enter: `your-dockerhub-username/akusparkle:latest`
-   - Add environment variables from `.env`
+   - Add environment variables (same as above)
+   - Set Health Check Path: `/health.php`
    - Deploy
 
 ### Option C: Direct Server Deployment (if you have SSH access)
 
 ```bash
-# On your Pxxl Space server
+# On your server
 git clone https://github.com/yourusername/akusparkle.git
 cd akusparkle
 cp .env.example .env
@@ -128,23 +148,24 @@ docker-compose -f docker-compose.prod.yml up -d
 
 ## Step 5: Configure Custom Domain (Optional)
 
-1. In Pxxl Space dashboard, go to your app settings
+1. In Hostless dashboard, go to your project settings
 2. Add custom domain: `akusparkle.com` or `shop.akusparkle.com`
 3. Configure DNS:
    - Type: CNAME
    - Name: `www` or `@`
-   - Value: `your-app.pxxl.app`
+   - Value: `your-project.hostless.run`
 4. Enable HTTPS (Let's Encrypt auto-provisioned)
 
 ## Step 6: Verify Deployment
 
-1. Visit your deployed URL
+1. Visit your deployed URL (e.g., `https://your-project.hostless.run`)
 2. Test:
    - Homepage loads
    - Products page shows products
    - Admin login works (username: `admin`, password: `AkuSpakle123!`)
    - Cart functionality
    - Payment page
+   - Health check: `https://your-project.hostless.run/health.php`
 
 ## Database Management
 
@@ -171,10 +192,10 @@ mysql -h your-rds-endpoint -u admin -p akusparkle < backup_2024-01-15.sql
 ## Security Checklist
 
 - [ ] Use strong database password (20+ chars)
-- [ ] Restrict RDS security group to Pxxl Space IPs only
+- [ ] Restrict RDS security group to Hostless.cloud IPs only
 - [ ] Enable RDS encryption at rest
 - [ ] Enable RDS automated backups (7+ days retention)
-- [ ] Use HTTPS only (enforced by Pxxl Space)
+- [ ] Use HTTPS only (enforced by Hostless.cloud)
 - [ ] Set secure session cookies (already configured)
 - [ ] Rotate admin password after first login
 - [ ] Consider AWS Secrets Manager for production credentials
@@ -183,23 +204,29 @@ mysql -h your-rds-endpoint -u admin -p akusparkle < backup_2024-01-15.sql
 
 ### Database Connection Failed
 
-1. Check RDS security group allows port 3306 from Pxxl Space
-2. Verify endpoint, username, password in `.env`
+1. Check RDS security group allows port 3306 from Hostless.cloud
+2. Verify endpoint, username, password in Hostless environment variables
 3. Check RDS is "Available" status
 4. Test connection: `telnet your-rds-endpoint 3306`
 
 ### App Not Loading
 
-1. Check Pxxl Space logs
+1. Check Hostless.cloud logs in dashboard
 2. Verify Docker image built correctly
-3. Check environment variables are set in Pxxl Space dashboard
-4. Verify `docker-compose.prod.yml` ports match Pxxl Space expectations
+3. Check environment variables are set in Hostless dashboard
+4. Verify `docker-compose.prod.yml` ports match (8080)
+5. Check health endpoint: `curl https://your-project.hostless.run/health.php`
+
+### Port Issues
+
+Hostless.cloud sets the `PORT` environment variable automatically. The application must listen on this port. Our Dockerfile and entrypoint script handle this automatically.
 
 ### CORS Issues
 
 The `config.php` automatically allows:
 - `localhost` (any port)
-- `*.pxxl.app` domains
+- `*.pxxl.app` domains (legacy)
+- Hostless.cloud domains
 
 Add your custom domain to the CORS allowlist in `api/config.php` if needed.
 
@@ -208,7 +235,7 @@ Add your custom domain to the CORS allowlist in `api/config.php` if needed.
 Create `.github/workflows/deploy.yml`:
 
 ```yaml
-name: Deploy to Pxxl Space
+name: Deploy to Hostless.cloud
 
 on:
   push:
@@ -226,14 +253,15 @@ jobs:
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
           docker push ${{ secrets.DOCKER_USERNAME }}/akusparkle:${{ github.sha }}
       
-      - name: Deploy to Pxxl Space
-        # Add Pxxl Space deployment action here
-        run: echo "Deploy to Pxxl Space"
+      - name: Deploy to Hostless.cloud
+        # Hostless.cloud supports Git-based deployment automatically
+        # Or use their API/CLI if available
+        run: echo "Push to main triggers auto-deploy on Hostless.cloud"
 ```
 
 ## Monitoring
 
-- **Pxxl Space**: Built-in metrics in dashboard
+- **Hostless.cloud**: Built-in metrics in dashboard
 - **AWS RDS**: CloudWatch metrics (CPU, connections, storage)
 - **Application**: Add error tracking (Sentry) and uptime monitoring
 
@@ -241,14 +269,14 @@ jobs:
 
 | Service | Free Tier | Production Estimate |
 |---------|-----------|---------------------|
-| Pxxl Space | Free tier available | $5-20/month |
+| Hostless.cloud | Free tier available (never sleeps) | $0-20/month |
 | AWS RDS (db.t3.micro) | 750 hrs/month | ~$15/month |
 | AWS RDS Storage (20GB) | 20 GB | ~$2/month |
 | Data Transfer | 1 GB | ~$1-5/month |
-| **Total** | **$0** | **~$23-42/month** |
+| **Total** | **$0** | **~$18-42/month** |
 
 ## Support
 
-- Pxxl Space Docs: [docs.pxxl.app](https://docs.pxxl.app)
+- Hostless.cloud Docs: [docs.hostless.cloud](https://docs.hostless.cloud)
 - AWS RDS Docs: [docs.aws.amazon.com/rds](https://docs.aws.amazon.com/rds)
 - Project Issues: GitHub Issues

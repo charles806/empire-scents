@@ -33,8 +33,13 @@ RUN if [ -f "composer.json" ]; then composer install --no-dev --optimize-autoloa
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
-# Expose port 80
-EXPOSE 80
+# Copy entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-# Start Apache
+# Expose the default port (Hostless will set PORT at runtime)
+EXPOSE 8080
+
+# Start Apache with PORT environment variable
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"]
