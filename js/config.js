@@ -104,63 +104,63 @@ const ProductService = {
         throw new Error('Delete failed');
     }
 };
-function getLocalProducts() {
-    const stored = localStorage.getItem('products');
-    if (stored) {
-        return JSON.parse(stored);
-    }
-    return DEFAULT_PRODUCTS;
-}
+// function getLocalProducts() {
+//     const stored = localStorage.getItem('products');
+//     if (stored) {
+//         return JSON.parse(stored);
+//     }
+//     return DEFAULT_PRODUCTS;
+// }
 
-const DEFAULT_PRODUCTS = [
-    {
-        id: 1,
-        name: "Magic Mix - Dark Currant",
-        category: "magic-mix",
-        price: 9500,
-        image: "images/placeholder.svg",
-        badge: "Bestseller"
-    },
-    {
-        id: 2,
-        name: "Magic Mix - Exotic Mix",
-        category: "magic-mix",
-        price: 9500,
-        image: "images/placeholder.svg",
-        badge: "New"
-    },
-    {
-        id: 3,
-        name: "Hair Growth Oil",
-        category: "hair-oil",
-        price: 8500,
-        image: "images/placeholder.svg",
-        badge: "Bestseller"
-    },
-    {
-        id: 4,
-        name: "Scalp Cleanser",
-        category: "scalp-care",
-        price: 7500,
-        image: "images/placeholder.svg",
-        badge: ""
-    },
-    {
-        id: 5,
-        name: "Beard Oil for Men",
-        category: "beard-care",
-        price: 7000,
-        image: "images/placeholder.svg",
-        badge: "New"
-    }
-];
+// const DEFAULT_PRODUCTS = [
+//     {
+//         id: 1,
+//         name: "Magic Mix - Dark Currant",
+//         category: "magic-mix",
+//         price: 9500,
+//         image: "images/placeholder.svg",
+//         badge: "Bestseller"
+//     },
+//     {
+//         id: 2,
+//         name: "Magic Mix - Exotic Mix",
+//         category: "magic-mix",
+//         price: 9500,
+//         image: "images/placeholder.svg",
+//         badge: "New"
+//     },
+//     {
+//         id: 3,
+//         name: "Hair Growth Oil",
+//         category: "hair-oil",
+//         price: 8500,
+//         image: "images/placeholder.svg",
+//         badge: "Bestseller"
+//     },
+//     {
+//         id: 4,
+//         name: "Scalp Cleanser",
+//         category: "scalp-care",
+//         price: 7500,
+//         image: "images/placeholder.svg",
+//         badge: ""
+//     },
+//     {
+//         id: 5,
+//         name: "Beard Oil for Men",
+//         category: "beard-care",
+//         price: 7000,
+//         image: "images/placeholder.svg",
+//         badge: "New"
+//     }
+// ];
 
-const CATEGORIES = [
-    { name: "Magic Mix", slug: "magic-mix", image: "images/placeholder.svg" },
-    { name: "Hair Growth Oil", slug: "hair-oil", image: "images/placeholder.svg" },
-    { name: "Scalp Cleanser", slug: "scalp-care", image: "images/placeholder.svg" },
-    { name: "Beard Oil for Men", slug: "beard-care", image: "images/placeholder.svg" }
-];
+// const CATEGORIES = [
+//     { name: "Magic Mix", slug: "magic-mix", image: "images/placeholder.svg" },
+//     { name: "Hair Growth Oil", slug: "hair-oil", image: "images/placeholder.svg" },
+//     { name: "Scalp Cleanser", slug: "scalp-care", image: "images/placeholder.svg" },
+//     { name: "Beard Oil for Men", slug: "beard-care", image: "images/placeholder.svg" }
+// ];
 
 const PAYMENT_DETAILS = {
     accountNumber: "9073824064",

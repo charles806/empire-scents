@@ -40,10 +40,10 @@ session_set_cookie_params([
 session_start();
 
 // Database configuration from environment variables with defaults for local development
-$DB_HOST = getenv('DB_HOST') ?: '127.0.0.1:3306';
+$DB_HOST = 'gateway01.eu-central-1.prod.aws.tidbcloud.com';
 $DB_NAME = getenv('DB_NAME') ?: 'akusparkle';
-$DB_USER = getenv('DB_USER') ?: 'root';
-$DB_PASS = getenv('DB_PASS') ?: '';
+$DB_USER = '25vHvthuqNzC1nn.root';
+$DB_PASS = 'geFBwBGlKc8XEJZN';
 
 try {
     $pdo = new PDO("mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4", $DB_USER, $DB_PASS, [
